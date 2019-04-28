@@ -1,7 +1,7 @@
 # SPAlert
 Native popup alert similar to Apple Music or Feedback in AppStore app. Support animations. Now in develop. If you want to follow the project, put a star ✯
 
-## Preview
+### Preview
 <img src="https://github.com/IvanVorobei/SPAlert/blob/master/Resources/Preview.gif" height="450">
 
 ## My projects
