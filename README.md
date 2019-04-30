@@ -1,4 +1,5 @@
 # SPAlert
+
 Native popup **alert similar to Apple Music or Feedback in AppStore** app. Support animations. I tried to repeat Apple alert as much as possible. You can download example app [Debts - Spending tracker](https://itunes.apple.com/app/id1446635818) from AppStore. If you like the project, do not forget to **put star ★**
 
 ### Preview
