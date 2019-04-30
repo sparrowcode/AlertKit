@@ -27,6 +27,7 @@ open class SPAlertView: UIView {
     public var cornerRadius: CGFloat = 8
     public var dismissByTap: Bool = true
     public var contentColor: UIColor = #colorLiteral(red: 0.3450980392, green: 0.3411764706, blue: 0.3450980392, alpha: 1)
+    public var haptic: SPAlertHaptic = .none
     
     public var layout = SPAlertLayout()
     
@@ -50,6 +51,7 @@ open class SPAlertView: UIView {
         super.init(frame: CGRect.zero)
         self.iconView = preset.iconView
         self.layout = preset.layout
+        self.haptic = preset.haptic
         self.titleLabel = UILabel()
         self.titleLabel?.text = title
         if let message = message {
@@ -135,11 +137,14 @@ open class SPAlertView: UIView {
     //MARK: - Public Methods
     
     func present() {
+        
+        self.haptic.impact()
+        
         self.keyWindow.addSubview(self)
         self.layoutIfNeeded()
-        
         self.alpha = 0
         self.transform = transform.scaledBy(x: 0.8, y: 0.8)
+        
         UIView.animate(withDuration: 0.2, animations: {
             self.alpha = 1
             self.transform = CGAffineTransform.identity

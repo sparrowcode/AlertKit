@@ -55,6 +55,15 @@ public enum SPAlertPreset {
             return layout
         }
     }
+    
+    var haptic: SPAlertHaptic {
+        switch self {
+        case .done:
+            return .success
+        case .heart:
+            return .success
+        }
+    }
 }
 
 public struct SPAlertLayout {
