@@ -88,7 +88,7 @@ alertView.present()
 
 ### Layout
 
-Here you can change the size and size:
+Here you can change the sizes and spaces:
 
 ```swift
 alertView.layout.topSpace = 18
