@@ -1,5 +1,5 @@
 # SPAlert
-Native popup **alert similar to Apple Music or Feedback in AppStore** app. Support animations. I tried to repeat Apple alert as much as possible. If you like the project, do not forget to **put star ★**
+Native popup **alert similar to Apple Music or Feedback in AppStore** app. Support animations. I tried to repeat Apple alert as much as possible. You can download example app [Code - Learn Swift & Design](https://itunes.apple.com/app/id1453325619) from AppStore. If you like the project, do not forget to **put star ★**
 
 ### Preview
 
