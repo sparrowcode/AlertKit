@@ -1,5 +1,5 @@
 # SPAlert
-Native popup **alert similar to Apple Music or Feedback in AppStore** app. Support animations. I tried to repeat Apple alert as much as possible. You can download example app [Code - Learn Swift & Design](https://itunes.apple.com/app/id1453325619) from AppStore. If you like the project, do not forget to **put star ★**
+Native popup **alert similar to Apple Music or Feedback in AppStore** app. Support animations. I tried to repeat Apple alert as much as possible. You can download example app [Debts - Spending tracker](https://itunes.apple.com/app/id1446635818) from AppStore. If you like the project, do not forget to **put star ★**
 
 ### Preview
 
@@ -8,8 +8,6 @@ Native popup **alert similar to Apple Music or Feedback in AppStore** app. Suppo
 	<img src="https://github.com/IvanVorobei/SPAlert/blob/master/Resources/Preview-Heart.gif" width="250">
 	<img src="https://github.com/IvanVorobei/SPAlert/blob/master/Resources/Preview-Message.gif" width="250">
 </p>
-
-
 
 ## Navigate
 
@@ -20,6 +18,7 @@ Native popup **alert similar to Apple Music or Feedback in AppStore** app. Suppo
     - [Duration](#duration)
     - [Layout](#layout)
     - [Dismiss by Tap](#dismiss-by-tap)
+    - [Haptic](#haptic)   
     - [Corner Radius](#corner-radius)   
 - [Other Projects (+gif)](#my-projects)
 	- [SPStorkController](#spstorkcontroller)
@@ -102,6 +101,16 @@ If you click on the alert, it will disappear ahead of time. This can be disabled
 ```swift
 alertView.dismissByTap = false
 ```
+
+### Haptic
+
+If you use presets, the vibro-response will be start automatically. If you want to customize this, you need set property `haptic`:
+
+```swift
+alertView.haptic = .success
+```
+
+For disable haptic, set it to `.none`.
 
 ### Corner Radius
 
