@@ -107,7 +107,7 @@ alertView.dismissByTap = false
 
 ### Haptic
 
-If you use presets, the vibro-response will be start automatically. If you want to customize this, you need set property `haptic`:
+If you use presets, the vibro-response will be start automatically. For customize this, you need set property `haptic`:
 
 ```swift
 alertView.haptic = .success
