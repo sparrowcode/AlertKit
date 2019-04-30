@@ -3,11 +3,13 @@ Native popup **alert similar to Apple Music or Feedback in AppStore** app. Suppo
 
 ### Preview
 
-<img src="https://github.com/IvanVorobei/SPAlert/blob/master/Resources/Preview-Done.gif" width="300">
-<img src="https://github.com/IvanVorobei/SPAlert/blob/master/Resources/Preview-Heart.gif" width="300">
-<img src="https://github.com/IvanVorobei/SPAlert/blob/master/Resources/Preview-Message.gif" width="300">
+<p float="left">
+ 	<img src="https://github.com/IvanVorobei/SPAlert/blob/master/Resources/Preview-Done.gif" width="300">
+	<img src="https://github.com/IvanVorobei/SPAlert/blob/master/Resources/Preview-Heart.gif" width="300">
+	<img src="https://github.com/IvanVorobei/SPAlert/blob/master/Resources/Preview-Message.gif" width="300">
+</p>
 
-Soon I am add cool preview)
+
 
 ## Navigate
 
