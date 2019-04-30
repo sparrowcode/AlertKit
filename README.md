@@ -4,9 +4,9 @@ Native popup **alert similar to Apple Music or Feedback in AppStore** app. Suppo
 ### Preview
 
 <p float="left">
- 	<img src="https://github.com/IvanVorobei/SPAlert/blob/master/Resources/Preview-Done.gif" width="300">
-	<img src="https://github.com/IvanVorobei/SPAlert/blob/master/Resources/Preview-Heart.gif" width="300">
-	<img src="https://github.com/IvanVorobei/SPAlert/blob/master/Resources/Preview-Message.gif" width="300">
+ 	<img src="https://github.com/IvanVorobei/SPAlert/blob/master/Resources/Preview-Done.gif" width="250">
+	<img src="https://github.com/IvanVorobei/SPAlert/blob/master/Resources/Preview-Heart.gif" width="250">
+	<img src="https://github.com/IvanVorobei/SPAlert/blob/master/Resources/Preview-Message.gif" width="250">
 </p>
 
 
