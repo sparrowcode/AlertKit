@@ -7,7 +7,7 @@ Native popup **alert similar to Apple Music or Feedback in AppStore** app. Suppo
 <p float="left">
  	<img src="https://github.com/IvanVorobei/SPAlert/blob/master/Resources/Preview-Done.gif" width="250">
 	<img src="https://github.com/IvanVorobei/SPAlert/blob/master/Resources/Preview-Heart.gif" width="250">
-	<img src="https://github.com/IvanVorobei/SPAlert/blob/master/Resources/Preview-Message.gif" width="250">
+	<img src="https://github.com/IvanVorobei/SPAlert/blob/master/Resources/Preview-Message-2.gif" width="250">
 </p>
 
 If you want to **buy source code** of example apps, please, go to [xcode-shop.com](https://xcode-shop.com).
