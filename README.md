@@ -124,7 +124,7 @@ I use a corner radius like an Apple. If you need to change it, see the property 
 alertView.cornerRadius = 12
 ```
 
-### Required Presets
+## Required Presets
 
 I will add new types and presets as needed. I will add animation and custom layout to them for a better experience. To know what presets need to be done, please inform me. You do not need to be shy. Make a new [issue](https://github.com/IvanVorobei/SPAlert/issues) and describe what kind of graphics or animation you would like. I will try to quickly add new items.
 
