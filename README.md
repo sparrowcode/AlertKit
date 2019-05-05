@@ -52,7 +52,7 @@ If you prefer not to use any of the aforementioned dependency managers, you can 
 
 ## Quick Start
 
-For best experience, I recomend call alerts by `SPAlert`. These functions are updated regularly and show as Apple way. I focus on presets: 
+For best experience, I recommend call alerts by `SPAlert`. These functions are updated regularly and show as Apple way. I focus on presets: 
 
 ```swift
 SPAlert.present(title: "Added to Library", preset: .done)
