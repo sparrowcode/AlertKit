@@ -136,7 +136,7 @@ open class SPAlertView: UIView {
     
     //MARK: - Public Methods
     
-    func present() {
+    public func present() {
         
         self.haptic.impact()
         
