@@ -24,7 +24,7 @@ If you want to **buy source code** of example apps, please, go to [xcode-shop.co
     - [Haptic](#haptic)   
     - [Corner Radius](#corner-radius)
 - [Required Presets](#required-presets)
-- [Other Projects (+gif)](#my-projects)
+- [Other Projects +gif](#my-projects)
 	- [SPStorkController](#spstorkcontroller)
     - [SPLarkController](#splarkcontroller)
     - [SPPermission](#sppermission)
