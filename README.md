@@ -6,11 +6,11 @@
     <img src="https://github.com/IvanVorobei/SPAlert/blob/master/Resources/Preview-Message.gif" width="250">
 </p>
 
-<p>**Popup from Apple Music & Feedback in AppStore**. Contains `Done` & `Heart` presets. `Done` preset present with animation. I clone Apple's alerts as much as possible. You can download example app [Debts - Spending tracker](https://itunes.apple.com/app/id1446635818) from AppStore. If you like the project, do not forget to **put star ★** or donate:
+**Popup from Apple Music & Feedback in AppStore**. Contains `Done` & `Heart` presets. `Done` preset present with animation. I clone Apple's alerts as much as possible. You can download example app [Debts - Spending tracker](https://itunes.apple.com/app/id1446635818) from AppStore. If you like the project, do not forget to **put star ★** or donate:
 
 [![Patron](https://github.com/IvanVorobei/SPPermission/blob/master/Resources/Patron%20Button.svg)](https://patreon.com/ivanvorobei)
 
-If you want to **buy source code** of example apps, please, go to [xcode-shop.com](https://xcode-shop.com).</p>
+If you want to **buy source code** of example apps, please, go to [xcode-shop.com](https://xcode-shop.com).
 
 ## Navigate
 
