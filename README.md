@@ -10,8 +10,6 @@
 
 [![Patron](https://github.com/IvanVorobei/SPPermission/blob/master/Resources/Patron%20Button.svg)](https://patreon.com/ivanvorobei)
 
-If you want to **buy source code** of example apps, please, go to [xcode-shop.com](https://xcode-shop.com).
-
 ## Navigate
 
 - [Requirements](#requirements)
