@@ -24,7 +24,6 @@ import UIKit
 open class SPAlertView: UIView {
     
     public var duration: TimeInterval = 1.5
-    public var cornerRadius: CGFloat = 8
     public var dismissByTap: Bool = true
     public var contentColor: UIColor = #colorLiteral(red: 0.3450980392, green: 0.3411764706, blue: 0.3450980392, alpha: 1)
     public var haptic: SPAlertHaptic = .none
@@ -96,7 +95,7 @@ open class SPAlertView: UIView {
     private func commonInit() {
         self.backgroundColor = .clear
         self.layer.masksToBounds = true
-        self.layer.cornerRadius = self.cornerRadius
+        self.layer.cornerRadius = 8
         
         self.backgroundView.isUserInteractionEnabled = false
         self.addSubview(self.backgroundView)
