@@ -124,7 +124,7 @@ For disable haptic, set it to `.none`.
 I use a corner radius like an Apple. If you need to change it, see the property `cornerRadius`: 
 
 ```swift
-alertView.cornerRadius = 12
+alertView.layer.cornerRadius = 40
 ```
 
 ## Required Presets
