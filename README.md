@@ -158,7 +158,7 @@ Alert you can find in [SPAlert](https://github.com/ivanvorobei/SPAlert) project.
 
 [SPPermission](https://github.com/ivanvorobei/SPPermission) allow request permissions **with native dialog** UI and interactive animations. Also you can request permissions without dialog. Check state any permission. You can start using this project with just two lines of code and easy customisation.
 
-You can buy example Dialog controller & Dinamic animations in [xcode-shop.com](https://xcode-shop.com/ui-elements). Also see [preview](https://xcode-shop.com/assets/preview/dinamic-alert.mov) with this item.
+You can buy example Dialog & Dinamic animations in [xcode-shop.com](https://xcode-shop.com/ui-elements), see [preview](https://xcode-shop.com/assets/preview/dinamic-alert.mov).
 
 ---
 
