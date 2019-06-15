@@ -170,8 +170,6 @@ You can buy example Dialog & Dinamic animations in [xcode-shop.com](https://xcod
 
 You can download example app [Code - Learn Swift & Design](https://itunes.apple.com/app/id1453325619) from AppStore. If you want to **buy source code** of app this app, please, go to [xcode-shop.com](https://xcode-shop.com).
 
----
-
 ## License
 `SPAlert` is released under the MIT license. Check `LICENSE.md` for details.
 
