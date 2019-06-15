@@ -8,9 +8,9 @@
     <img src="https://github.com/ivanvorobei/SPAlert/blob/master/Resources/Preview-Message.gif" width="250">
 </p>
 
-If you like the project, do not forget to `put star ★` or help me by donate:
+If you like the project, do not forget to `put star ★` or visit my store for iOS developers:
 
-[![Patron](https://github.com/ivanvorobei/SPPermission/blob/master/Resources/Patron%20Button.svg)](https://patreon.com/ivanvorobei)
+[![xcode-shop.com](https://github.com/ivanvorobei/SPPermission/blob/master/Resources/Buttons/Xcode%20Shop%20Button%20-%201.svg)](https://xcode-shop.com)
 
 See project's backers in [Sponsors](https://github.com/ivanvorobei/SPAlert#sponsors) section.
 
@@ -158,7 +158,7 @@ Alert you can find in [SPAlert](https://github.com/ivanvorobei/SPAlert) project.
 
 [SPPermission](https://github.com/ivanvorobei/SPPermission) allow request permissions **with native dialog** UI and interactive animations. Also you can request permissions without dialog. Check state any permission. You can start using this project with just two lines of code and easy customisation.
 
-If your app uses `SPPermission`, write me. I am adding you app as example of usage.
+You can buy example Dialog controller & Dinamic animations in [xcode-shop.com](https://xcode-shop.com/ui-elements). Also see [preview](https://xcode-shop.com/assets/preview/dinamic-alert.mov) with this item.
 
 ---
 
