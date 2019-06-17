@@ -1,6 +1,6 @@
 # SPAlert
 
-**Popup from Apple Music & Feedback in AppStore**. Contains `Done` & `Heart` presets. `Done` preset present with animation. I clone Apple's alerts as much as possible. You can find this alerts in AppStore after feedback, after added song to library in Apple Music. You can download example app [Debts - Spending tracker](https://itunes.apple.com/app/id1446635818) from AppStore.
+**Popup from Apple Music & Feedback in AppStore**. Contains `Done` & `Heart` presets. `Done` preset present with animation. I clone Apple's alerts as much as possible. You can find this alerts in AppStore after feedback, after added song to library in Apple Music.
 
 <p float="left">
     <img src="https://github.com/ivanvorobei/SPAlert/blob/master/Resources/Preview-Done.gif" width="250">
@@ -8,9 +8,9 @@
     <img src="https://github.com/ivanvorobei/SPAlert/blob/master/Resources/Preview-Message.gif" width="250">
 </p>
 
-If you like the project, do not forget to `put star ★` or visit my store for iOS developers:
+You can download example [Debts - Spending tracker](https://itunes.apple.com/app/id1446635818) app from AppStore. For **buy source code** of app in preview, go to:
 
-[![xcode-shop.com](https://github.com/ivanvorobei/SPPermission/blob/master/Resources/Buttons/Xcode%20Shop%20Button%20-%201.svg)](https://xcode-shop.com)
+[![xcode-shop.com](https://github.com/ivanvorobei/SPPermission/blob/master/Resources/Buttons/Xcode%20Shop%20Button%20-%203.svg)](https://xcode-shop.com)
 
 See project's backers in [Sponsors](https://github.com/ivanvorobei/SPAlert#sponsors) section.
 
