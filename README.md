@@ -130,14 +130,16 @@ alertView.layer.cornerRadius = 40
 
 ### Dark Mode
 
-<img align="left" src="https://github.com/ivanvorobei/SPAlert/blob/master/Resources/Dark-Mode-Preview.jpg" width="250">
+<img align="left" src="https://github.com/ivanvorobei/SPAlert/blob/master/Resources/Dark-Mode-Preview.jpg" width="220">
 
 The default mode is `Dark Mode`. No additional configuration is required. As soon as the user change the interface to dark, all alerts will appear dark.
 
 For check state of user appearance I am use `traitCollection`:
 
 ```swift
-if self.traitCollection.userInterfaceStyle == .dark { return true }
+if self.traitCollection.userInterfaceStyle == .dark {
+    return true
+}
 ```
 
 It available sice iOS 12, for early using always Light Mode. 
