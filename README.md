@@ -22,11 +22,11 @@ See project's backers in [Sponsors](https://github.com/ivanvorobei/SPAlert#spons
 - [Quick Start](#quick-start)
 - [Usage](#usage)
     - [Duration](#duration)
+    - [Dark Mode](#dark-mode)
     - [Layout](#layout)
     - [Dismiss by Tap](#dismiss-by-tap)
     - [Haptic](#haptic)   
     - [Corner Radius](#corner-radius)
-    - [Dark Mode](#dark-mode)
 - [Required Presets](#required-presets)
 - [Sponsors](#sponsors)
 - [Other Projects +gif](#my-projects)
@@ -91,6 +91,22 @@ alertView.duration = 3
 alertView.present()
 ```
 
+### Dark Mode
+
+<img align="left" src="https://github.com/ivanvorobei/SPAlert/blob/master/Resources/Dark-Mode-Preview.jpg" width="220">
+
+The default mode is `Dark Mode`. No additional configuration is required. As soon as the user change the interface to dark, all alerts will appear dark.
+
+For check state of user appearance I am use `traitCollection`:
+
+```swift
+if self.traitCollection.userInterfaceStyle == .dark {
+    return true
+}
+```
+
+It available sice iOS 12, for early using always Light Mode. 
+
 ### Layout
 
 Here you can change the sizes and spaces:
@@ -127,22 +143,6 @@ I use a corner radius like an Apple. If you need to change it, see the property 
 ```swift
 alertView.layer.cornerRadius = 40
 ```
-
-### Dark Mode
-
-<img align="left" src="https://github.com/ivanvorobei/SPAlert/blob/master/Resources/Dark-Mode-Preview.jpg" width="220">
-
-The default mode is `Dark Mode`. No additional configuration is required. As soon as the user change the interface to dark, all alerts will appear dark.
-
-For check state of user appearance I am use `traitCollection`:
-
-```swift
-if self.traitCollection.userInterfaceStyle == .dark {
-    return true
-}
-```
-
-It available sice iOS 12, for early using always Light Mode. 
 
 ## Required Presets
 
