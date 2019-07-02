@@ -163,8 +163,8 @@ open class SPAlertView: UIView {
             self.addSubview(messageLabel)
         }
         
-        self.iconColor = self.isDarkMode ? #colorLiteral(red: 0.0822, green: 0.0783, blue: 0.09, alpha: 1) : #colorLiteral(red: 0.3450980392, green: 0.3411764706, blue: 0.3450980392, alpha: 1)
-        self.textColor = self.isDarkMode ? #colorLiteral(red: 0.594, green: 0.594, blue: 0.6, alpha: 1) : #colorLiteral(red: 0.3450980392, green: 0.3411764706, blue: 0.3450980392, alpha: 1)
+        self.iconColor = self.isDarkMode ? #colorLiteral(red: 0.4991744435, green: 0.4991744435, blue: 0.5042166096, alpha: 1) : #colorLiteral(red: 0.3450980392, green: 0.3411764706, blue: 0.3450980392, alpha: 1)
+        self.textColor = self.isDarkMode ? #colorLiteral(red: 0.4991744435, green: 0.4991744435, blue: 0.5042166096, alpha: 1) : #colorLiteral(red: 0.3450980392, green: 0.3411764706, blue: 0.3450980392, alpha: 1)
     }
     
     //MARK: - Public Methods
