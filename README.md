@@ -1,6 +1,6 @@
 # SPAlert
 
-**Popup from Apple Music & Feedback in AppStore**. Contains `Done` & `Heart` presets. `Done` preset present with animation. I clone Apple's alerts as much as possible. You can find this alerts in AppStore after feedback, after added song to library in Apple Music.
+**Popup from Apple Music & Feedback in AppStore**. Contains `Done` & `Heart` presets. `Done` preset present with animation. Also support Dark Mode. I clone Apple's alerts as much as possible. You can find this alerts in AppStore after feedback, after added song to library in Apple Music.
 
 <p float="left">
     <img src="https://github.com/ivanvorobei/SPAlert/blob/master/Resources/Preview-Done.gif" width="250">
@@ -26,6 +26,7 @@ See project's backers in [Sponsors](https://github.com/ivanvorobei/SPAlert#spons
     - [Dismiss by Tap](#dismiss-by-tap)
     - [Haptic](#haptic)   
     - [Corner Radius](#corner-radius)
+    - [Dark Mode](#dark-mode)
 - [Required Presets](#required-presets)
 - [Sponsors](#sponsors)
 - [Other Projects +gif](#my-projects)
@@ -34,7 +35,6 @@ See project's backers in [Sponsors](https://github.com/ivanvorobei/SPAlert#spons
     - [SPPermission](#sppermission)
     - [Awesome iOS UI](https://github.com/ivanvorobei/awesome-ios-ui)
 - [License](#license)
-- [Contact or Order Develop](#contact)
 
 ## Requirements
 
@@ -128,6 +128,12 @@ I use a corner radius like an Apple. If you need to change it, see the property 
 alertView.layer.cornerRadius = 40
 ```
 
+### Dark Mode
+
+The default mode is `Dark Mode`. No additional configuration is required. As soon as the user change the interface to dark, all alerts will appear dark.
+
+<img src="https://github.com/ivanvorobei/SPAlert/blob/master/Resources/Dark-Mode-Preview.jpg" width="250">
+
 ## Required Presets
 
 I will add new types and presets as needed. I will add animation and custom layout to them for a better experience. To know what presets need to be done, please inform me. You do not need to be shy. Make a new [issue](https://github.com/ivanvorobei/SPAlert/issues) and describe what kind of graphics or animation you would like. I will try to quickly add new items.
@@ -174,11 +180,3 @@ You can download example app [Code - Learn Swift & Design](https://itunes.apple.
 ## License
 
 `SPAlert` is released under the MIT license. Check `LICENSE.md` for details.
-
-## Contact
-
-If you need any application or UI to be developed, contact me via [telegram](https://t.me/ivanvorobei). I develop iOS apps and designs. I use `swift`. You can see my apps [in AppStore](https://itunes.apple.com/developer/id1446635817).
-
-If you want to know more about Xcode, UIKit & Design, follow me on twitter:
-
-[![https://twitter.com/varabeis](https://github.com/ivanvorobei/SPPermission/blob/master/Resources/Buttons/Twitter-2.svg)](https://twitter.com/varabeis)
