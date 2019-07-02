@@ -25,15 +25,38 @@ open class SPAlertView: UIView {
     
     public var duration: TimeInterval = 1.5
     public var dismissByTap: Bool = true
-    public var contentColor: UIColor = #colorLiteral(red: 0.3450980392, green: 0.3411764706, blue: 0.3450980392, alpha: 1)
     public var haptic: SPAlertHaptic = .none
+    
+    public var iconColor: UIColor! {
+        didSet {
+            iconView?.tintColor = self.iconColor
+        }
+    }
+    public var textColor: UIColor! {
+        didSet {
+            titleLabel?.textColor = self.textColor
+            messageLabel?.textColor = self.textColor
+        }
+    }
     
     public var layout = SPAlertLayout()
     
     private var titleLabel: UILabel? = nil
     private var messageLabel: UILabel? = nil
     private var iconView: UIView? = nil
-    private let backgroundView: UIVisualEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .extraLight))
+    private var backgroundView: UIVisualEffectView!
+    
+    private var isDarkMode: Bool {
+        if #available(iOS 12.0, *) {
+            if self.traitCollection.userInterfaceStyle == .dark {
+                return true
+            } else {
+                return false
+            }
+        } else {
+            return false
+        }
+    }
     
     private var keyWindow: UIWindow { return UIApplication.shared.keyWindow ?? UIWindow() }
     
@@ -93,9 +116,20 @@ open class SPAlertView: UIView {
     //MARK: - Configure
     
     private func commonInit() {
+        
         self.backgroundColor = .clear
         self.layer.masksToBounds = true
         self.layer.cornerRadius = 8
+        
+        if #available(iOS 12.0, *) {
+            if self.traitCollection.userInterfaceStyle == .dark {
+                self.backgroundView = UIVisualEffectView(effect: UIBlurEffect(style: .dark))
+            } else {
+                self.backgroundView = UIVisualEffectView(effect: UIBlurEffect(style: .extraLight))
+            }
+        } else {
+            self.backgroundView = UIVisualEffectView(effect: UIBlurEffect(style: .extraLight))
+        }
         
         self.backgroundView.isUserInteractionEnabled = false
         self.addSubview(self.backgroundView)
@@ -106,13 +140,11 @@ open class SPAlertView: UIView {
         }
         
         if let iconView = self.iconView {
-            iconView.tintColor = self.contentColor
             self.addSubview(iconView)
         }
         
         if let titleLabel = self.titleLabel {
             titleLabel.font = UIFont.boldSystemFont(ofSize: 22)
-            titleLabel.textColor = self.contentColor
             titleLabel.numberOfLines = 0
             let style = NSMutableParagraphStyle()
             style.lineSpacing = 3
@@ -123,7 +155,6 @@ open class SPAlertView: UIView {
         
         if let messageLabel = self.messageLabel {
             messageLabel.font = UIFont.systemFont(ofSize: 16)
-            messageLabel.textColor = self.contentColor
             messageLabel.numberOfLines = 0
             let style = NSMutableParagraphStyle()
             style.lineSpacing = 2
@@ -131,6 +162,9 @@ open class SPAlertView: UIView {
             messageLabel.attributedText = NSAttributedString(string: messageLabel.text ?? "", attributes: [.paragraphStyle: style])
             self.addSubview(messageLabel)
         }
+        
+        self.iconColor = self.isDarkMode ? #colorLiteral(red: 0.0822, green: 0.0783, blue: 0.09, alpha: 1) : #colorLiteral(red: 0.3450980392, green: 0.3411764706, blue: 0.3450980392, alpha: 1)
+        self.textColor = self.isDarkMode ? #colorLiteral(red: 0.594, green: 0.594, blue: 0.6, alpha: 1) : #colorLiteral(red: 0.3450980392, green: 0.3411764706, blue: 0.3450980392, alpha: 1)
     }
     
     //MARK: - Public Methods
