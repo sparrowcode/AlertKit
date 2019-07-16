@@ -106,7 +106,7 @@ if self.traitCollection.userInterfaceStyle == .dark {
 }
 ```
 
-It available sice iOS 12, for early using always Light Mode. 
+It available since iOS 12, for early using always Light Mode. 
 
 ### Layout
 
