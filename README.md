@@ -19,6 +19,8 @@ See project's backers in [Sponsors](https://github.com/ivanvorobei/SPAlert#spons
 
 - [Requirements](#requirements)
 - [Installation](#installation)
+    - [CocoaPods](#cocoapods)
+    - [Manually](#manually)
 - [Quick Start](#quick-start)
 - [Usage](#usage)
     - [Duration](#duration)
