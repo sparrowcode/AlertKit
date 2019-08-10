@@ -20,6 +20,7 @@ See project's backers in [Sponsors](https://github.com/ivanvorobei/SPAlert#spons
 - [Requirements](#requirements)
 - [Installation](#installation)
     - [CocoaPods](#cocoapods)
+    - [Swift Package Manager](#swift-package-manager)
     - [Manually](#manually)
 - [Quick Start](#quick-start)
 - [Usage](#usage)
@@ -51,6 +52,16 @@ Swift `4.2` & `5.0`. Ready for use on iOS 10+
 
 ```ruby
 pod 'SPAlert'
+```
+
+### Swift Package Manager
+
+The [Swift Package Manager](https://swift.org/package-manager/) is a tool for managing the distribution of Swift code. It’s integrated with the Swift build system to automate the process of downloading, compiling, and linking dependencies.
+
+To integrate `SPAlert` into your Xcode project using Xcode 11, specify it in `Project > Swift Packages`:
+
+```ogdl
+https://github.com/ivanvorobei/SPAlert
 ```
 
 ### Manually
