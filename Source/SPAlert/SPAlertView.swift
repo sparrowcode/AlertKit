@@ -58,7 +58,7 @@ open class SPAlertView: UIView {
         }
     }
     
-    private var keyWindow: UIWindow { return UIApplication.shared.keyWindow ?? UIWindow() }
+    public var keyWindow: UIView = (UIApplication.shared.keyWindow ?? UIWindow())
     
     //MARK: - Initializers
     
@@ -175,6 +175,7 @@ open class SPAlertView: UIView {
         
         self.keyWindow.addSubview(self)
         self.layoutIfNeeded()
+        self.layoutSubviews()
         self.alpha = 0
         self.transform = transform.scaledBy(x: 0.8, y: 0.8)
         
