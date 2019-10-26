@@ -13,6 +13,8 @@ For **buy source code** of app in preview, go to:
 
 [![xcode-shop.com](https://github.com/ivanvorobei/SPPermission/blob/master/Resources/Buttons/Xcode%20Shop%20Button%20-%203.svg)](https://xcode-shop.com)
 
+I am need translate my app [Debts](https://itunes.apple.com/app/id1446635818), if you can help me with it, I can propose you project for free. *Help for help!*
+
 See project's backers in [Sponsors](https://github.com/ivanvorobei/SPAlert#sponsors) section.
 
 ## Navigate
