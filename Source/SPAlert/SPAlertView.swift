@@ -45,6 +45,7 @@ open class SPAlertView: UIView {
     private var messageLabel: UILabel? = nil
     private var iconView: UIView? = nil
     private var backgroundView: UIVisualEffectView!
+    private var completion: (() -> Void)?
     
     private var isDarkMode: Bool {
         if #available(iOS 12.0, *) {
@@ -62,14 +63,18 @@ open class SPAlertView: UIView {
     
     //MARK: - Initializers
     
-    public init(message: String) {
+    public init(message: String, completion: (() -> Void)? = nil) {
         super.init(frame: CGRect.zero)
         self.messageLabel = UILabel()
         self.messageLabel?.text = message
+        self.completion = completion
         self.commonInit()
     }
     
-    public init(title: String, message: String?, preset: SPAlertPreset) {
+    public init(title: String,
+                message: String?,
+                preset: SPAlertPreset,
+                completion: (() -> Void)? = nil) {
         super.init(frame: CGRect.zero)
         self.iconView = preset.iconView
         self.layout = preset.layout
@@ -80,10 +85,14 @@ open class SPAlertView: UIView {
             self.messageLabel = UILabel()
             self.messageLabel?.text = message
         }
+        self.completion = completion
         self.commonInit()
     }
     
-    public init(title: String, message: String?, icon view: UIView) {
+    public init(title: String,
+                message: String?,
+                icon view: UIView,
+                completion: (() -> Void)? = nil) {
         super.init(frame: CGRect.zero)
         self.iconView = view
         self.titleLabel = UILabel()
@@ -92,10 +101,14 @@ open class SPAlertView: UIView {
             self.messageLabel = UILabel()
             self.messageLabel?.text = message
         }
+        self.completion = completion
         self.commonInit()
     }
     
-    public init(title: String, message: String?, image: UIImage) {
+    public init(title: String,
+                message: String?,
+                image: UIImage,
+                completion: (() -> Void)? = nil) {
         super.init(frame: CGRect.zero)
         self.iconView = UIImageView(image: image.withRenderingMode(.alwaysTemplate))
         self.iconView?.contentMode = .scaleAspectFit
@@ -105,6 +118,7 @@ open class SPAlertView: UIView {
             self.messageLabel = UILabel()
             self.messageLabel?.text = message
         }
+        self.completion = completion
         self.commonInit()
     }
     
@@ -195,8 +209,9 @@ open class SPAlertView: UIView {
         UIView.animate(withDuration: 0.2, animations: {
             self.alpha = 0
             self.transform = self.transform.scaledBy(x: 0.8, y: 0.8)
-        }, completion: { finished in
-            self.removeFromSuperview()
+        }, completion: { [weak self] finished in
+            self?.removeFromSuperview()
+            self?.completion?()
         })
     }
     

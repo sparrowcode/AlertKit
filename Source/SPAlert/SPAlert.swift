@@ -24,18 +24,31 @@ import UIKit
 public enum SPAlert {
     
     
-    public static func present(title: String, message: String? = nil, preset: SPAlertPreset) {
-        let alertView = SPAlertView(title: title, message: message, preset: preset)
+    public static func present(title: String,
+                               message: String? = nil,
+                               preset: SPAlertPreset,
+                               completion: (() -> Void)? = nil) {
+        let alertView = SPAlertView(title: title,
+                                    message: message,
+                                    preset: preset,
+                                    completion: completion)
         alertView.present()
     }
     
-    public static func present(title: String, message: String? = nil, image: UIImage) {
-        let alertView = SPAlertView(title: title, message: message, image: image)
+    public static func present(title: String,
+                               message: String? = nil,
+                               image: UIImage,
+                               completion: (() -> Void)? = nil) {
+        let alertView = SPAlertView(title: title,
+                                    message: message,
+                                    image: image,
+                                    completion: completion)
         alertView.present()
     }
     
-    public static func present(message: String) {
-        let alertView = SPAlertView(message: message)
+    public static func present(message: String,
+                               completion: (() -> Void)? = nil) {
+        let alertView = SPAlertView(message: message, completion: completion)
         alertView.present()
     }
 }
