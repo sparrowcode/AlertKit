@@ -2,7 +2,7 @@ Pod::Spec.new do |s|
 
   s.name          = "SPAlert"
   s.version       = "2.0"
-  s.summary       = "Native popup alert similar to Apple Music or Feedback in AppStore app."
+  s.summary       = "Native alert from Apple Music & Feedback. Contains Done, Heart & Message presets."
   s.homepage      = "https://github.com/IvanVorobei/SPAlert"
   s.source        = { :git => "https://github.com/IvanVorobei/SPAlert.git", :tag => s.version }
   s.license       = { :type => "MIT", :file => "LICENSE" }
