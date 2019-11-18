@@ -4,7 +4,7 @@
 
 <p float="left">
     <img src="https://github.com/ivanvorobei/SPAlert/blob/master/Assets/Readme/Preview%20-%20Done.gif" width="250">
-    <img src="https://github.com/ivanvorobei/SPAlert/blob/master/Assets/Readme/Preview%20- %20Heart.gif" width="250">
+    <img src="https://github.com/ivanvorobei/SPAlert/blob/master/Assets/Readme/Preview%20-%20Heart.gif" width="250">
     <img src="https://github.com/ivanvorobei/SPAlert/blob/master/Assets/Readme/Preview%20-%20Message.gif" width="250">
 </p>
 
