@@ -19,23 +19,14 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-import UIKit
+#import <Foundation/Foundation.h>
 
-public enum SPAlert {
-    
-    
-    public static func present(title: String, message: String? = nil, preset: SPAlertPreset) {
-        let alertView = SPAlertView(title: title, message: message, preset: preset)
-        alertView.present()
-    }
-    
-    public static func present(title: String, message: String? = nil, image: UIImage) {
-        let alertView = SPAlertView(title: title, message: message, image: image)
-        alertView.present()
-    }
-    
-    public static func present(message: String) {
-        let alertView = SPAlertView(message: message)
-        alertView.present()
-    }
-}
+//! Project version number for SPAlert.
+FOUNDATION_EXPORT double SPAlertVersionNumber;
+
+//! Project version string for SPAlert.
+FOUNDATION_EXPORT const unsigned char SPAlertVersionString[];
+
+// In this header, you should import all the public headers of your framework using statements like #import <SPAlert/PublicHeader.h>
+
+

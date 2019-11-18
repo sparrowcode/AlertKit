@@ -1,5 +1,5 @@
 // The MIT License (MIT)
-// Copyright © 2019 Ivan Vorobei (hello@ivanvorobei.by)
+// Copyright © 2019 Ivan Vorobei (ivanvorobei@icloud.com)
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -34,11 +34,11 @@ public class SPAlertIconHeartView: UIView {
     
     public override func draw(_ rect: CGRect) {
         super.draw(rect)
-        HeartStyleKit.drawHeart(frame: rect, resizing: .aspectFit, fillColor: self.tintColor)
+        HeartDraw.drawHeart(frame: rect, resizing: .aspectFit, fillColor: self.tintColor)
     }
 }
 
-class HeartStyleKit : NSObject {
+class HeartDraw: NSObject {
     
     @objc dynamic public class func drawHeart(frame targetFrame: CGRect = CGRect(x: 0, y: 0, width: 510, height: 470), resizing: ResizingBehavior = .aspectFit, fillColor: UIColor = UIColor(red: 0.000, green: 0.000, blue: 0.000, alpha: 1.000)) {
 

@@ -11,6 +11,6 @@ let package = Package(
         .library(name: "SPAlert", targets: ["SPAlert"])
     ],
     targets: [
-        .target(name: "SPAlert", dependencies: [], path: "Source/SPAlert")
+        .target(name: "SPAlert")
     ]
 )
