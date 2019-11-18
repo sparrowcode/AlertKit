@@ -12,7 +12,7 @@ I am use it in app [Debts - Spending tracker](https://itunes.apple.com/app/id144
 
 <p float="left">
 [![xcode-shop.com](https://github.com/ivanvorobei/SPPermissions/blob/master/Assets/Buttons/xcode-shop.svg)](https://xcode-shop.com)
-[https://github.com/ivanvorobei](https://github.com/ivanvorobei/SPPermissions/blob/master/Assets/Buttons/follow-me-on-github.svg)](https://github.com/ivanvorobei)
+[![https://github.com/ivanvorobei](https://github.com/ivanvorobei/SPPermissions/blob/master/Assets/Buttons/follow-me-on-github.svg)](https://github.com/ivanvorobei)
 </p>
 
 If you like the project, do not forget to `put star ★` and follow me on GitHub. For help project, see [Сooperation](#сooperation) section.
