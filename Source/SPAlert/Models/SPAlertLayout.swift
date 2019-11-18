@@ -1,5 +1,5 @@
 // The MIT License (MIT)
-// Copyright © 2019 Ivan Vorobei (hello@ivanvorobei.by)
+// Copyright © 2019 Ivan Vorobei (ivanvorobei@icloud.com)
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -21,51 +21,6 @@
 
 import UIKit
 
-public enum SPAlertPreset {
-    
-    case done
-    case heart
-    
-    var iconView: UIView {
-        switch self {
-        case .done:
-            return SPAlertIconDoneView()
-        case .heart:
-            return SPAlertIconHeartView()
-        }
-    }
-    
-    var layout: SPAlertLayout {
-        switch self {
-        case .done:
-            var layout = SPAlertLayout()
-            layout.topSpace = 63
-            layout.bottomSpace = 29
-            layout.iconWidth = 112
-            layout.iconHeight = 112
-            layout.bottomIconSpace = 35
-            return layout
-        case .heart:
-            var layout = SPAlertLayout()
-            layout.topSpace = 49
-            layout.bottomSpace = 25
-            layout.iconWidth = 112
-            layout.iconHeight = 77
-            layout.bottomIconSpace = 35
-            return layout
-        }
-    }
-    
-    var haptic: SPAlertHaptic {
-        switch self {
-        case .done:
-            return .success
-        case .heart:
-            return .success
-        }
-    }
-}
-
 public struct SPAlertLayout {
     
     public var topSpace: CGFloat = 43
@@ -73,9 +28,4 @@ public struct SPAlertLayout {
     public var iconWidth: CGFloat = 100
     public var iconHeight: CGFloat = 100
     public var bottomIconSpace: CGFloat = 41
-}
-
-public protocol SPAlertIconAnimatable {
-    
-    func animate()
 }

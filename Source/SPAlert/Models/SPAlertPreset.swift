@@ -21,21 +21,47 @@
 
 import UIKit
 
-public enum SPAlert {
+public enum SPAlertPreset {
     
+    case done
+    case heart
     
-    public static func present(title: String, message: String? = nil, preset: SPAlertPreset) {
-        let alertView = SPAlertView(title: title, message: message, preset: preset)
-        alertView.present()
+    var iconView: UIView {
+        switch self {
+        case .done:
+            return SPAlertIconDoneView()
+        case .heart:
+            return SPAlertIconHeartView()
+        }
     }
     
-    public static func present(title: String, message: String? = nil, image: UIImage) {
-        let alertView = SPAlertView(title: title, message: message, image: image)
-        alertView.present()
+    var layout: SPAlertLayout {
+        switch self {
+        case .done:
+            var layout = SPAlertLayout()
+            layout.topSpace = 63
+            layout.bottomSpace = 29
+            layout.iconWidth = 112
+            layout.iconHeight = 112
+            layout.bottomIconSpace = 35
+            return layout
+        case .heart:
+            var layout = SPAlertLayout()
+            layout.topSpace = 49
+            layout.bottomSpace = 25
+            layout.iconWidth = 112
+            layout.iconHeight = 77
+            layout.bottomIconSpace = 35
+            return layout
+        }
     }
     
-    public static func present(message: String) {
-        let alertView = SPAlertView(message: message)
-        alertView.present()
+    var haptic: SPAlertHaptic {
+        switch self {
+        case .done:
+            return .success
+        case .heart:
+            return .success
+        }
     }
 }

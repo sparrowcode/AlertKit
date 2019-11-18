@@ -21,21 +21,7 @@
 
 import UIKit
 
-public enum SPAlert {
+public protocol SPAlertIconAnimatable {
     
-    
-    public static func present(title: String, message: String? = nil, preset: SPAlertPreset) {
-        let alertView = SPAlertView(title: title, message: message, preset: preset)
-        alertView.present()
-    }
-    
-    public static func present(title: String, message: String? = nil, image: UIImage) {
-        let alertView = SPAlertView(title: title, message: message, image: image)
-        alertView.present()
-    }
-    
-    public static func present(message: String) {
-        let alertView = SPAlertView(message: message)
-        alertView.present()
-    }
+    func animate()
 }
