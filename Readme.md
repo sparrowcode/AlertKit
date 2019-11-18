@@ -3,8 +3,8 @@
 **Popup from Apple Music & Feedback in AppStore**. Contains `Done`, `Heart` &  `Message` presets. `Done` preset include animation. Also support Dark Mode. I clone Apple's alerts as much as possible. You can find this alerts in AppStore after feedback and after added song to library in Apple Music.
 
 <p float="left">
-    <img src="https://github.com/ivanvorobei/SPAlert/blob/master/Resources/Preview%20-%20Done.gif" width="250">
-    <img src="https://github.com/ivanvorobei/SPAlert/blob/master/Resources/Preview%20- %20Heart.gif" width="250">
+    <img src="https://github.com/ivanvorobei/SPAlert/blob/master/Assets/Readme/Preview%20-%20Done.gif" width="250">
+    <img src="https://github.com/ivanvorobei/SPAlert/blob/master/Assets/Readme/Preview%20- %20Heart.gif" width="250">
     <img src="https://github.com/ivanvorobei/SPAlert/blob/master/Assets/Readme/Preview%20-%20Message.gif" width="250">
 </p>
 
@@ -105,7 +105,7 @@ alertView.present()
 
 ### Dark Mode
 
-<img align="left" src="https://github.com/ivanvorobei/SPAlert/blob/master/Resources/Preview%20-%20DarkMode.jpg" width="220">
+<img align="left" src="https://github.com/ivanvorobei/SPAlert/blob/master/Assets/Readme/Preview%20-%20DarkMode.jpg" width="220">
 
 Dark Mode no need additional configuration. As soon as the user change the interface to dark, all alerts will appear dark.
 
