@@ -22,6 +22,7 @@ I am use this repo in app [Debts - Spending tracker](https://itunes.apple.com/ap
     - [Swift Package Manager](#swift-package-manager)
     - [Carthage](#carthage)
     - [Manually](#manually)
+- [Presets](#presets)
 - [Quick Start](#quick-start)
 - [Usage](#usage)
     - [Duration](#duration)
@@ -69,7 +70,7 @@ github "ivanvorobei/SPAlert"
 
 If you prefer not to use any of dependency managers, you can integrate `SPAlert` into your project manually. Put `Source/SPAlert` folder in your Xcode project. Make sure to enable `Copy items if needed` and `Create groups`.
 
-### Presets
+## Presets
 
 For now supporting `Done`, `Heart`, `Error` & `Message` presets.
 
