@@ -23,7 +23,6 @@ import UIKit
 
 public enum SPAlert {
     
-    
     public static func present(title: String, message: String? = nil, preset: SPAlertPreset) {
         let alertView = SPAlertView(title: title, message: message, preset: preset)
         alertView.present()
@@ -34,8 +33,9 @@ public enum SPAlert {
         alertView.present()
     }
     
-    public static func present(message: String) {
+    public static func present(message: String, haptic: SPAlertHaptic = .none) {
         let alertView = SPAlertView(message: message)
+        alertView.haptic = haptic
         alertView.present()
     }
 }
