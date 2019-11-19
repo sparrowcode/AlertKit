@@ -69,6 +69,16 @@ github "ivanvorobei/SPAlert"
 
 If you prefer not to use any of dependency managers, you can integrate `SPAlert` into your project manually. Put `Source/SPAlert` folder in your Xcode project. Make sure to enable `Copy items if needed` and `Create groups`.
 
+### Presets
+
+For now supporting `Done`, `Heart`, `Error` & `Message` presets.
+
+<p float="left">
+    <img src="https://github.com/ivanvorobei/SPAlert/blob/master/Assets/Readme/Miniature%20-%20Done.gif" width="60">
+    <img src="https://github.com/ivanvorobei/SPAlert/blob/master/Assets/Readme/Miniature%20-%20Heart.gif" width="60">
+    <img src="https://github.com/ivanvorobei/SPAlert/blob/master/Assets/Readme/Miniature%20-%20Error.gif" width="60">
+</p>
+
 ## Quick Start
 
 For best experience, I recommend call alerts by `SPAlert`. These functions are updated regularly and show as Apple way. I focus on presets: 
@@ -91,7 +101,7 @@ SPAlert.present(message: "Empty UITextField")
 
 ## Usage
 
-For now supporting `Done`, `Heart`, `Error` &  `Message` presets. Sometimes it may require deep customization. In this section, I will show you what you can do.
+Sometimes it may require deep customization. In this section, I will show you what you can do.
 
 ### Duration
 
