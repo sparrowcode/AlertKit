@@ -142,6 +142,7 @@ open class SPAlertView: UIView {
         haptic.impact()
         keyWindow.addSubview(self)
         layoutIfNeeded()
+        layoutSubviews()
         alpha = 0
         transform = transform.scaledBy(x: 0.8, y: 0.8)
         
@@ -226,5 +227,5 @@ open class SPAlertView: UIView {
         }
     }
     
-    private var keyWindow: UIWindow { return UIApplication.shared.keyWindow ?? UIWindow() }
+    public var keyWindow: UIView = (UIApplication.shared.keyWindow ?? UIWindow())
 }

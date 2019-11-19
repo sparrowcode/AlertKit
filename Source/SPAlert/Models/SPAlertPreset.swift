@@ -25,6 +25,7 @@ public enum SPAlertPreset {
     
     case done
     case heart
+    case error
     
     var iconView: UIView {
         switch self {
@@ -32,6 +33,8 @@ public enum SPAlertPreset {
             return SPAlertIconDoneView()
         case .heart:
             return SPAlertIconHeartView()
+        case .error:
+            return SPAlertIconErrorView()
         }
     }
     
@@ -53,6 +56,14 @@ public enum SPAlertPreset {
             layout.iconHeight = 77
             layout.bottomIconSpace = 35
             return layout
+        case .error:
+            var layout = SPAlertLayout()
+            layout.topSpace = 63
+            layout.bottomSpace = 29
+            layout.iconWidth = 112
+            layout.iconHeight = 112
+            layout.bottomIconSpace = 35
+            return layout
         }
     }
     
@@ -62,6 +73,8 @@ public enum SPAlertPreset {
             return .success
         case .heart:
             return .success
+        case .error:
+            return .error
         }
     }
 }
