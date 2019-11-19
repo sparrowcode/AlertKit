@@ -1,6 +1,6 @@
 # SPAlert
 
-**Popup from Apple Music & Feedback in AppStore**. Contains `Done`, `Heart` &  `Message` presets. `Done` preset include animation. Also support Dark Mode. I clone Apple's alerts as much as possible. You can find this alerts in AppStore after feedback and after added song to library in Apple Music.
+**Popup from Apple Music & Feedback in AppStore**. Contains `Done`, `Heart`, `Error` &  `Message` presets. Support Dark Mode. I clone Apple's alerts as much as possible. You can find this alerts in AppStore after feedback and after added song to library in Apple Music.
 
 <p float="left">
     <img src="https://github.com/ivanvorobei/SPAlert/blob/master/Assets/Readme/Preview%20-%20Done.gif" width="250">
@@ -9,7 +9,7 @@
 </p>
 
 If you like the project, do not forget to `put star ★` and follow me on GitHub. For help project, see [Сooperation](#сooperation) section.
-I am use it in app [Debts - Spending tracker](https://itunes.apple.com/app/id1446635818). You can bue source code this app in my store for iOS developers:
+I am use this repo in app [Debts - Spending tracker](https://itunes.apple.com/app/id1446635818). You can buy source code this app in my store for iOS developers:
 
 [![xcode-shop.com](https://github.com/ivanvorobei/SPPermissions/blob/master/Assets/Buttons/xcode-shop.svg)](https://xcode-shop.com)
 [![https://github.com/ivanvorobei](https://github.com/ivanvorobei/SPPermissions/blob/master/Assets/Buttons/follow-me-on-github.svg)](https://github.com/ivanvorobei)
@@ -91,7 +91,7 @@ SPAlert.present(message: "Empty UITextField")
 
 ## Usage
 
-Sometimes it may require deep customization. In this section, I will show you what you can do.
+For now supporting `Done`, `Heart`, `Error` &  `Message` presets. Sometimes it may require deep customization. In this section, I will show you what you can do.
 
 ### Duration
 
