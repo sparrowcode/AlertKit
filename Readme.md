@@ -74,9 +74,9 @@ If you prefer not to use any of dependency managers, you can integrate `SPAlert`
 For now supporting `Done`, `Heart`, `Error` & `Message` presets.
 
 <p float="left">
-    <img src="https://github.com/ivanvorobei/SPAlert/blob/master/Assets/Readme/Miniature%20-%20Done.svg" width="60">
-    <img src="https://github.com/ivanvorobei/SPAlert/blob/master/Assets/Readme/Miniature%20-%20Heart.svg" width="60">
-    <img src="https://github.com/ivanvorobei/SPAlert/blob/master/Assets/Readme/Miniature%20-%20Error.svg" width="60">
+    <img src="https://github.com/ivanvorobei/SPAlert/blob/master/Assets/Readme/Miniature%20-%20Done.svg" width="80">
+    <img src="https://github.com/ivanvorobei/SPAlert/blob/master/Assets/Readme/Miniature%20-%20Heart.svg" width="80">
+    <img src="https://github.com/ivanvorobei/SPAlert/blob/master/Assets/Readme/Miniature%20-%20Error.svg" width="80">
 </p>
 
 ## Quick Start
