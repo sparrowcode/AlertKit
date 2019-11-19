@@ -5,8 +5,9 @@ class ViewController: UITableViewController {
     
     let data: [Alert] = [
         Alert(key: "Done", preset: .done, title: "Added to Library", subtitle: nil),
-        Alert(key: "Heart", preset: .heart, title: "Love", subtitle: "We'll recommend more like this in for You"),
-        Alert(key: "Message", preset: nil, title: nil, subtitle: "Email requerid")
+        Alert(key: "Heart", preset: .heart, title: "Love", subtitle: "We'll recommend more like this for you"),
+        Alert(key: "Message", preset: nil, title: nil, subtitle: "Email required"),
+        Alert(key: "Error", preset: .error, title: "Oops", subtitle: "Please try again later")
     ]
     
     var selectedIndexPath: IndexPath {
