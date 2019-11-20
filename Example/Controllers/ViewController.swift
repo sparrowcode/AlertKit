@@ -6,7 +6,7 @@ class ViewController: UITableViewController {
     let data: [Alert] = [
         Alert(key: "Done", preset: .done, title: "Added to Library", subtitle: nil),
         Alert(key: "Heart", preset: .heart, title: "Love", subtitle: "We'll recommend more like this for you"),
-        Alert(key: "Doc", preset: .doc, title: "Documents saved", subtitle: "See in folder new file"),
+        Alert(key: "Doc", preset: .doc, title: "Document saved", subtitle: "See in folder new file"),
         Alert(key: "Error", preset: .error, title: "Oops", subtitle: "Please try again later"),
         Alert(key: "Message", preset: nil, title: nil, subtitle: "Email required")
     ]
