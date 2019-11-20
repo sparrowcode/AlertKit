@@ -21,18 +21,32 @@
 
 import UIKit
 
+/**
+ Base class with fast presenting.
+ */
 public enum SPAlert {
     
+    /**
+     Present with presets.
+     */
     public static func present(title: String, message: String? = nil, preset: SPAlertPreset) {
         let alertView = SPAlertView(title: title, message: message, preset: preset)
         alertView.present()
     }
     
+    /**
+     Present with image.
+     */
     public static func present(title: String, message: String? = nil, image: UIImage) {
         let alertView = SPAlertView(title: title, message: message, image: image)
         alertView.present()
     }
     
+    /**
+     Present only message, without icon.
+     
+     - parameter haptic: Pass with vibro using with present alet.
+     */
     public static func present(message: String, haptic: SPAlertHaptic = .none) {
         let alertView = SPAlertView(message: message)
         alertView.haptic = haptic

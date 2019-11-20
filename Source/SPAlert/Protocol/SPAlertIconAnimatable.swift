@@ -21,7 +21,13 @@
 
 import UIKit
 
+/**
+ Protocol for generate animatable icon.
+ */
 public protocol SPAlertIconAnimatable {
     
+    /**
+     Func call when need start animate icon. Recomend using duration fewer 1. No need call manually, it function call auto.
+     */
     func animate()
 }

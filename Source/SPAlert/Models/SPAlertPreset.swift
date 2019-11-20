@@ -21,6 +21,9 @@
 
 import UIKit
 
+/**
+Defaults values, icons and vibro for ready-using presets.
+*/
 public enum SPAlertPreset {
     
     case done
@@ -28,6 +31,9 @@ public enum SPAlertPreset {
     case doc
     case error
     
+    /**
+     View for preset.
+     */
     var iconView: UIView {
         switch self {
         case .done:
@@ -41,6 +47,9 @@ public enum SPAlertPreset {
         }
     }
     
+    /**
+     Layout for preset. Include spacings and icon size.
+     */
     var layout: SPAlertLayout {
         switch self {
         case .done:
@@ -78,6 +87,9 @@ public enum SPAlertPreset {
         }
     }
     
+    /**
+     Default vibro. Can customize after create with preset.
+     */
     var haptic: SPAlertHaptic {
         switch self {
         case .done:
