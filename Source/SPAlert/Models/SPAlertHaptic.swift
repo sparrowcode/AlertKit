@@ -21,16 +21,21 @@
 
 import UIKit
 
+/**
+ Vibro assest. Call `impact` for run.
+ */
 public enum SPAlertHaptic {
-
+    
     case success
     case warning
     case error
     case none
     
+    /**
+     Run vibro-haptic.
+     */
     func impact() {
         let generator = UINotificationFeedbackGenerator()
-        
         switch self {
         case .success:
             generator.notificationOccurred(UINotificationFeedbackGenerator.FeedbackType.success)

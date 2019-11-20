@@ -21,11 +21,33 @@
 
 import UIKit
 
+/**
+ Layout for alert.
+ */
 public struct SPAlertLayout {
     
+    /**
+     Top space from icon to top area,
+     */
     public var topSpace: CGFloat = 43
+    
+    /**
+     Bottom space from titles to bottom area.
+     */
     public var bottomSpace: CGFloat = 25
+    
+    /**
+     Icon width.
+     */
     public var iconWidth: CGFloat = 100
+    
+    /**
+     Icon height.
+     */
     public var iconHeight: CGFloat = 100
+    
+    /**
+     Bottom space from icon to titles.
+     */
     public var bottomIconSpace: CGFloat = 41
 }

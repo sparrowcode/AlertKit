@@ -21,17 +21,56 @@
 
 import UIKit
 
+/**
+View which presenting. You can configure `titleLabel`, `subtitleLabel` and other. For change duration use property `duration`.
+Also you can configure layout & haptic. If you use preset, all configure automatically.
+*/
 open class SPAlertView: UIView {
     
+    /**
+     Large top text on alert.
+     */
     private var titleLabel: UILabel? = nil
+    
+    /**
+     Small text on alert.
+     */
     private var subtitleLabel: UILabel? = nil
+    
+    /**
+     Icon view. Size for it configure in `layout` property.
+     */
     private var iconView: UIView? = nil
+    
+    /**
+     Blur view for background.
+     */
     private var backgroundView: UIVisualEffectView!
     
+    /**
+     Duration time when alert visible.
+     */
     public var duration: TimeInterval = 1.5
+    
+    /**
+     Allow dismiss by tap on alert. By default it allowed.
+     */
     public var dismissByTap: Bool = true
+    
+    /**
+     Vibro for this alert. Default value using for presets. If you init custom. haptic not configure.
+     */
     public var haptic: SPAlertHaptic = .none
+    
+    /**
+     Spacing and icon size configure here. Auto configure when you using presets.
+     */
     public var layout = SPAlertLayout()
+    
+    /**
+     View on which present alert.
+     */
+    public var keyWindow: UIView = (UIApplication.shared.keyWindow ?? UIWindow())
     
     public init(title: String, message: String?, preset: SPAlertPreset) {
         super.init(frame: CGRect.zero)
@@ -117,7 +156,7 @@ open class SPAlertView: UIView {
             titleLabel.attributedText = NSAttributedString(string: titleLabel.text ?? "", attributes: [.paragraphStyle: style])
             addSubview(titleLabel)
         }
-    
+        
         if let subtitleLabel = subtitleLabel {
             subtitleLabel.font = UIFont.systemFont(ofSize: 16)
             subtitleLabel.numberOfLines = 0
@@ -138,6 +177,9 @@ open class SPAlertView: UIView {
     
     // MARK: - Public
     
+    /**
+     Use this method for present controller. No need pass any controller, alert appear on `keyWindow`.
+     */
     public func present() {
         haptic.impact()
         keyWindow.addSubview(self)
@@ -159,6 +201,9 @@ open class SPAlertView: UIView {
         })
     }
     
+    /**
+     Use this method for force dismiss controller. By default it call automatically.
+     */
     @objc func dismiss() {
         UIView.animate(withDuration: 0.2, animations: {
             self.alpha = 0
@@ -191,12 +236,18 @@ open class SPAlertView: UIView {
         backgroundView.frame = bounds
     }
     
+    /**
+     Layout labels with multi-lines.
+     */
     private func layout(_ label: UILabel, x: CGFloat, y: CGFloat, width: CGFloat) {
         label.frame = CGRect.init(x: x, y: y, width: width, height: 0)
         label.sizeToFit()
         label.frame = CGRect.init(x: x, y: y, width: width, height: label.frame.height)
     }
     
+    /**
+     This menthod call when need calulate height with layout.
+     */
     private func calculateHeight() -> CGFloat {
         var height: CGFloat = 0
         if let subtitleLabel = subtitleLabel {
@@ -213,8 +264,9 @@ open class SPAlertView: UIView {
         return height
     }
     
-    // MARK: - Internal
-    
+    /**
+     Check `userInterfaceStyle` mode.
+     */
     private var isDarkMode: Bool {
         if #available(iOS 12.0, *) {
             if traitCollection.userInterfaceStyle == .dark {
@@ -226,6 +278,4 @@ open class SPAlertView: UIView {
             return false
         }
     }
-    
-    public var keyWindow: UIView = (UIApplication.shared.keyWindow ?? UIWindow())
 }
