@@ -81,6 +81,8 @@ For now supporting `Done`, `Heart`, `Doc`, `Error` & `Message` presets.
     <img src="https://github.com/ivanvorobei/SPAlert/blob/master/Assets/Readme/Miniature%20-%20Error.svg" width="80">
 </p>
 
+Also I can propose extra pack with 15 presets for all my donators. You can become [here](https://www.patreon.com/ivanvorobei).
+
 ## Quick Start
 
 For best experience, I recommend call alerts by `SPAlert`. These functions are updated regularly and show as Apple way. I focus on presets: 

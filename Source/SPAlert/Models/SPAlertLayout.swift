@@ -37,12 +37,12 @@ public struct SPAlertLayout {
     public var bottomSpace: CGFloat = 25
     
     /**
-     Icon width.
+     Icon view width.
      */
     public var iconWidth: CGFloat = 100
     
     /**
-     Icon height.
+     Icon view height.
      */
     public var iconHeight: CGFloat = 100
     

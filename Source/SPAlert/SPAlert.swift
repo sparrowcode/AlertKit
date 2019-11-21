@@ -28,6 +28,10 @@ public enum SPAlert {
     
     /**
      Present with presets.
+     
+     - parameter title: Main text in alert.
+     - parameter message: Subtitle in alert. Optional.
+     - parameter preset: Default configure layout and icons.
      */
     public static func present(title: String, message: String? = nil, preset: SPAlertPreset) {
         let alertView = SPAlertView(title: title, message: message, preset: preset)
@@ -36,6 +40,10 @@ public enum SPAlert {
     
     /**
      Present with image.
+     
+     - parameter title: Main text in alert.
+     - parameter message: Subtitle in alert. Optional.
+     - parameter image: Custom `UIImage` for alert.
      */
     public static func present(title: String, message: String? = nil, image: UIImage) {
         let alertView = SPAlertView(title: title, message: message, image: image)
