@@ -84,5 +84,3 @@ extension ViewController {
         return "You can pass your image or animatable view. See Readme for more details."
     }
 }
-
-
