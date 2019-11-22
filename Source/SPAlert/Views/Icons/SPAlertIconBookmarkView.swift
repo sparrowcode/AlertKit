@@ -21,8 +21,8 @@
 
 import UIKit
 
-public class SPAlertIconHeartView: UIView {
-        
+public class SPAlertIconBookmarkView: UIView {
+    
     init() {
         super.init(frame: .zero)
         self.backgroundColor = .clear
@@ -34,35 +34,40 @@ public class SPAlertIconHeartView: UIView {
     
     public override func draw(_ rect: CGRect) {
         super.draw(rect)
-        HeartDraw.draw(frame: rect, resizing: .aspectFit, fillColor: self.tintColor)
+        BookmarkDraw.draw(frame: rect, resizing: .aspectFit, fillColor: self.tintColor)
     }
     
-    class HeartDraw: NSObject {
+    class BookmarkDraw: NSObject {
         
-        @objc dynamic public class func draw(frame targetFrame: CGRect = CGRect(x: 0, y: 0, width: 510, height: 470), resizing: ResizingBehavior = .aspectFit, fillColor: UIColor = UIColor(red: 0.000, green: 0.000, blue: 0.000, alpha: 1.000)) {
+        @objc dynamic public class func draw(frame targetFrame: CGRect = CGRect(x: 0, y: 0, width: 40, height: 53), resizing: ResizingBehavior = .aspectFit, fillColor: UIColor = UIColor(red: 0.349, green: 0.345, blue: 0.353, alpha: 1.000)) {
             let context = UIGraphicsGetCurrentContext()!
             context.saveGState()
-            let resizedFrame: CGRect = resizing.apply(rect: CGRect(x: 0, y: 0, width: 510, height: 470), target: targetFrame)
+            let resizedFrame: CGRect = resizing.apply(rect: CGRect(x: 0, y: 0, width: 40, height: 53), target: targetFrame)
             context.translateBy(x: resizedFrame.minX, y: resizedFrame.minY)
-            context.scaleBy(x: resizedFrame.width / 510, y: resizedFrame.height / 470)
-      
+            context.scaleBy(x: resizedFrame.width / 40, y: resizedFrame.height / 53)
             let bezierPath = UIBezierPath()
-            bezierPath.move(to: CGPoint(x: 255, y: 469.6))
-            bezierPath.addLine(to: CGPoint(x: 219.3, y: 433.9))
-            bezierPath.addCurve(to: CGPoint(x: 0, y: 140.65), controlPoint1: CGPoint(x: 86.7, y: 316.6), controlPoint2: CGPoint(x: 0, y: 237.55))
-            bezierPath.addCurve(to: CGPoint(x: 140.25, y: 0.4), controlPoint1: CGPoint(x: 0, y: 61.6), controlPoint2: CGPoint(x: 61.2, y: 0.4))
-            bezierPath.addCurve(to: CGPoint(x: 255, y: 53.95), controlPoint1: CGPoint(x: 183.6, y: 0.4), controlPoint2: CGPoint(x: 226.95, y: 20.8))
-            bezierPath.addCurve(to: CGPoint(x: 369.75, y: 0.4), controlPoint1: CGPoint(x: 283.05, y: 20.8), controlPoint2: CGPoint(x: 326.4, y: 0.4))
-            bezierPath.addCurve(to: CGPoint(x: 510, y: 140.65), controlPoint1: CGPoint(x: 448.8, y: 0.4), controlPoint2: CGPoint(x: 510, y: 61.6))
-            bezierPath.addCurve(to: CGPoint(x: 290.7, y: 433.9), controlPoint1: CGPoint(x: 510, y: 237.55), controlPoint2: CGPoint(x: 423.3, y: 316.6))
-            bezierPath.addLine(to: CGPoint(x: 255, y: 469.6))
+            bezierPath.move(to: CGPoint(x: 4.15, y: 52))
+            bezierPath.addCurve(to: CGPoint(x: 1, y: 48.46), controlPoint1: CGPoint(x: 2.4, y: 52), controlPoint2: CGPoint(x: 1, y: 50.93))
+            bezierPath.addLine(to: CGPoint(x: 1, y: 8.67))
+            bezierPath.addCurve(to: CGPoint(x: 8.6, y: 1), controlPoint1: CGPoint(x: 1, y: 3.63), controlPoint2: CGPoint(x: 3.61, y: 1))
+            bezierPath.addLine(to: CGPoint(x: 31.29, y: 1))
+            bezierPath.addCurve(to: CGPoint(x: 38.88, y: 8.67), controlPoint1: CGPoint(x: 36.27, y: 1), controlPoint2: CGPoint(x: 38.88, y: 3.63))
+            bezierPath.addLine(to: CGPoint(x: 38.88, y: 48.46))
+            bezierPath.addCurve(to: CGPoint(x: 35.71, y: 52), controlPoint1: CGPoint(x: 38.88, y: 50.93), controlPoint2: CGPoint(x: 37.46, y: 52))
+            bezierPath.addCurve(to: CGPoint(x: 32.52, y: 50.32), controlPoint1: CGPoint(x: 34.39, y: 52), controlPoint2: CGPoint(x: 33.55, y: 51.3))
+            bezierPath.addLine(to: CGPoint(x: 21.04, y: 39.35))
+            bezierPath.addCurve(to: CGPoint(x: 19.94, y: 38.74), controlPoint1: CGPoint(x: 20.55, y: 38.91), controlPoint2: CGPoint(x: 20.24, y: 38.74))
+            bezierPath.addCurve(to: CGPoint(x: 18.85, y: 39.35), controlPoint1: CGPoint(x: 19.64, y: 38.74), controlPoint2: CGPoint(x: 19.34, y: 38.88))
+            bezierPath.addLine(to: CGPoint(x: 8.5, y: 49.18))
+            bezierPath.addLine(to: CGPoint(x: 7.65, y: 49.97))
+            bezierPath.addCurve(to: CGPoint(x: 4.15, y: 52), controlPoint1: CGPoint(x: 6.04, y: 51.46), controlPoint2: CGPoint(x: 5.31, y: 52))
             bezierPath.close()
             fillColor.setFill()
             bezierPath.fill()
             context.restoreGState()
         }
         
-        @objc(HeartStyleKitResizingBehavior)
+        @objc(StyleKitNameResizingBehavior)
         public enum ResizingBehavior: Int {
             
             case aspectFit
@@ -103,4 +108,3 @@ public class SPAlertIconHeartView: UIView {
         }
     }
 }
-

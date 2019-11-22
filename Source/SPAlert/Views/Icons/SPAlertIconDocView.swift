@@ -34,12 +34,12 @@ public class SPAlertIconDocView: UIView {
     
     public override func draw(_ rect: CGRect) {
         super.draw(rect)
-        DocDraw.drawDoc(frame: rect, resizing: .aspectFit, fillColor: self.tintColor)
+        DocDraw.draw(frame: rect, resizing: .aspectFit, fillColor: self.tintColor)
     }
     
     class DocDraw: NSObject {
         
-        @objc dynamic public class func drawDoc(frame targetFrame: CGRect = CGRect(x: 0, y: 0, width: 70, height: 87), resizing: ResizingBehavior = .aspectFit, fillColor: UIColor = UIColor(red: 0.349, green: 0.345, blue: 0.353, alpha: 1.000)) {
+        @objc dynamic public class func draw(frame targetFrame: CGRect = CGRect(x: 0, y: 0, width: 70, height: 87), resizing: ResizingBehavior = .aspectFit, fillColor: UIColor = UIColor(red: 0.349, green: 0.345, blue: 0.353, alpha: 1.000)) {
 
             let context = UIGraphicsGetCurrentContext()!
             
