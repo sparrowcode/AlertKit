@@ -72,7 +72,7 @@ If you prefer not to use any of dependency managers, you can integrate `SPAlert`
 
 ## Presets
 
-For now supporting `Done`, `Heart`, `Doc`, `Error` & `Message` presets.
+For now supporting `Done`, `Heart`, `Doc`, `Error`, `Bookmark` & `Message` presets.
 
 <p float="left">
     <img src="https://github.com/ivanvorobei/SPAlert/blob/master/Assets/Readme/Miniature%20-%20Done.svg" width="80">
