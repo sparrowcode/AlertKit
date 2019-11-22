@@ -23,6 +23,7 @@
 		F41205292382AF5C009C2AC7 /* SPAlertIconAnimatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41205262382AF29009C2AC7 /* SPAlertIconAnimatable.swift */; };
 		F412052A2382AF64009C2AC7 /* SPAlertHaptic.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41204E42382AC9B009C2AC7 /* SPAlertHaptic.swift */; };
 		F412052B2382AF64009C2AC7 /* SPAlertLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41205222382AEFA009C2AC7 /* SPAlertLayout.swift */; };
+		F4A5A92C2388792F00B0DFE0 /* SPAlertIconBookmarkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A5A92B2388792F00B0DFE0 /* SPAlertIconBookmarkView.swift */; };
 		F4A8361A2385588300EB32E0 /* SPAlertIconDocView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A836192385588300EB32E0 /* SPAlertIconDocView.swift */; };
 /* End PBXBuildFile section */
 
@@ -75,6 +76,7 @@
 		F41205182382AD8B009C2AC7 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F41205222382AEFA009C2AC7 /* SPAlertLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPAlertLayout.swift; sourceTree = "<group>"; };
 		F41205262382AF29009C2AC7 /* SPAlertIconAnimatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPAlertIconAnimatable.swift; sourceTree = "<group>"; };
+		F4A5A92B2388792F00B0DFE0 /* SPAlertIconBookmarkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPAlertIconBookmarkView.swift; sourceTree = "<group>"; };
 		F4A836192385588300EB32E0 /* SPAlertIconDocView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPAlertIconDocView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -157,6 +159,7 @@
 				F41204E32382AC9B009C2AC7 /* SPAlertIconDoneView.swift */,
 				706F89492383277500ECF5D1 /* SPAlertIconErrorView.swift */,
 				F4A836192385588300EB32E0 /* SPAlertIconDocView.swift */,
+				F4A5A92B2388792F00B0DFE0 /* SPAlertIconBookmarkView.swift */,
 			);
 			path = Icons;
 			sourceTree = "<group>";
@@ -355,6 +358,7 @@
 				F412052A2382AF64009C2AC7 /* SPAlertHaptic.swift in Sources */,
 				F41204EE2382AC9B009C2AC7 /* SPAlert.swift in Sources */,
 				F41204EA2382AC9B009C2AC7 /* SPAlertPreset.swift in Sources */,
+				F4A5A92C2388792F00B0DFE0 /* SPAlertIconBookmarkView.swift in Sources */,
 				F41204EC2382AC9B009C2AC7 /* SPAlertIconDoneView.swift in Sources */,
 				F41204E92382AC9B009C2AC7 /* SPAlertView.swift in Sources */,
 				706F894A2383277500ECF5D1 /* SPAlertIconErrorView.swift in Sources */,
