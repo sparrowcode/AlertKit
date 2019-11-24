@@ -25,6 +25,7 @@
 		F412052B2382AF64009C2AC7 /* SPAlertLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41205222382AEFA009C2AC7 /* SPAlertLayout.swift */; };
 		F4A5A92C2388792F00B0DFE0 /* SPAlertIconBookmarkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A5A92B2388792F00B0DFE0 /* SPAlertIconBookmarkView.swift */; };
 		F4A8361A2385588300EB32E0 /* SPAlertIconDocView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A836192385588300EB32E0 /* SPAlertIconDocView.swift */; };
+		F4CA67B5238ABD0100E72F79 /* SPAlertIconAddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CA67B4238ABD0100E72F79 /* SPAlertIconAddView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +79,7 @@
 		F41205262382AF29009C2AC7 /* SPAlertIconAnimatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPAlertIconAnimatable.swift; sourceTree = "<group>"; };
 		F4A5A92B2388792F00B0DFE0 /* SPAlertIconBookmarkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPAlertIconBookmarkView.swift; sourceTree = "<group>"; };
 		F4A836192385588300EB32E0 /* SPAlertIconDocView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPAlertIconDocView.swift; sourceTree = "<group>"; };
+		F4CA67B4238ABD0100E72F79 /* SPAlertIconAddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPAlertIconAddView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +162,7 @@
 				706F89492383277500ECF5D1 /* SPAlertIconErrorView.swift */,
 				F4A836192385588300EB32E0 /* SPAlertIconDocView.swift */,
 				F4A5A92B2388792F00B0DFE0 /* SPAlertIconBookmarkView.swift */,
+				F4CA67B4238ABD0100E72F79 /* SPAlertIconAddView.swift */,
 			);
 			path = Icons;
 			sourceTree = "<group>";
@@ -363,6 +366,7 @@
 				F41204E92382AC9B009C2AC7 /* SPAlertView.swift in Sources */,
 				706F894A2383277500ECF5D1 /* SPAlertIconErrorView.swift in Sources */,
 				F41205292382AF5C009C2AC7 /* SPAlertIconAnimatable.swift in Sources */,
+				F4CA67B5238ABD0100E72F79 /* SPAlertIconAddView.swift in Sources */,
 				F41204EB2382AC9B009C2AC7 /* SPAlertIconHeartView.swift in Sources */,
 				F4A8361A2385588300EB32E0 /* SPAlertIconDocView.swift in Sources */,
 				F412052B2382AF64009C2AC7 /* SPAlertLayout.swift in Sources */,

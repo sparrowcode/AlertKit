@@ -8,6 +8,7 @@ class ViewController: UITableViewController {
         Alert(key: "Heart", preset: .heart, title: "Love", subtitle: "We'll recommend more like this for you"),
         Alert(key: "Doc", preset: .doc, title: "Document saved", subtitle: "See in folder new file"),
         Alert(key: "Bookmark", preset: .bookmark, title: "Added to bookmark", subtitle: "See bookmarks screen"),
+        Alert(key: "Add", preset: .add, title: "Added to Folder", subtitle: nil),
         Alert(key: "Error", preset: .error, title: "Oops", subtitle: "Please try again later"),
         Alert(key: "Message", preset: nil, title: nil, subtitle: "Email required")
     ]

@@ -30,6 +30,7 @@ public enum SPAlertPreset {
     case heart
     case doc
     case bookmark
+    case add
     case error
     
     /**
@@ -45,6 +46,8 @@ public enum SPAlertPreset {
             return SPAlertIconDocView()
         case .bookmark:
             return SPAlertIconBookmarkView()
+        case .add:
+            return SPAlertIconAddView()
         case .error:
             return SPAlertIconErrorView()
         }
@@ -81,19 +84,27 @@ public enum SPAlertPreset {
             return layout
         case .bookmark:
             var layout = SPAlertLayout()
-            layout.topSpace = 51
+            layout.topSpace = 57
             layout.bottomSpace = 29
             layout.iconWidth = 112
-            layout.iconHeight = 77
-            layout.bottomIconSpace = 35
+            layout.iconHeight = 94
+            layout.bottomIconSpace = 36
+            return layout
+        case .add:
+            var layout = SPAlertLayout()
+            layout.topSpace = 63
+            layout.bottomSpace = 29
+            layout.iconWidth = 106
+            layout.iconHeight = 106
+            layout.bottomIconSpace = 39
             return layout
         case .error:
             var layout = SPAlertLayout()
             layout.topSpace = 63
             layout.bottomSpace = 29
-            layout.iconWidth = 112
-            layout.iconHeight = 112
-            layout.bottomIconSpace = 35
+            layout.iconWidth = 100
+            layout.iconHeight = 100
+            layout.bottomIconSpace = 37
             return layout
         }
     }
@@ -110,6 +121,8 @@ public enum SPAlertPreset {
         case .doc:
             return .success
         case .bookmark:
+            return .success
+        case .add:
             return .success
         case .error:
             return .error
