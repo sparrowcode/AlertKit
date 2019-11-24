@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="110px" height="110px" viewBox="0 0 110 110" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 59.1 (86144) - https://sketch.com -->
+    <title>Miniature - Add</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Miniature---Add" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect id="Area" fill="#F4F2F5" x="5" y="5" width="100" height="100" rx="8"></rect>
+        <g id="Icon" transform="translate(55.214429, 54.775216) rotate(45.000000) translate(-55.214429, -54.775216) translate(33.714429, 33.275216)" stroke="#59585A" stroke-linecap="round" stroke-width="7">
+            <line x1="42.4269517" y1="-1.49600344e-13" x2="-1.83997573e-17" y2="42.4254932" id="Line"></line>
+            <line x1="42.4231667" y1="1.88813599e-13" x2="-2.63484297e-13" y2="42.4280371" id="Line" transform="translate(21.211583, 21.214019) scale(-1, 1) translate(-21.211583, -21.214019) "></line>
+        </g>
+    </g>
+</svg>

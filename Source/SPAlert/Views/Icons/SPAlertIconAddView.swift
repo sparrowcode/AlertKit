@@ -21,19 +21,19 @@
 
 import UIKit
 
-public class SPAlertIconErrorView: UIView, SPAlertIconAnimatable {
+public class SPAlertIconAddView: UIView, SPAlertIconAnimatable {
 
     public func animate() {
-        animateTopToBottomLine()
-        animateBottomToTopLine()
+        animateLeftToRightLine()
+        animateBottomFromTopLine()
     }
         
-    private func animateTopToBottomLine() {
+    private func animateLeftToRightLine() {
         let length = frame.width
         
         let topToBottomLine = UIBezierPath()
-        topToBottomLine.move(to: CGPoint(x: length * 0, y: length * 0))
-        topToBottomLine.addLine(to: CGPoint(x: length * 1, y: length * 1))
+        topToBottomLine.move(to: CGPoint(x: length * 0, y: length * 0.5))
+        topToBottomLine.addLine(to: CGPoint(x: length * 1, y: length * 0.5))
         
         let animatableLayer = CAShapeLayer()
         animatableLayer.path = topToBottomLine.cgPath
@@ -46,7 +46,7 @@ public class SPAlertIconErrorView: UIView, SPAlertIconAnimatable {
         self.layer.addSublayer(animatableLayer)
         
         let animation = CABasicAnimation(keyPath: "strokeEnd")
-        animation.duration = 0.22
+        animation.duration = 0.3
         animation.fromValue = 0
         animation.toValue = 1
         animation.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
@@ -55,12 +55,12 @@ public class SPAlertIconErrorView: UIView, SPAlertIconAnimatable {
         animatableLayer.add(animation, forKey: "animation")
     }
         
-    private func animateBottomToTopLine() {
+    private func animateBottomFromTopLine() {
         let length = frame.width
         
         let bottomToTopLine = UIBezierPath()
-        bottomToTopLine.move(to: CGPoint(x: length * 0, y: length * 1))
-        bottomToTopLine.addLine(to: CGPoint(x: length * 1, y: length * 0))
+        bottomToTopLine.move(to: CGPoint(x: length * 0.5, y: length * 1))
+        bottomToTopLine.addLine(to: CGPoint(x: length * 0.5, y: length * 0))
         
         let animatableLayer = CAShapeLayer()
         animatableLayer.path = bottomToTopLine.cgPath
@@ -73,7 +73,7 @@ public class SPAlertIconErrorView: UIView, SPAlertIconAnimatable {
         self.layer.addSublayer(animatableLayer)
         
         let animation = CABasicAnimation(keyPath: "strokeEnd")
-        animation.duration = 0.22
+        animation.duration = 0.3
         animation.fromValue = 0
         animation.toValue = 1
         animation.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
