@@ -33,7 +33,6 @@ I am use this repo in app [Debts - Spending tracker](https://itunes.apple.com/ap
     - [Swift Package Manager](#swift-package-manager)
     - [Carthage](#carthage)
     - [Manually](#manually)
-- [Presets](#presets)
 - [Quick Start](#quick-start)
 - [Usage](#usage)
     - [Duration](#duration)
@@ -80,23 +79,6 @@ github "ivanvorobei/SPAlert"
 ### Manually
 
 If you prefer not to use any of dependency managers, you can integrate `SPAlert` into your project manually. Put `Source/SPAlert` folder in your Xcode project. Make sure to enable `Copy items if needed` and `Create groups`.
-
-## Presets
-
-For now supporting `Done`, `Add`, `Heart`, `Doc`,  `Bookmark`, `Moon`, `Star`, `Error`, & `Message` presets.
-
-<p float="left">
-    <img src="https://github.com/ivanvorobei/SPAlert/blob/master/Assets/Readme/Miniature%20-%20Done.svg" width="80">
-    <img src="https://github.com/ivanvorobei/SPAlert/blob/master/Assets/Readme/Miniature%20-%20Add.svg" width="80">
-    <img src="https://github.com/ivanvorobei/SPAlert/blob/master/Assets/Readme/Miniature%20-%20Heart.svg" width="80">
-    <img src="https://github.com/ivanvorobei/SPAlert/blob/master/Assets/Readme/Miniature%20-%20Doc.svg" width="80">
-    <img src="https://github.com/ivanvorobei/SPAlert/blob/master/Assets/Readme/Miniature%20-%20Bookmark.svg" width="80">
-    <img src="https://github.com/ivanvorobei/SPAlert/blob/master/Assets/Readme/Miniature%20-%20Moon.svg" width="80">
-    <img src="https://github.com/ivanvorobei/SPAlert/blob/master/Assets/Readme/Miniature%20-%20Star.svg" width="80">
-    <img src="https://github.com/ivanvorobei/SPAlert/blob/master/Assets/Readme/Miniature%20-%20Error.svg" width="80">
-</p>
-
-Also I can propose extra pack with 15 presets for all my donators. You can become [here](https://www.patreon.com/ivanvorobei).
 
 ## Quick Start
 
