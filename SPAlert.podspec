@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name          = "SPAlert"
-  s.version       = "2.0.5"
+  s.version       = "2.0.6"
   s.summary       = "Native alert from Apple Music & Feedback. Contains Done, Heart & Message presets."
   s.homepage      = "https://github.com/IvanVorobei/SPAlert"
   s.source        = { :git => "https://github.com/IvanVorobei/SPAlert.git", :tag => s.version }

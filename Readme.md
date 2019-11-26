@@ -80,6 +80,8 @@ For now supporting `Done`, `Add`, `Heart`, `Doc`, `Error`, `Bookmark` & `Message
     <img src="https://github.com/ivanvorobei/SPAlert/blob/master/Assets/Readme/Miniature%20-%20Heart.svg" width="80">
     <img src="https://github.com/ivanvorobei/SPAlert/blob/master/Assets/Readme/Miniature%20-%20Doc.svg" width="80">
     <img src="https://github.com/ivanvorobei/SPAlert/blob/master/Assets/Readme/Miniature%20-%20Bookmark.svg" width="80">
+    <img src="https://github.com/ivanvorobei/SPAlert/blob/master/Assets/Readme/Miniature%20-%20Moon.svg" width="80">
+    <img src="https://github.com/ivanvorobei/SPAlert/blob/master/Assets/Readme/Miniature%20-%20Star.svg" width="80">
     <img src="https://github.com/ivanvorobei/SPAlert/blob/master/Assets/Readme/Miniature%20-%20Error.svg" width="80">
 </p>
 

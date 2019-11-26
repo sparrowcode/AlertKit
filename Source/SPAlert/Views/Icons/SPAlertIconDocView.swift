@@ -40,14 +40,11 @@ public class SPAlertIconDocView: UIView {
     class DocDraw: NSObject {
         
         @objc dynamic public class func draw(frame targetFrame: CGRect = CGRect(x: 0, y: 0, width: 70, height: 87), resizing: ResizingBehavior = .aspectFit, fillColor: UIColor = UIColor(red: 0.349, green: 0.345, blue: 0.353, alpha: 1.000)) {
-
             let context = UIGraphicsGetCurrentContext()!
-            
             context.saveGState()
             let resizedFrame: CGRect = resizing.apply(rect: CGRect(x: 0, y: 0, width: 70, height: 87), target: targetFrame)
             context.translateBy(x: resizedFrame.minX, y: resizedFrame.minY)
             context.scaleBy(x: resizedFrame.width / 70, y: resizedFrame.height / 87)
-
             let bezierPath = UIBezierPath()
             bezierPath.move(to: CGPoint(x: 13.73, y: 86.65))
             bezierPath.addLine(to: CGPoint(x: 55.38, y: 86.65))
