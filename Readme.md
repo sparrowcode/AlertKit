@@ -1,6 +1,6 @@
 # SPAlert
 
-**Popup from Apple Music & Feedback in AppStore**. Contains `Done`, `Heart`, `Error` and [other presets](#presets). Support Dark Mode. I clone Apple's alerts as much as possible. You can find this alerts in AppStore after feedback and after added song to library in Apple Music.
+**Popup from Apple Music & Feedback in AppStore**. Contains `Done`, `Heart`, `Error` and other presets. Support Dark Mode. I clone Apple's alerts as much as possible. You can find this alerts in AppStore after feedback and after added song to library in Apple Music.
 
 <p float="left">
     <img src="https://github.com/ivanvorobei/SPAlert/blob/master/Assets/Readme/Preview%20-%20Done.gif" width="250">
