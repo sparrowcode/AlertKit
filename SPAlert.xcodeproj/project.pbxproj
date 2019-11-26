@@ -26,6 +26,8 @@
 		F4A5A92C2388792F00B0DFE0 /* SPAlertIconBookmarkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A5A92B2388792F00B0DFE0 /* SPAlertIconBookmarkView.swift */; };
 		F4A8361A2385588300EB32E0 /* SPAlertIconDocView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A836192385588300EB32E0 /* SPAlertIconDocView.swift */; };
 		F4CA67B5238ABD0100E72F79 /* SPAlertIconAddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CA67B4238ABD0100E72F79 /* SPAlertIconAddView.swift */; };
+		F4D3CD58238DA9FE006C3DE2 /* SPAlertIconMoonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D3CD57238DA9FE006C3DE2 /* SPAlertIconMoonView.swift */; };
+		F4D3CD5A238DAA49006C3DE2 /* SPAlertIconStarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D3CD59238DAA49006C3DE2 /* SPAlertIconStarView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +82,8 @@
 		F4A5A92B2388792F00B0DFE0 /* SPAlertIconBookmarkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPAlertIconBookmarkView.swift; sourceTree = "<group>"; };
 		F4A836192385588300EB32E0 /* SPAlertIconDocView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPAlertIconDocView.swift; sourceTree = "<group>"; };
 		F4CA67B4238ABD0100E72F79 /* SPAlertIconAddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPAlertIconAddView.swift; sourceTree = "<group>"; };
+		F4D3CD57238DA9FE006C3DE2 /* SPAlertIconMoonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPAlertIconMoonView.swift; sourceTree = "<group>"; };
+		F4D3CD59238DAA49006C3DE2 /* SPAlertIconStarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPAlertIconStarView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +167,8 @@
 				F4A836192385588300EB32E0 /* SPAlertIconDocView.swift */,
 				F4A5A92B2388792F00B0DFE0 /* SPAlertIconBookmarkView.swift */,
 				F4CA67B4238ABD0100E72F79 /* SPAlertIconAddView.swift */,
+				F4D3CD57238DA9FE006C3DE2 /* SPAlertIconMoonView.swift */,
+				F4D3CD59238DAA49006C3DE2 /* SPAlertIconStarView.swift */,
 			);
 			path = Icons;
 			sourceTree = "<group>";
@@ -364,6 +370,8 @@
 				F4A5A92C2388792F00B0DFE0 /* SPAlertIconBookmarkView.swift in Sources */,
 				F41204EC2382AC9B009C2AC7 /* SPAlertIconDoneView.swift in Sources */,
 				F41204E92382AC9B009C2AC7 /* SPAlertView.swift in Sources */,
+				F4D3CD58238DA9FE006C3DE2 /* SPAlertIconMoonView.swift in Sources */,
+				F4D3CD5A238DAA49006C3DE2 /* SPAlertIconStarView.swift in Sources */,
 				706F894A2383277500ECF5D1 /* SPAlertIconErrorView.swift in Sources */,
 				F41205292382AF5C009C2AC7 /* SPAlertIconAnimatable.swift in Sources */,
 				F4CA67B5238ABD0100E72F79 /* SPAlertIconAddView.swift in Sources */,

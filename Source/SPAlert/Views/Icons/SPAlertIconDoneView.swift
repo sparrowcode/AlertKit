@@ -24,7 +24,6 @@ import UIKit
 public class SPAlertIconDoneView: UIView, SPAlertIconAnimatable {
 
     public func animate() {
-        
         let length = frame.width
         let animatablePath = UIBezierPath()
         animatablePath.move(to: CGPoint(x: length * 0.196, y: length * 0.527))

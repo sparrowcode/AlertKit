@@ -72,6 +72,8 @@ open class SPAlertView: UIView {
      */
     public var keyWindow: UIView = (UIApplication.shared.keyWindow ?? UIWindow())
     
+    // MARK: Init
+    
     public init(title: String, message: String?, preset: SPAlertPreset) {
         super.init(frame: CGRect.zero)
         iconView = preset.iconView
@@ -175,7 +177,7 @@ open class SPAlertView: UIView {
         subtitleLabel?.textColor = color
     }
     
-    // MARK: - Public
+    // MARK: Public
     
     /**
      Use this method for present controller. No need pass any controller, alert appear on `keyWindow`.
@@ -213,7 +215,7 @@ open class SPAlertView: UIView {
         })
     }
     
-    // MARK: - Layout
+    // MARK: Layout
     
     open override func layoutSubviews() {
         super.layoutSubviews()
