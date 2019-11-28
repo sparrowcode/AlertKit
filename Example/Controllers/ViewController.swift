@@ -10,6 +10,7 @@ class ViewController: UITableViewController {
         Alert(key: "Bookmark", preset: .bookmark, title: "Added to bookmark", subtitle: "See bookmarks screen"),
         Alert(key: "Moon", preset: .moon, title: "Night Mode", subtitle: "You can disable it in settings"),
         Alert(key: "Star", preset: .star, title: "Added to favorite", subtitle: nil),
+        Alert(key: "Exclamation", preset: .exclamation, title: "Oops", subtitle: "Something went wrong"),
         Alert(key: "Add", preset: .add, title: "Added to Folder", subtitle: nil),
         Alert(key: "Error", preset: .error, title: "Oops", subtitle: "Please try again later"),
         Alert(key: "Message", preset: nil, title: nil, subtitle: "Email required")
@@ -46,6 +47,9 @@ class ViewController: UITableViewController {
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
     }
     
+    /**
+     Show now. Call when tap on nav-bar item.
+     */
     @objc func showAlert() {
         let alertData = data[selectedIndexPath.row]
         if let preset = alertData.preset {
@@ -55,6 +59,14 @@ class ViewController: UITableViewController {
         }
     }
     
+    /**
+     Alert preview data.
+     
+     - parameter key: Visible ID in table view.
+     - parameter preset: Preset for `SPAlert`.
+     - parameter title: Title in `SPAlert`. Optional only for `.message` preset.
+     - parameter subtitle: Optional subtitle in `SPAlert`.
+     */
     typealias Alert = (key: String, preset: SPAlertPreset?, title: String?, subtitle: String?)
 }
 
