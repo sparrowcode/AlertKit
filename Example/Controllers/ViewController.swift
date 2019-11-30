@@ -11,6 +11,7 @@ class ViewController: UITableViewController {
         Alert(key: "Moon", preset: .moon, title: "Night Mode", subtitle: "You can disable it in settings"),
         Alert(key: "Star", preset: .star, title: "Added to favorite", subtitle: nil),
         Alert(key: "Exclamation", preset: .exclamation, title: "Oops", subtitle: "Something went wrong"),
+        Alert(key: "Message", preset: .message, title: "Message sended", subtitle: "You can check history"),
         Alert(key: "Add", preset: .add, title: "Added to Folder", subtitle: nil),
         Alert(key: "Error", preset: .error, title: "Oops", subtitle: "Please try again later"),
         Alert(key: "Message", preset: nil, title: nil, subtitle: "Email required")
