@@ -5,9 +5,9 @@
     <desc>Created with Sketch.</desc>
     <g id="Miniature---Add" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <rect id="Area" fill="#F4F2F5" x="5" y="5" width="100" height="100" rx="8"></rect>
-        <g id="Icon" transform="translate(55.000000, 55.000000) rotate(45.000000) translate(-55.000000, -55.000000) translate(35.000000, 35.000000)" stroke="#59585A" stroke-linecap="round" stroke-width="7">
-            <line x1="39.4669318" y1="-1.3916311e-13" x2="-1.71160533e-17" y2="39.465575" id="Line"></line>
-            <line x1="39.4634109" y1="1.99435476e-13" x2="-2.53033311e-13" y2="39.4679415" id="Line" transform="translate(19.731705, 19.733971) scale(-1, 1) translate(-19.731705, -19.733971) "></line>
+        <g id="Icon" transform="translate(55.000000, 55.000000) rotate(45.000000) translate(-55.000000, -55.000000) translate(36.000000, 36.000000)" stroke="#59585A" stroke-linecap="round" stroke-width="7">
+            <line x1="37.4935852" y1="-1.32204955e-13" x2="-1.62602506e-17" y2="37.4922963" id="Line"></line>
+            <line x1="37.4902404" y1="2.06516728e-13" x2="-2.46065988e-13" y2="37.4945444" id="Line" transform="translate(18.745120, 18.747272) scale(-1, 1) translate(-18.745120, -18.747272) "></line>
         </g>
     </g>
 </svg>
