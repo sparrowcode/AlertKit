@@ -14,6 +14,8 @@ class ViewController: UITableViewController {
         Alert(key: "Message", preset: .message, title: "Message sended", subtitle: "You can check history"),
         Alert(key: "Add", preset: .add, title: "Added to Folder", subtitle: nil),
         Alert(key: "Error", preset: .error, title: "Oops", subtitle: "Please try again later"),
+        Alert(key: "Shuffle", preset: .shuffle, title: "Songs Shuffled", subtitle: nil),
+        Alert(key: "Repeat", preset: .repeat, title: "Songs Repeat", subtitle: nil),
         Alert(key: "Message", preset: nil, title: nil, subtitle: "Email required")
     ]
     

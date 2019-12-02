@@ -87,9 +87,7 @@ public class SPAlertIconMessageView: UIView {
             bezierPath.close()
             fillColor.setFill()
             bezierPath.fill()
-            
             context.restoreGState()
-
         }
         
         @objc(StyleKitNameResizingBehavior)
