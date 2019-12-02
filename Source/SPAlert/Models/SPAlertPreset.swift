@@ -36,6 +36,8 @@ public enum SPAlertPreset {
     case message
     case add
     case error
+    case shuffle
+    case `repeat`
     
     /**
      View for preset.
@@ -62,6 +64,10 @@ public enum SPAlertPreset {
             return SPAlertIconStarView()
         case .error:
             return SPAlertIconErrorView()
+        case .shuffle:
+            return SPAlertIconShuffleView()
+        case .repeat:
+            return SPAlertIconRepeatView()
         }
     }
     
@@ -150,6 +156,22 @@ public enum SPAlertPreset {
             layout.iconHeight = 100
             layout.bottomIconSpace = 37
             return layout
+        case .shuffle:
+            var layout = SPAlertLayout()
+            layout.topSpace = 63
+            layout.bottomSpace = 29
+            layout.iconWidth = 86
+            layout.iconHeight = 86
+            layout.bottomIconSpace = 39
+            return layout
+        case .repeat:
+            var layout = SPAlertLayout()
+            layout.topSpace = 63
+            layout.bottomSpace = 29
+            layout.iconWidth = 86
+            layout.iconHeight = 86
+            layout.bottomIconSpace = 39
+            return layout
         }
     }
     
@@ -178,6 +200,10 @@ public enum SPAlertPreset {
             return .warning
         case .error:
             return .error
+        case .shuffle:
+            return .success
+        case .repeat:
+            return .success
         }
     }
 }
