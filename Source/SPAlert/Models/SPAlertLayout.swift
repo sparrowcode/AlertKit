@@ -22,7 +22,7 @@
 import UIKit
 
 /**
- Layout for alert.
+ Layout for alert. Basic width is `250`. Height calculate automatically.
  */
 public struct SPAlertLayout {
     

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		706F894A2383277500ECF5D1 /* SPAlertIconErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706F89492383277500ECF5D1 /* SPAlertIconErrorView.swift */; };
+		F40FB62A239ADF940090BA57 /* SPAlertIconQuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40FB629239ADF940090BA57 /* SPAlertIconQuestionView.swift */; };
 		F41204E92382AC9B009C2AC7 /* SPAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41204DF2382AC9B009C2AC7 /* SPAlertView.swift */; };
 		F41204EA2382AC9B009C2AC7 /* SPAlertPreset.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41204E02382AC9B009C2AC7 /* SPAlertPreset.swift */; };
 		F41204EB2382AC9B009C2AC7 /* SPAlertIconHeartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41204E22382AC9B009C2AC7 /* SPAlertIconHeartView.swift */; };
@@ -61,6 +62,7 @@
 
 /* Begin PBXFileReference section */
 		706F89492383277500ECF5D1 /* SPAlertIconErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPAlertIconErrorView.swift; sourceTree = "<group>"; };
+		F40FB629239ADF940090BA57 /* SPAlertIconQuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPAlertIconQuestionView.swift; sourceTree = "<group>"; };
 		F41204D02382ABE9009C2AC7 /* SPAlert.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SPAlert.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F41204DF2382AC9B009C2AC7 /* SPAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPAlertView.swift; sourceTree = "<group>"; };
 		F41204E02382AC9B009C2AC7 /* SPAlertPreset.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPAlertPreset.swift; sourceTree = "<group>"; };
@@ -184,6 +186,7 @@
 				F47EE19C23959ADB00B02DF2 /* SPAlertIconShuffleView.swift */,
 				F47EE19E23959AE500B02DF2 /* SPAlertIconRepeatView.swift */,
 				F421EFF02398684E000A566D /* SPAlertIconFlagView.swift */,
+				F40FB629239ADF940090BA57 /* SPAlertIconQuestionView.swift */,
 			);
 			path = Icons;
 			sourceTree = "<group>";
@@ -381,6 +384,7 @@
 			files = (
 				F412052A2382AF64009C2AC7 /* SPAlertHaptic.swift in Sources */,
 				F41204EE2382AC9B009C2AC7 /* SPAlert.swift in Sources */,
+				F40FB62A239ADF940090BA57 /* SPAlertIconQuestionView.swift in Sources */,
 				F4E4459D2390524A0067FF5C /* SPAlertIconExclamationView.swift in Sources */,
 				F41204EA2382AC9B009C2AC7 /* SPAlertPreset.swift in Sources */,
 				F4A5A92C2388792F00B0DFE0 /* SPAlertIconBookmarkView.swift in Sources */,
