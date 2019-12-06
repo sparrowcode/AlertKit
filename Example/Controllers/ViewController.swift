@@ -12,6 +12,7 @@ class ViewController: UITableViewController {
         Alert(key: "Star", preset: .star, title: "Added to favorite", subtitle: nil),
         Alert(key: "Flag", preset: .flag, title: "Message Flaged", subtitle: nil),
         Alert(key: "Exclamation", preset: .exclamation, title: "Oops", subtitle: "Something went wrong"),
+        Alert(key: "Question", preset: .question, title: "Oops", subtitle: "Form not complete"),
         Alert(key: "Message", preset: .message, title: "Message sended", subtitle: "You can check history"),
         Alert(key: "Add", preset: .add, title: "Added to Folder", subtitle: nil),
         Alert(key: "Error", preset: .error, title: "Oops", subtitle: "Please try again later"),
