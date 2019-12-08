@@ -36,6 +36,7 @@ public enum SPAlertPreset {
     case flag
     case message
     case question
+    case bolt
     case add
     case error
     case shuffle
@@ -74,6 +75,8 @@ public enum SPAlertPreset {
             return SPAlertIconFlagView()
         case .question:
             return SPAlertIconQuestionView()
+        case .bolt:
+            return SPAlertIconBoltView()
         }
     }
     
@@ -145,6 +148,14 @@ public enum SPAlertPreset {
             layout.iconWidth = 112
             layout.iconHeight = 90
             layout.bottomIconSpace = 36
+            return layout
+        case .bolt:
+            var layout = SPAlertLayout()
+            layout.topSpace = 45
+            layout.bottomSpace = 27
+            layout.iconWidth = 116
+            layout.iconHeight = 116
+            layout.bottomIconSpace = 34
             return layout
         case .moon:
             var layout = SPAlertLayout()
@@ -229,6 +240,8 @@ public enum SPAlertPreset {
         case .repeat:
             return .success
         case .flag:
+            return .success
+        case .bolt:
             return .success
         }
     }
