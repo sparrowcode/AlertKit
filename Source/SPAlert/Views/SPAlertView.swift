@@ -271,9 +271,14 @@ open class SPAlertView: UIView {
      */
     private var isDarkMode: Bool {
         if #available(iOS 12.0, *) {
-            if traitCollection.userInterfaceStyle == .dark {
+            switch UIApplication.shared.windows.first?.traitCollection.userInterfaceStyle ?? .light {
+            case .dark:
                 return true
-            } else {
+            case .light:
+                return false
+            case .unspecified:
+                return false
+            @unknown default:
                 return false
             }
         } else {
