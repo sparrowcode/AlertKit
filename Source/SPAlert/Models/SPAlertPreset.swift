@@ -42,9 +42,10 @@ public enum SPAlertPreset {
     case shuffle
     case `repeat`
     case magic
+    case eject
     
     /**
-     View for preset.
+     View for preset. Wrap to `UIView`.
      */
     var iconView: UIView {
         switch self {
@@ -80,11 +81,14 @@ public enum SPAlertPreset {
             return SPAlertIconBoltView()
         case .magic:
             return SPAlertIconMagicView()
+        case .eject:
+            return SPAlertIconEjectView()
         }
     }
     
     /**
      Layout for preset. Include spacings and icon size.
+     Size of frame `250` to `250`, it fix size. Not using proportional. Set fix in points.
      */
     var layout: SPAlertLayout {
         switch self {
@@ -135,6 +139,14 @@ public enum SPAlertPreset {
             layout.iconWidth = 112
             layout.iconHeight = 77
             layout.bottomIconSpace = 35
+            return layout
+        case .eject:
+            var layout = SPAlertLayout()
+            layout.topSpace = 48
+            layout.bottomSpace = 31
+            layout.iconWidth = 112
+            layout.iconHeight = 77
+            layout.bottomIconSpace = 32
             return layout
         case .flag:
             var layout = SPAlertLayout()
@@ -220,7 +232,7 @@ public enum SPAlertPreset {
     }
     
     /**
-     Default vibro. Can customize after create with preset.
+     Default haptic. Can customize after create with preset.
      */
     var haptic: SPAlertHaptic {
         switch self {
@@ -250,6 +262,8 @@ public enum SPAlertPreset {
             return .error
         case .shuffle:
             return .success
+        case .eject:
+            return .warning
         case .repeat:
             return .success
         case .flag:
