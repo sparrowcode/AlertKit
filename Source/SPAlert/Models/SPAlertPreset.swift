@@ -43,6 +43,7 @@ public enum SPAlertPreset {
     case `repeat`
     case magic
     case eject
+    case card
     
     /**
      View for preset. Wrap to `UIView`.
@@ -83,6 +84,8 @@ public enum SPAlertPreset {
             return SPAlertIconMagicView()
         case .eject:
             return SPAlertIconEjectView()
+        case .card:
+            return SPAlertIconCardView()
         }
     }
     
@@ -147,6 +150,14 @@ public enum SPAlertPreset {
             layout.iconWidth = 112
             layout.iconHeight = 77
             layout.bottomIconSpace = 32
+            return layout
+        case .card:
+            var layout = SPAlertLayout()
+            layout.topSpace = 45
+            layout.bottomSpace = 31
+            layout.iconWidth = 108
+            layout.iconHeight = 108
+            layout.bottomIconSpace = 25
             return layout
         case .flag:
             var layout = SPAlertLayout()
@@ -269,6 +280,8 @@ public enum SPAlertPreset {
         case .flag:
             return .success
         case .bolt:
+            return .success
+        case .card:
             return .success
         }
     }
