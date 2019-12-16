@@ -17,6 +17,7 @@ class ViewController: UITableViewController {
         Alert(key: "Bolt", preset: .bolt, title: "Power", subtitle: "Now turned on"),
         Alert(key: "Eject", preset: .eject, title: "Eject complete", subtitle: nil),
         Alert(key: "Card", preset: .card, title: "Payment sent", subtitle: "Thanks for donate"),
+        Alert(key: "Rotate", preset: .rotate, title: "Portrait mode", subtitle: "You can change it in settings"),
         Alert(key: "Magic", preset: .magic, title: "Magic here! You see", subtitle: "Strange text, true?"),
         Alert(key: "Add", preset: .add, title: "Added to Folder", subtitle: nil),
         Alert(key: "Error", preset: .error, title: "Oops", subtitle: "Please try again later"),
