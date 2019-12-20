@@ -23,6 +23,8 @@ And other
     <img src="https://github.com/ivanvorobei/SPAlert/blob/master/Assets/Readme/Miniature%20-%20Eject.svg" width="55">
     <img src="https://github.com/ivanvorobei/SPAlert/blob/master/Assets/Readme/Miniature%20-%20Card.svg" width="55">
     <img src="https://github.com/ivanvorobei/SPAlert/blob/master/Assets/Readme/Miniature%20-%20Like.svg" width="55">
+    <img src="https://github.com/ivanvorobei/SPAlert/blob/master/Assets/Readme/Miniature%20-%20Dislike.svg" width="55">
+    <img src="https://github.com/ivanvorobei/SPAlert/blob/master/Assets/Readme/Miniature%20-%20Privacy.svg" width="55">
     <img src="https://github.com/ivanvorobei/SPAlert/blob/master/Assets/Readme/Miniature%20-%20Rotate.svg" width="55">
     <img src="https://github.com/ivanvorobei/SPAlert/blob/master/Assets/Readme/Miniature%20-%20Magic.svg" width="55">
     <img src="https://github.com/ivanvorobei/SPAlert/blob/master/Assets/Readme/Miniature%20-%20Add.svg" width="55">

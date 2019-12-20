@@ -18,6 +18,8 @@ class ViewController: UITableViewController {
         Alert(key: "Eject", preset: .eject, title: "Eject complete", subtitle: nil),
         Alert(key: "Card", preset: .card, title: "Payment sent", subtitle: "Thanks for donate"),
         Alert(key: "Like", preset: .like, title: "Thanks for feedback", subtitle: "It helped us"),
+        Alert(key: "Dislike", preset: .dislike, title: "Thanks for feedback", subtitle: "It helped us"),
+        Alert(key: "Privacy", preset: .privacy, title: "Privacy accepted", subtitle: "You privacy it important"),
         Alert(key: "Rotate", preset: .rotate, title: "Portrait mode", subtitle: "You can change it in settings"),
         Alert(key: "Magic", preset: .magic, title: "Magic here! You see", subtitle: "Strange text, true?"),
         Alert(key: "Add", preset: .add, title: "Added to Folder", subtitle: nil),

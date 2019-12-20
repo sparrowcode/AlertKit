@@ -46,6 +46,8 @@ public enum SPAlertPreset {
     case card
     case rotate
     case like
+    case dislike
+    case privacy
     
     /**
      View for preset. Wrap to `UIView`.
@@ -92,6 +94,10 @@ public enum SPAlertPreset {
             return SPAlertIconRotateView()
         case .like:
             return SPAlertIconLikeView()
+        case .dislike:
+            return SPAlertIconDislikeView()
+        case .privacy:
+            return SPAlertIconPrivacyView()
         }
     }
     
@@ -188,6 +194,22 @@ public enum SPAlertPreset {
             layout.iconWidth = 112
             layout.iconHeight = 88
             layout.bottomIconSpace = 35
+            return layout
+        case .dislike:
+            var layout = SPAlertLayout()
+            layout.topSpace = 49
+            layout.bottomSpace = 31
+            layout.iconWidth = 112
+            layout.iconHeight = 88
+            layout.bottomIconSpace = 35
+            return layout
+        case .privacy:
+            var layout = SPAlertLayout()
+            layout.topSpace = 47
+            layout.bottomSpace = 31
+            layout.iconWidth = 106
+            layout.iconHeight = 106
+            layout.bottomIconSpace = 32
             return layout
         case .bookmark:
             var layout = SPAlertLayout()
@@ -308,6 +330,10 @@ public enum SPAlertPreset {
         case .rotate:
             return .success
         case .like:
+            return .success
+        case .dislike:
+            return .error
+        case .privacy:
             return .success
         }
     }
