@@ -17,6 +17,7 @@ class ViewController: UITableViewController {
         Alert(key: "Bolt", preset: .bolt, title: "Power", subtitle: "Now turned on"),
         Alert(key: "Eject", preset: .eject, title: "Eject complete", subtitle: nil),
         Alert(key: "Card", preset: .card, title: "Payment sent", subtitle: "Thanks for donate"),
+        Alert(key: "Cart", preset: .cart, title: "Add to order", subtitle: "It wait in cart"),
         Alert(key: "Like", preset: .like, title: "Thanks for feedback", subtitle: "It helped us"),
         Alert(key: "Dislike", preset: .dislike, title: "Thanks for feedback", subtitle: "It helped us"),
         Alert(key: "Privacy", preset: .privacy, title: "Privacy accepted", subtitle: "You privacy it important"),
