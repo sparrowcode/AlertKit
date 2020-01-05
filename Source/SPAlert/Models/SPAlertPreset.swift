@@ -49,6 +49,7 @@ public enum SPAlertPreset {
     case dislike
     case privacy
     case cart
+    case search
     
     /**
      View for preset. Wrap to `UIView`.
@@ -101,6 +102,8 @@ public enum SPAlertPreset {
             return SPAlertIconPrivacyView()
         case .cart:
             return SPAlertIconCartView()
+        case .search:
+            return SPAlertIconSearchView()
         }
     }
     
@@ -294,6 +297,14 @@ public enum SPAlertPreset {
             layout.iconHeight = 86
             layout.bottomIconSpace = 39
             return layout
+        case .search:
+            var layout = SPAlertLayout()
+            layout.topSpace = 42
+            layout.bottomSpace = 29
+            layout.iconWidth = 98
+            layout.iconHeight = 98
+            layout.bottomIconSpace = 39
+            return layout
         }
     }
     
@@ -337,6 +348,8 @@ public enum SPAlertPreset {
         case .bolt:
             return .success
         case .card:
+            return .success
+        case .search:
             return .success
         case .rotate:
             return .success

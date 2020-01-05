@@ -23,6 +23,7 @@ class ViewController: UITableViewController {
         Alert(key: "Privacy", preset: .privacy, title: "Privacy accepted", subtitle: "You privacy it important"),
         Alert(key: "Rotate", preset: .rotate, title: "Portrait mode", subtitle: "You can change it in settings"),
         Alert(key: "Magic", preset: .magic, title: "Magic here! You see", subtitle: "Strange text, true?"),
+        Alert(key: "Search", preset: .search, title: "Searching", subtitle: "Maybe need other title"),
         Alert(key: "Add", preset: .add, title: "Added to Folder", subtitle: nil),
         Alert(key: "Error", preset: .error, title: "Oops", subtitle: "Please try again later"),
         Alert(key: "Shuffle", preset: .shuffle, title: "Songs Shuffled", subtitle: nil),
