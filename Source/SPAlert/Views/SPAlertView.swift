@@ -206,7 +206,7 @@ open class SPAlertView: UIView {
     /**
      Use this method for force dismiss controller. By default it call automatically.
      */
-    @objc func dismiss() {
+    @objc public func dismiss() {
         UIView.animate(withDuration: 0.2, animations: {
             self.alpha = 0
             self.transform = self.transform.scaledBy(x: 0.8, y: 0.8)
