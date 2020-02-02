@@ -3,9 +3,9 @@
 **Popup from Apple Music & Feedback in AppStore**. Contains `Done`, `Heart`, `Error` and other presets. Support Dark Mode. I clone Apple's alerts as much as possible. You can find this alerts in AppStore after feedback and after added song to library in Apple Music.
 
 <p float="left">
-    <img src="https://github.com/ivanvorobei/SPAlert/blob/master/Assets/Readme/Preview%20-%20Done.gif" width="250">
-    <img src="https://github.com/ivanvorobei/SPAlert/blob/master/Assets/Readme/Preview%20-%20Heart.gif" width="250">
-    <img src="https://github.com/ivanvorobei/SPAlert/blob/master/Assets/Readme/Preview%20-%20Message.gif" width="250">
+    <img src="https://github.com/ivanvorobei/SPAlert/blob/master/Assets/Readme/Preview%20-%20Done.gif" width="220">
+    <img src="https://github.com/ivanvorobei/SPAlert/blob/master/Assets/Readme/Preview%20-%20Heart.gif" width="220">
+    <img src="https://github.com/ivanvorobei/SPAlert/blob/master/Assets/Readme/Preview%20-%20Message.gif" width="220">
 </p>
 
 And other
@@ -34,7 +34,7 @@ And other
     <img src="https://github.com/ivanvorobei/SPAlert/blob/master/Assets/Readme/Miniature%20-%20Repeat.svg" width="55">
 </p>
 
-If you like the project, do not forget to `put star ★` and follow me on GitHub. For help project, see [Сooperation](#сooperation) section.
+If you like the project, do not forget to `put star ★` and follow me on GitHub. To help project, see [Сooperation](#сooperation) section.
 
 Check example usage in app _Debts - Spending tracker_ for [iOS](https://itunes.apple.com/app/id1446635818) and [macOS](https://apps.apple.com/app/id1496914334). You can buy source code this app in my store for iOS developers:
 
