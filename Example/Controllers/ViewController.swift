@@ -4,6 +4,7 @@ import SPAlert
 class ViewController: UITableViewController {
     
     let data: [Alert] = [
+		Alert(key: "Loading", preset: nil, title: nil, subtitle: "Loading..."),
         Alert(key: "Done", preset: .done, title: "Added to Library", subtitle: nil),
         Alert(key: "Heart", preset: .heart, title: "Love", subtitle: "We'll recommend more like this for you"),
         Alert(key: "Doc", preset: .doc, title: "Document saved", subtitle: "See in folder new file"),
@@ -68,7 +69,9 @@ class ViewController: UITableViewController {
         let alertData = data[selectedIndexPath.row]
         if let preset = alertData.preset {
             SPAlert.present(title: alertData.title ?? "Here title", message: alertData.subtitle, preset: preset)
-        } else {
+		} else if alertData.key == "Loading" {
+			SPAlert.presentLoading(message: alertData.subtitle ?? "Empty", timeout: 2.5)
+		} else {
             SPAlert.present(message: alertData.subtitle ?? "Empty")
         }
     }

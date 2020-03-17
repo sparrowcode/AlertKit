@@ -60,4 +60,13 @@ public enum SPAlert {
         alertView.haptic = haptic
         alertView.present()
     }
+
+	public static func presentLoading(message: String, timeout: Double? = nil) {
+		let alertView = SPAlertView(loadingMessage: message)
+		alertView.width = 125
+		alertView.dismissByTap = false
+		alertView.duration = timeout
+		alertView.disableUserInteractionWhenPresenting = true
+		alertView.present()
+	}
 }
