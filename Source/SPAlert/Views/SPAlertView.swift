@@ -91,6 +91,15 @@ open class SPAlertView: UIView {
 	 */
 	public var disableUserInteractionWhenPresenting = false
 
+	/// Color used to set labels's text color and the activityView's tint color if any.
+	private var foregroundColor: UIColor {
+		if isDarkMode {
+			return UIColor(red: 127/255, green: 127/255, blue: 129/255, alpha: 1)
+		} else {
+			return UIColor(red: 88/255, green: 87/255, blue: 88/255, alpha: 1)
+		}
+	}
+
     // MARK: Init
     
     public init(title: String, message: String?, preset: SPAlertPreset) {
@@ -156,6 +165,12 @@ open class SPAlertView: UIView {
 			}
 		}()
 
+		if #available(iOS 13.0, *) {
+			// Let the system use the default color
+		} else {
+			activityView!.color = foregroundColor
+		}
+
 		addSubview(activityView!)
 	}
     
@@ -208,12 +223,9 @@ open class SPAlertView: UIView {
             addSubview(subtitleLabel)
         }
         
-        let darkModeColor = UIColor(red: 127 / 255, green: 127 / 255, blue: 129 / 255, alpha: 1)
-        let lightModeColor = UIColor(red: 88 / 255, green: 87 / 255, blue: 88 / 255, alpha: 1)
-        let color = isDarkMode ? darkModeColor : lightModeColor
-        iconView?.tintColor = color
-        titleLabel?.textColor = color
-        subtitleLabel?.textColor = color
+		iconView?.tintColor = foregroundColor
+		titleLabel?.textColor = foregroundColor
+		subtitleLabel?.textColor = foregroundColor
     }
     
     // MARK: Public
