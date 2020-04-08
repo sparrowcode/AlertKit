@@ -95,9 +95,23 @@ open class SPAlertView: UIView {
      Set to `true` if you want to make the loading view rectangualar
      */
     public var makeLoadingViewRectangular = true
-
-    /// Color used to set labels's text color and the activityView's tint color if any.
-    private var foregroundColor: UIColor {
+    
+    /**
+     Color used to set labels's text color and the activityView's tint color if any.
+     It also updates all the colors used by the labes and the activity view that were defined in the initialization
+     process.
+    */
+    public var foregroundColor: UIColor = UIColor() {
+        didSet {
+            if let _ = activityView { activityView!.color = foregroundColor }
+            iconView?.tintColor = foregroundColor
+            titleLabel?.textColor = foregroundColor
+            subtitleLabel?.textColor = foregroundColor
+        }
+    }
+    
+    /// Creates a default foregroundColor
+    private var foregroundColorDefault: UIColor {
         if isDarkMode {
             return UIColor(red: 127/255, green: 127/255, blue: 129/255, alpha: 1)
         } else {
@@ -109,6 +123,8 @@ open class SPAlertView: UIView {
     
     public init(title: String, message: String?, preset: SPAlertPreset) {
         super.init(frame: CGRect.zero)
+        self.foregroundColor = self.foregroundColorDefault
+        
         iconView = preset.iconView
         layout = preset.layout
         haptic = preset.haptic
@@ -123,6 +139,8 @@ open class SPAlertView: UIView {
     
     public init(title: String, message: String?, icon view: UIView) {
         super.init(frame: CGRect.zero)
+        self.foregroundColor = self.foregroundColorDefault
+        
         iconView = view
         titleLabel = UILabel()
         titleLabel?.text = title
@@ -135,6 +153,8 @@ open class SPAlertView: UIView {
     
     public init(title: String, message: String?, image: UIImage) {
         super.init(frame: CGRect.zero)
+        self.foregroundColor = self.foregroundColorDefault
+        
         iconView = UIImageView(image: image.withRenderingMode(.alwaysTemplate))
         iconView?.contentMode = .scaleAspectFit
         titleLabel = UILabel()
@@ -148,6 +168,8 @@ open class SPAlertView: UIView {
     
     public init(message: String) {
         super.init(frame: CGRect.zero)
+        self.foregroundColor = self.foregroundColorDefault
+        
         subtitleLabel = UILabel()
         subtitleLabel?.text = message
         commonInit()
@@ -156,9 +178,11 @@ open class SPAlertView: UIView {
     /**
      Display an alert with an activity indicator and a subtitle underneath.
      */
-    public convenience init(loadingMessage: String) {
+    public convenience init(loadingMessage: String, timeout: Double? = nil) {
         self.init(message: loadingMessage)
-
+        
+        duration = timeout
+        
         // we override the subtitle label's font weight
         subtitleLabel!.font = .boldSystemFont(ofSize: subtitleLabel!.font.pointSize)
 
