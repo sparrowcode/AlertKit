@@ -72,12 +72,7 @@ public enum SPAlert {
         alertView.width = 125
         alertView.dismissByTap = false
         alertView.disableUserInteractionWhenPresenting = true
-        if timeout != nil {
-            alertView.duration = timeout!
-            alertView.present()
-        } else {
-            alertView.presentLoading()
-        }
+        alertView.duration = timeout
         return alertView
     }
 }

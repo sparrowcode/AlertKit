@@ -22,40 +22,47 @@
 import UIKit
 
 /**
-View which presenting. You can configure `titleLabel`, `subtitleLabel` and other. For change duration use property `duration`.
-Also you can configure layout & haptic. If you use preset, all configure automatically.
+    View which presenting. You can configure `titleLabel`, `subtitleLabel` and other. For change duration use property `duration`.
+    Also you can configure layout & haptic. If you use preset, all configure automatically.
 */
 open class SPAlertView: UIView {
     
     /**
      Large top text on alert.
      */
-    private var titleLabel: UILabel? = nil
-    
+    private var titleLabel: UILabel?
+
     /**
      Small text on alert.
      */
-    private var subtitleLabel: UILabel? = nil
-    
+    private var subtitleLabel: UILabel?
+
     /**
      Icon view. Size for it configure in `layout` property.
      */
-    private var iconView: UIView? = nil
-    
+    private var iconView: UIView?
+
+    /**
+     Activity view used when instantiating using `init(loadingMessage:)`
+     */
+    private var activityView: UIActivityIndicatorView?
+
     /**
      Blur view for background.
      */
     private var backgroundView: UIVisualEffectView!
-    
+
     /**
-     Duration time when alert visible.
+     Automatic dismissal trigger duration.
+     Set to nil to disable the automatic dismissal.
+     The default value is __1.5 seconds__.
      */
-    public var duration: TimeInterval = 1.5
+    public var duration: TimeInterval? = 1.5
     
     /**
      Allow dismiss by tap on alert. By default it allowed.
      */
-    public var dismissByTap: Bool = true
+    public var dismissByTap = true
     
     /**
      Vibro for this alert. Default value using for presets. If you init custom. haptic not configure.
@@ -71,12 +78,24 @@ open class SPAlertView: UIView {
      View on which present alert.
      */
     public var keyWindow: UIView = (UIApplication.shared.keyWindow ?? UIWindow())
+
+    /**
+     Set the alert width (the default value is __250 points__).
+     Make sure you set this before presenting the alert!
+     */
+    public var width: CGFloat = 250
+
+    /**
+     Set to `true` if you want to disable the user interaction of the key window when `present()` is called
+     and whenever `dismiss()` get called, we enable back the user interaction.
+     */
+    public var disableUserInteractionWhenPresenting = false
     
     /**
-     Activity view used when instantiating using `init(loadingMessage:)`
+     Set to `true` if you want to make the loading view rectangualar
      */
-    private var activityView: UIActivityIndicatorView?
-    
+    public var makeLoadingViewRectangular = true
+
     /// Color used to set labels's text color and the activityView's tint color if any.
     private var foregroundColor: UIColor {
         if isDarkMode {
@@ -85,19 +104,7 @@ open class SPAlertView: UIView {
             return UIColor(red: 88/255, green: 87/255, blue: 88/255, alpha: 1)
         }
     }
-    
-    /**
-     Set the alert width (the default value is __250 points__).
-     Make sure you set this before presenting the alert!
-     */
-    public var width: CGFloat = 250
-    
-    /**
-     Set to `true` if you want to disable the user interaction of the key window when `present()` is called
-     and whenever `dismiss()` get called, we enable back the user interaction.
-     */
-    public var disableUserInteractionWhenPresenting = false
-    
+
     // MARK: Init
     
     public init(title: String, message: String?, preset: SPAlertPreset) {
@@ -145,7 +152,10 @@ open class SPAlertView: UIView {
         subtitleLabel?.text = message
         commonInit()
     }
-    
+
+    /**
+     Display an alert with an activity indicator and a subtitle underneath.
+     */
     public convenience init(loadingMessage: String) {
         self.init(message: loadingMessage)
 
@@ -218,12 +228,9 @@ open class SPAlertView: UIView {
             addSubview(subtitleLabel)
         }
         
-        let darkModeColor = UIColor(red: 127 / 255, green: 127 / 255, blue: 129 / 255, alpha: 1)
-        let lightModeColor = UIColor(red: 88 / 255, green: 87 / 255, blue: 88 / 255, alpha: 1)
-        let color = isDarkMode ? darkModeColor : lightModeColor
-        iconView?.tintColor = color
-        titleLabel?.textColor = color
-        subtitleLabel?.textColor = color
+        iconView?.tintColor = foregroundColor
+        titleLabel?.textColor = foregroundColor
+        subtitleLabel?.textColor = foregroundColor
     }
     
     // MARK: Public
@@ -238,37 +245,24 @@ open class SPAlertView: UIView {
         layoutSubviews()
         alpha = 0
         transform = transform.scaledBy(x: 0.8, y: 0.8)
-        
+        activityView?.startAnimating()
+
+        if disableUserInteractionWhenPresenting {
+            keyWindow.isUserInteractionEnabled = false
+        }
+
         UIView.animate(withDuration: 0.2, animations: {
             self.alpha = 1
             self.transform = CGAffineTransform.identity
-        }, completion: {finished in
+        }, completion: { finished in
             if let iconView = self.iconView as? SPAlertIconAnimatable {
                 iconView.animate()
             }
-            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + self.duration) {
-                self.dismiss()
-            }
-        })
-    }
-    
-    /**
-     Use this method for present controller without timeout. No need pass any controller, alert appear on `keyWindow`.
-     */
-    public func presentLoading() {
-        haptic.impact()
-        keyWindow.addSubview(self)
-        layoutIfNeeded()
-        layoutSubviews()
-        alpha = 0
-        transform = transform.scaledBy(x: 0.8, y: 0.8)
-        
-        UIView.animate(withDuration: 0.2, animations: {
-            self.alpha = 1
-            self.transform = CGAffineTransform.identity
-        }, completion: {finished in
-            if let iconView = self.iconView as? SPAlertIconAnimatable {
-                iconView.animate()
+
+            if let duration = self.duration {
+                DispatchQueue.main.asyncAfter(deadline: .now() + duration) {
+                    self.dismiss()
+                }
             }
         })
     }
@@ -277,6 +271,10 @@ open class SPAlertView: UIView {
      Use this method for force dismiss controller. By default it call automatically.
      */
     @objc public func dismiss() {
+        if disableUserInteractionWhenPresenting {
+            keyWindow.isUserInteractionEnabled = true
+        }
+
         UIView.animate(withDuration: 0.2, animations: {
             self.alpha = 0
             self.transform = self.transform.scaledBy(x: 0.8, y: 0.8)
@@ -289,20 +287,45 @@ open class SPAlertView: UIView {
     
     open override func layoutSubviews() {
         super.layoutSubviews()
-        let width: CGFloat = 250
         let sideSpace: CGFloat = 16
-        if let iconView = iconView {
-            iconView.frame = CGRect.init(x: 0, y: layout.topSpace, width: layout.iconWidth, height: layout.iconHeight)
-            iconView.center.x = width / 2
+        let topMargin: CGFloat = 8
+
+        if let activityView = activityView {
+            let activityViewBottomSpace: CGFloat = 8
+            let yPosition: CGFloat
+            if makeLoadingViewRectangular {
+                yPosition = (self.width / 2)
+                            + activityViewBottomSpace
+                            + topMargin
+            } else {
+                yPosition = 23
+                            + activityView.bounds.height
+                            + activityViewBottomSpace
+            }
+            
+            layout(subtitleLabel!, x: sideSpace, y: yPosition, width: width - 2 * sideSpace)
+            
+            if makeLoadingViewRectangular {
+                activityView.frame.origin.y = (self.width / 2) - activityViewBottomSpace - activityView.bounds.height + topMargin
+            } else {
+                activityView.frame.origin.y = 23
+            }
+            activityView.center.x = subtitleLabel!.center.x
+        } else {
+            if let iconView = iconView {
+                iconView.frame = CGRect.init(x: 0, y: layout.topSpace, width: layout.iconWidth, height: layout.iconHeight)
+                iconView.center.x = width / 2
+            }
+            if let titleLabel = titleLabel {
+                let yPosition = (iconView == nil) ? 32 : (iconView!.frame.origin.y + iconView!.frame.height + layout.bottomIconSpace)
+                layout(titleLabel, x: sideSpace, y: yPosition, width: width - sideSpace * 2)
+            }
+            if let subtitleLabel = subtitleLabel {
+                let yPosition = (titleLabel == nil) ? 23 : titleLabel!.frame.origin.y + titleLabel!.frame.height + 4
+                layout(subtitleLabel, x: sideSpace, y: yPosition, width: width - sideSpace * 2)
+            }
         }
-        if let titleLabel = titleLabel {
-            let yPosition = (iconView == nil) ? 32 : (iconView!.frame.origin.y + iconView!.frame.height + layout.bottomIconSpace)
-            layout(titleLabel, x: sideSpace, y: yPosition, width: width - sideSpace * 2)
-        }
-        if let subtitleLabel = subtitleLabel {
-            let yPosition = (titleLabel == nil) ? 23 : titleLabel!.frame.origin.y + titleLabel!.frame.height + 4
-            layout(subtitleLabel, x: sideSpace, y: yPosition, width: width - sideSpace * 2)
-        }
+
         frame = CGRect.init(x: 0, y: 0, width: width, height: calculateHeight())
         center = CGPoint.init(x: keyWindow.frame.midX, y: keyWindow.frame.midY)
         backgroundView.frame = bounds
@@ -321,19 +344,30 @@ open class SPAlertView: UIView {
      This menthod call when need calulate height with layout.
      */
     private func calculateHeight() -> CGFloat {
-        var height: CGFloat = 0
-        if let subtitleLabel = subtitleLabel {
-            if titleLabel == nil {
-                height += subtitleLabel.frame.origin.y * 2 + subtitleLabel.frame.height
+        if activityView != nil {
+            if self.makeLoadingViewRectangular {
+                return self.width
             } else {
-                height += subtitleLabel.frame.origin.y + subtitleLabel.frame.height + layout.bottomSpace
+                return subtitleLabel!.frame.origin.y
+                        + subtitleLabel!.bounds.height
+                        + layout.bottomSpace
             }
-        } else {
-            if let titleLabel = titleLabel {
-                height += titleLabel.frame.origin.y + titleLabel.frame.height + layout.bottomSpace
+        } else if let subtitleLabel = subtitleLabel {
+            if titleLabel == nil {
+                return subtitleLabel.frame.origin.y * 2
+                    + subtitleLabel.frame.height
+            } else {
+                return subtitleLabel.frame.origin.y
+                    + subtitleLabel.frame.height
+                    + layout.bottomSpace
             }
+        } else if let titleLabel = titleLabel {
+            return titleLabel.frame.origin.y
+                + titleLabel.frame.height
+                + layout.bottomSpace
         }
-        return height
+
+        preconditionFailure()
     }
     
     /**
@@ -341,14 +375,13 @@ open class SPAlertView: UIView {
      */
     private var isDarkMode: Bool {
         if #available(iOS 12.0, *) {
-            switch UIApplication.shared.windows.first?.traitCollection.userInterfaceStyle ?? .light {
-            case .dark:
+            guard let window = UIApplication.shared.windows.first else {
+                return false
+            }
+
+            if case .dark = window.traitCollection.userInterfaceStyle {
                 return true
-            case .light:
-                return false
-            case .unspecified:
-                return false
-            @unknown default:
+            } else {
                 return false
             }
         } else {

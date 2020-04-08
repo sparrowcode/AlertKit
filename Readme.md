@@ -116,6 +116,19 @@ For showing a simple text message:
 SPAlert.present(message: "Text!")
 ```
 
+For showing a loading view without customization:
+
+```swift
+let alert = SPAlert.presentLoader(message: "Loading...")
+alert.dismis() // To dismiss the alert
+```
+
+For showing a loading view without customization but with timeout:
+
+```swift
+let _ = SPAlert.presentLoader(message: "Loading...", timeout: 5)
+```
+
 ## Usage
 
 If you require deep customization, this section will show you what you can do.
@@ -181,6 +194,16 @@ You can change the corner radius by setting the `cornerRadius` property:
 
 ```swift
 alertView.layer.cornerRadius = 40
+```
+
+### Loading View
+
+The loading view can be a square or it can calculate the size needed
+
+```swift
+let loadingView = SPAlertView(loadingMessage = "Loading...")
+loadingView.makeLoadingViewRectangular = true // default
+loadingView.present()
 ```
 
 ## Сooperation
