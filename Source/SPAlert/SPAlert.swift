@@ -60,4 +60,24 @@ public enum SPAlert {
         alertView.haptic = haptic
         alertView.present()
     }
+    
+    /**
+     Present the loading view
+     
+     - parameter timeout: If not passed the view will not be dismissed
+     - returns: SPAlertView so the loading view can be dismissed and or reused
+     */
+    public static func presentLoading(message: String, timeout: Double? = nil) -> SPAlertView {
+        let alertView = SPAlertView(loadingMessage: message)
+        alertView.width = 125
+        alertView.dismissByTap = false
+        alertView.disableUserInteractionWhenPresenting = true
+        if timeout != nil {
+            alertView.duration = timeout!
+            alertView.present()
+        } else {
+            alertView.presentLoading()
+        }
+        return alertView
+    }
 }

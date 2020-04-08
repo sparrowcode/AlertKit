@@ -72,6 +72,32 @@ open class SPAlertView: UIView {
      */
     public var keyWindow: UIView = (UIApplication.shared.keyWindow ?? UIWindow())
     
+    /**
+     Activity view used when instantiating using `init(loadingMessage:)`
+     */
+    private var activityView: UIActivityIndicatorView?
+    
+    /// Color used to set labels's text color and the activityView's tint color if any.
+    private var foregroundColor: UIColor {
+        if isDarkMode {
+            return UIColor(red: 127/255, green: 127/255, blue: 129/255, alpha: 1)
+        } else {
+            return UIColor(red: 88/255, green: 87/255, blue: 88/255, alpha: 1)
+        }
+    }
+    
+    /**
+     Set the alert width (the default value is __250 points__).
+     Make sure you set this before presenting the alert!
+     */
+    public var width: CGFloat = 250
+    
+    /**
+     Set to `true` if you want to disable the user interaction of the key window when `present()` is called
+     and whenever `dismiss()` get called, we enable back the user interaction.
+     */
+    public var disableUserInteractionWhenPresenting = false
+    
     // MARK: Init
     
     public init(title: String, message: String?, preset: SPAlertPreset) {
@@ -118,6 +144,29 @@ open class SPAlertView: UIView {
         subtitleLabel = UILabel()
         subtitleLabel?.text = message
         commonInit()
+    }
+    
+    public convenience init(loadingMessage: String) {
+        self.init(message: loadingMessage)
+
+        // we override the subtitle label's font weight
+        subtitleLabel!.font = .boldSystemFont(ofSize: subtitleLabel!.font.pointSize)
+
+        activityView = {
+            if #available(iOS 13.0, *) {
+                return UIActivityIndicatorView(style: .large)
+            } else {
+                return UIActivityIndicatorView(style: .whiteLarge)
+            }
+        }()
+
+        if #available(iOS 13.0, *) {
+            // Let the system use the default color
+        } else {
+            activityView!.color = foregroundColor
+        }
+
+        addSubview(activityView!)
     }
     
     public required init?(coder aDecoder: NSCoder) {
@@ -199,6 +248,27 @@ open class SPAlertView: UIView {
             }
             DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + self.duration) {
                 self.dismiss()
+            }
+        })
+    }
+    
+    /**
+     Use this method for present controller without timeout. No need pass any controller, alert appear on `keyWindow`.
+     */
+    public func presentLoading() {
+        haptic.impact()
+        keyWindow.addSubview(self)
+        layoutIfNeeded()
+        layoutSubviews()
+        alpha = 0
+        transform = transform.scaledBy(x: 0.8, y: 0.8)
+        
+        UIView.animate(withDuration: 0.2, animations: {
+            self.alpha = 1
+            self.transform = CGAffineTransform.identity
+        }, completion: {finished in
+            if let iconView = self.iconView as? SPAlertIconAnimatable {
+                iconView.animate()
             }
         })
     }
