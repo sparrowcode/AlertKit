@@ -161,7 +161,12 @@ open class SPAlertView: UIView {
     public var backgroundBlurRadius: CGFloat = 5
     
     /// Contains the UI with the blur
-    private var backgroundBlurUI: UIView?
+    private var backgroundBlurUI: UIView? {
+        didSet {
+            if self.backgroundBlurUI != nil
+            {print("I was created")} else {print("I was destroyed")}
+        }
+    }
     
     // MARK: Init
     
