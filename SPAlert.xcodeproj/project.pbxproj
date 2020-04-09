@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F57AB06243F61B700C1F9AF /* SPAlertBlurBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F57AB05243F61B700C1F9AF /* SPAlertBlurBackground.swift */; };
 		706F894A2383277500ECF5D1 /* SPAlertIconErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706F89492383277500ECF5D1 /* SPAlertIconErrorView.swift */; };
 		F40FB62A239ADF940090BA57 /* SPAlertIconQuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40FB629239ADF940090BA57 /* SPAlertIconQuestionView.swift */; };
 		F41204E92382AC9B009C2AC7 /* SPAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41204DF2382AC9B009C2AC7 /* SPAlertView.swift */; };
@@ -70,6 +71,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3F57AB05243F61B700C1F9AF /* SPAlertBlurBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPAlertBlurBackground.swift; sourceTree = "<group>"; };
 		706F89492383277500ECF5D1 /* SPAlertIconErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPAlertIconErrorView.swift; sourceTree = "<group>"; };
 		F40FB629239ADF940090BA57 /* SPAlertIconQuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPAlertIconQuestionView.swift; sourceTree = "<group>"; };
 		F41204D02382ABE9009C2AC7 /* SPAlert.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SPAlert.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -285,6 +287,7 @@
 			children = (
 				F41204E12382AC9B009C2AC7 /* Icons */,
 				F41204DF2382AC9B009C2AC7 /* SPAlertView.swift */,
+				3F57AB05243F61B700C1F9AF /* SPAlertBlurBackground.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -411,6 +414,7 @@
 			files = (
 				F412052A2382AF64009C2AC7 /* SPAlertHaptic.swift in Sources */,
 				F41204EE2382AC9B009C2AC7 /* SPAlert.swift in Sources */,
+				3F57AB06243F61B700C1F9AF /* SPAlertBlurBackground.swift in Sources */,
 				F40FB62A239ADF940090BA57 /* SPAlertIconQuestionView.swift in Sources */,
 				F4E4459D2390524A0067FF5C /* SPAlertIconExclamationView.swift in Sources */,
 				F459720223A841C00092CE7C /* SPAlertIconRotateView.swift in Sources */,

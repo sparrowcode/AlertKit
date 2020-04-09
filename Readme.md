@@ -202,9 +202,29 @@ The loading view can be a square or it can calculate the size needed
 
 ```swift
 let loadingView = SPAlertView(loadingMessage = "Loading...")
-loadingView.makeLoadingViewRectangular = true // default
+loadingView.makeLoadingViewRectangular = true // this is the default value
 loadingView.present()
 ```
+
+### Background Blur
+
+Background blur is available to the loading view as default or to the other alerts by adding to the configuration
+
+```swift
+let alertView = SPAlertView(title: "Added to Library", message: nil, preset: SPAlertPreset.done)
+alertView.blurBackground = true // The default value for alerts is false
+alertView.present()
+```
+
+To change the blur background
+
+```swift
+let loadingView = SPAlertView(loadingMessage = "Loading...")
+loadingView.backgroundBlurRadius = 10 // The default value is 5
+loadingView.present()
+```
+
+**Note:** This only blurs the views under the alert or the loading view, and not the alert or loading view it self.
 
 ## Сooperation
 

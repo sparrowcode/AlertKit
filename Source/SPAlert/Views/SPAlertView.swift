@@ -101,12 +101,38 @@ open class SPAlertView: UIView {
      It also updates all the colors used by the labes and the activity view that were defined in the initialization
      process.
     */
-    public var foregroundColor: UIColor = UIColor() {
-        didSet {
-            if let _ = activityView { activityView!.color = foregroundColor }
-            iconView?.tintColor = foregroundColor
-            titleLabel?.textColor = foregroundColor
-            subtitleLabel?.textColor = foregroundColor
+    public var foregroundColor: UIColor? = nil {
+        willSet {
+            /// Updates the UI with the new values for that all the views must be removed and added
+            self.iconView?.removeFromSuperview()
+            self.titleLabel?.removeFromSuperview()
+            self.subtitleLabel?.removeFromSuperview()
+            self.activityView?.removeFromSuperview()
+            
+            if let _ = activityView { activityView!.color = newValue }
+            titleLabel?.textColor = newValue
+            
+            
+            if let iconView = iconView {
+                iconView.tintColor = newValue
+                self.iconView = iconView
+                addSubview(iconView)
+            }
+            if let titleLabel = titleLabel {
+                titleLabel.textColor = newValue
+                self.titleLabel = titleLabel
+                addSubview(titleLabel)
+            }
+            if let subtitleLabel = subtitleLabel {
+                subtitleLabel.textColor = newValue
+                self.subtitleLabel = subtitleLabel
+                addSubview(subtitleLabel)
+            }
+            if let activityView = activityView {
+                activityView.color = newValue
+                self.activityView = activityView
+                addSubview(activityView)
+            }
         }
     }
     
@@ -119,11 +145,33 @@ open class SPAlertView: UIView {
         }
     }
 
+    /// Enables the blur of the background, it creates the blur UI when set to true and destroys when set to false
+    public var blurBackground: Bool = false {
+        willSet {
+            if newValue {
+                self.backgroundBlurUI = SPAlertBlurBackground.init(keyWindow: self.keyWindow, withRadius: self.backgroundBlurRadius)
+            } else {
+                if backgroundBlurUI != nil { backgroundBlurUI?.removeFromSuperview() }
+                self.backgroundBlurUI = nil
+            }
+        }
+    }
+    
+    /// Amount of blur in the background
+    public var backgroundBlurRadius: CGFloat = 5
+    
+    /// Contains the UI with the blur
+    private var backgroundBlurUI: UIView? {
+        didSet {
+            if self.backgroundBlurUI != nil
+            {print("I was created")} else {print("I was destroyed")}
+        }
+    }
+    
     // MARK: Init
     
     public init(title: String, message: String?, preset: SPAlertPreset) {
         super.init(frame: CGRect.zero)
-        self.foregroundColor = self.foregroundColorDefault
         
         iconView = preset.iconView
         layout = preset.layout
@@ -139,7 +187,6 @@ open class SPAlertView: UIView {
     
     public init(title: String, message: String?, icon view: UIView) {
         super.init(frame: CGRect.zero)
-        self.foregroundColor = self.foregroundColorDefault
         
         iconView = view
         titleLabel = UILabel()
@@ -153,7 +200,6 @@ open class SPAlertView: UIView {
     
     public init(title: String, message: String?, image: UIImage) {
         super.init(frame: CGRect.zero)
-        self.foregroundColor = self.foregroundColorDefault
         
         iconView = UIImageView(image: image.withRenderingMode(.alwaysTemplate))
         iconView?.contentMode = .scaleAspectFit
@@ -168,7 +214,6 @@ open class SPAlertView: UIView {
     
     public init(message: String) {
         super.init(frame: CGRect.zero)
-        self.foregroundColor = self.foregroundColorDefault
         
         subtitleLabel = UILabel()
         subtitleLabel?.text = message
@@ -178,10 +223,15 @@ open class SPAlertView: UIView {
     /**
      Display an alert with an activity indicator and a subtitle underneath.
      */
-    public convenience init(loadingMessage: String, timeout: Double? = nil) {
+    public convenience init(loadingMessage: String, blurBackground: Bool = true, timeout: Double? = nil) {
         self.init(message: loadingMessage)
         
         duration = timeout
+        self.blurBackground = blurBackground // During loading the best practice is to blur the background, none the less, this can be disabled
+        // During the init phase the `willSet` is not available so we must initialize manually
+        if blurBackground {
+            self.backgroundBlurUI = SPAlertBlurBackground.init(keyWindow: self.keyWindow, withRadius: self.backgroundBlurRadius)
+        }
         
         // we override the subtitle label's font weight
         subtitleLabel!.font = .boldSystemFont(ofSize: subtitleLabel!.font.pointSize)
@@ -209,6 +259,7 @@ open class SPAlertView: UIView {
     }
     
     private func commonInit() {
+        self.foregroundColor = self.foregroundColorDefault /// Gives the default colors to the foreground color
         backgroundColor = .clear
         layer.masksToBounds = true
         layer.cornerRadius = 8
@@ -239,6 +290,7 @@ open class SPAlertView: UIView {
             style.lineSpacing = 3
             style.alignment = .center
             titleLabel.attributedText = NSAttributedString(string: titleLabel.text ?? "", attributes: [.paragraphStyle: style])
+            self.titleLabel = titleLabel /// Updates the stored property with the new properties
             addSubview(titleLabel)
         }
         
@@ -249,6 +301,7 @@ open class SPAlertView: UIView {
             style.lineSpacing = 2
             style.alignment = .center
             subtitleLabel.attributedText = NSAttributedString(string: subtitleLabel.text ?? "", attributes: [.paragraphStyle: style])
+            self.subtitleLabel = subtitleLabel /// Updates the stored property with the new properties
             addSubview(subtitleLabel)
         }
         
