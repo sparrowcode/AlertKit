@@ -144,8 +144,8 @@ open class SPAlertView: UIView {
             return UIColor(red: 88/255, green: 87/255, blue: 88/255, alpha: 1)
         }
     }
-
-    /// Enables the blur of the background, it creates the blur UI when set to true and destroys when set to false
+    
+    /// Blurs the background
     public var blurBackground: Bool = false {
         willSet {
             if newValue {
@@ -161,13 +161,8 @@ open class SPAlertView: UIView {
     public var backgroundBlurRadius: CGFloat = 5
     
     /// Contains the UI with the blur
-    private var backgroundBlurUI: UIView? {
-        didSet {
-            if self.backgroundBlurUI != nil
-            {print("I was created")} else {print("I was destroyed")}
-        }
-    }
-    
+    private var backgroundBlurUI: UIView?
+
     // MARK: Init
     
     public init(title: String, message: String?, preset: SPAlertPreset) {
@@ -225,16 +220,15 @@ open class SPAlertView: UIView {
      */
     public convenience init(loadingMessage: String, blurBackground: Bool = true, timeout: Double? = nil) {
         self.init(message: loadingMessage)
-        
         duration = timeout
+        
         self.blurBackground = blurBackground // During loading the best practice is to blur the background, none the less, this can be disabled
-        // During the init phase the `willSet` is not available so we must initialize manually
         if blurBackground {
             self.backgroundBlurUI = SPAlertBlurBackground.init(keyWindow: self.keyWindow, withRadius: self.backgroundBlurRadius)
         }
-        
+
         // we override the subtitle label's font weight
-        subtitleLabel!.font = .boldSystemFont(ofSize: subtitleLabel!.font.pointSize)
+        subtitleLabel!.font = .boldSystemFont(ofSize: 22)
 
         activityView = {
             if #available(iOS 13.0, *) {
@@ -251,6 +245,7 @@ open class SPAlertView: UIView {
         }
 
         addSubview(activityView!)
+        
     }
     
     public required init?(coder aDecoder: NSCoder) {
@@ -258,15 +253,19 @@ open class SPAlertView: UIView {
         commonInit()
     }
     
+    func clearViews() {
+        subviews.forEach({ $0.removeFromSuperview() })
+    }
+    
     private func commonInit() {
-        self.foregroundColor = self.foregroundColorDefault /// Gives the default colors to the foreground color
+        self.foregroundColor = self.foregroundColorDefault
         backgroundColor = .clear
         layer.masksToBounds = true
         layer.cornerRadius = 8
         
         backgroundView = {
             if #available(iOS 12.0, *) {
-                return UIVisualEffectView(effect: UIBlurEffect(style: isDarkMode ? .dark : .extraLight))
+                return UIVisualEffectView(effect: UIBlurEffect(style: isDarkMode ? .light : .dark))
             } else {
                 return UIVisualEffectView(effect: UIBlurEffect(style: .extraLight))
             }
@@ -290,7 +289,7 @@ open class SPAlertView: UIView {
             style.lineSpacing = 3
             style.alignment = .center
             titleLabel.attributedText = NSAttributedString(string: titleLabel.text ?? "", attributes: [.paragraphStyle: style])
-            self.titleLabel = titleLabel /// Updates the stored property with the new properties
+            self.titleLabel = titleLabel
             addSubview(titleLabel)
         }
         
@@ -301,13 +300,14 @@ open class SPAlertView: UIView {
             style.lineSpacing = 2
             style.alignment = .center
             subtitleLabel.attributedText = NSAttributedString(string: subtitleLabel.text ?? "", attributes: [.paragraphStyle: style])
-            self.subtitleLabel = subtitleLabel /// Updates the stored property with the new properties
+            self.subtitleLabel = subtitleLabel
             addSubview(subtitleLabel)
         }
         
-        iconView?.tintColor = foregroundColor
-        titleLabel?.textColor = foregroundColor
-        subtitleLabel?.textColor = foregroundColor
+        
+        self.iconView?.tintColor = self.foregroundColor
+        self.titleLabel?.textColor = self.foregroundColor
+        self.subtitleLabel?.textColor = self.foregroundColor
     }
     
     // MARK: Public
@@ -317,6 +317,9 @@ open class SPAlertView: UIView {
      */
     public func present() {
         haptic.impact()
+        if blurBackground {
+            keyWindow.addSubview(backgroundBlurUI!)
+        }
         keyWindow.addSubview(self)
         layoutIfNeeded()
         layoutSubviews()
@@ -356,6 +359,7 @@ open class SPAlertView: UIView {
             self.alpha = 0
             self.transform = self.transform.scaledBy(x: 0.8, y: 0.8)
         }, completion: { finished in
+            self.backgroundBlurUI?.removeFromSuperview()
             self.removeFromSuperview()
         })
     }
