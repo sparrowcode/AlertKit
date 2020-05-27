@@ -76,8 +76,21 @@ open class SPAlertView: UIView {
     
     /**
      View on which present alert.
+     The verification will supress the depriciated in macOS Catalyst and future versions of iOS and iPadOS
      */
-    public var keyWindow: UIView = (UIApplication.shared.keyWindow ?? UIWindow())
+    public var keyWindow: UIView {
+        if #available(iOS 13, macCatalyst 13, *) {
+            return UIApplication.shared.connectedScenes
+                .filter({$0.activationState == .foregroundActive})
+                .map({$0 as? UIWindowScene})
+                .compactMap({$0})
+                .first?.windows
+                .filter({$0.isKeyWindow}).first ?? UIWindow()
+        } else {
+            return (UIApplication.shared.keyWindow ?? UIWindow())
+        }
+    }
+    
 
     /**
      Set the alert width (the default value is __250 points__).
