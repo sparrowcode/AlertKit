@@ -34,12 +34,9 @@ And more:
     <img src="https://github.com/ivanvorobei/SPAlert/blob/master/Assets/Readme/Miniature%20-%20Repeat.svg" width="50">
 </p>
 
-If you like the project, please do not forget to `star ★` this repository and follow me on GitHub. To help out with the project, see the [Сooperation](#сooperation) section.
+If you like the project, don't forget to `put star ★` and follow me on GitHub:
 
-For an example of this plugin in use, check this app: _Debts - Spending tracker_ for [iOS](https://itunes.apple.com/app/id1446635818) and [macOS](https://apps.apple.com/app/id1496914334). You can buy source code this apps in my store for iOS developers:
-
-[![xcode-shop.com](https://github.com/ivanvorobei/SPPermissions/blob/master/Assets/Buttons/xcode-shop.svg)](https://xcode-shop.com)
-[![https://github.com/ivanvorobei](https://github.com/ivanvorobei/SPPermissions/blob/master/Assets/Buttons/follow-me-on-github.svg)](https://github.com/ivanvorobei)
+[![https://github.com/ivanvorobei](https://github.com/ivanvorobei/Assets/blob/master/Buttons/follow-me-on-github.svg)](https://github.com/ivanvorobei)
 
 ## Navigate
 
@@ -57,7 +54,8 @@ For an example of this plugin in use, check this app: _Debts - Spending tracker_
     - [Dismiss by Tap](#dismiss-by-tap)
     - [Haptic](#haptic)   
     - [Corner Radius](#corner-radius)
-- [Сooperation](#сooperation)
+- [Other Projects](#other-projects)
+- [Russian Community](#russian-community)
 - [License](#license)
 
 ## Requirements
@@ -183,12 +181,24 @@ You can change the corner radius by setting the `cornerRadius` property:
 alertView.layer.cornerRadius = 40
 ```
 
-## Сooperation
+## Other Projects
 
-This project is free to use, but developing it takes time. Contributing to this project is a huge help. Here is list of tasks that need to be done:
+#### [SPPermissions](https://github.com/ivanvorobei/SPPermissions)
+Allow request permissions with native dialog UI and interactive animations. Also you can request permissions without dialog. Check state any permission. You can start using this project with just two lines of code and easy customisation.
 
-- Add documentation in the source files (description of public methods and parameters). 
-- Help me translate my app [Debts - Spending tracker](https://itunes.apple.com/app/id1446635818) for other languages. 
+#### [SPAlert](https://github.com/ivanvorobei/SPAlert)
+It is popup from Apple Music & Feedback in AppStore. Contains Done & Heart presets. Done present with draw path animation. I clone Apple's alerts as much as possible.
+You can find this alerts in AppStore after feedback, after added song to library in Apple Music. I am also add alert without icon, as simple message.
+
+#### [SPDiffable](https://github.com/ivanvorobei/SPDiffable)
+Apple's diffable API requerid models for each object type. If you want use it in many place, you pass many time to implemenet and get over duplicates codes. This project help you do it elegant with shared models and special cell providers for one-usage models.
+
+## Russian Community
+
+Присоединяйтесь в телеграм канал [Код Воробья](https://sparrowcode.ivanvorobei.by/telegram), там найдете заметки о iOS разработке и дизайне.
+Большие туториалы выклыдываю на [YouTube](https://sparrowcode.ivanvorobei.by/youtube).
+
+[![Tutorials on YouTube](https://github.com/ivanvorobei/Assets/blob/master/Russian%20Community/youtube-preview.png)](https://sparrowcode.ivanvorobei.by/youtube)
 
 ## License
 
