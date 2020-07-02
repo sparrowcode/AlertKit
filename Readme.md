@@ -54,7 +54,6 @@ If you like the project, don't forget to `put star ★` and follow me on GitHub:
     - [Dismiss by Tap](#dismiss-by-tap)
     - [Haptic](#haptic)   
     - [Corner Radius](#corner-radius)
-- [License](#license)
 - [Other Projects](#other-projects)
 - [Russian Community](#russian-community)
 
@@ -180,10 +179,6 @@ You can change the corner radius by setting the `cornerRadius` property:
 ```swift
 alertView.layer.cornerRadius = 40
 ```
-
-## License
-
-`SPAlert` is released under the MIT license. Check `LICENSE.md` for details.
 
 ## Other Projects
 
