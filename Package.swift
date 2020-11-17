@@ -1,4 +1,4 @@
-// swift-tools-version:5.1
+// swift-tools-version:5.3
 
 import PackageDescription
 
@@ -14,3 +14,4 @@ let package = Package(
         .target(name: "SPAlert")
     ]
 )
+
