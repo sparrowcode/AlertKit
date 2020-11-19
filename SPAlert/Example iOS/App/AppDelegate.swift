@@ -23,15 +23,11 @@ import UIKit
 import SparrowKit
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
-    
-    var window: UIWindow?
+class AppDelegate: SPAppWindowDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        let frame = UIScreen.main.bounds
-        window = UIWindow(frame: frame)
-        window?.rootViewController = UINavigationController(rootViewController: UIViewController())
-        window?.makeKeyAndVisible()
+        let rootController = PresetsController().wrapToNavigationController(prefersLargeTitles: false)
+        makeKeyAndVisible(rootController)
         return true
     }
 }

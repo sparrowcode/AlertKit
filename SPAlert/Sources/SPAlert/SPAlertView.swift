@@ -23,9 +23,7 @@ import UIKit
 
 open class SPAlertView: UIView {
     
-    // MARK: - Properties
-    
-    open var dismissByTap: Bool = true
+    // MARK: - Views
     
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
@@ -50,6 +48,10 @@ open class SPAlertView: UIView {
         view.isUserInteractionEnabled = false
         return view
     }()
+    
+    // MARK: - Properties
+    
+    open var dismissByTap: Bool = true
     
     // MARK: - Initializers
     

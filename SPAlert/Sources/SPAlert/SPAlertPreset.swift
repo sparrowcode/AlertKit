@@ -21,10 +21,16 @@
 
 import UIKit
 
-public enum SPAlertPreset {
+public enum SPAlertPreset: CaseIterable {
     
     case done
     case heart
     
     case custom(_ image: UIImage)
+    
+    // MARK: - CaseIterable
+    
+    public static var allCases: [SPAlertPreset] {
+        return [.done, .heart]
+    }
 }
