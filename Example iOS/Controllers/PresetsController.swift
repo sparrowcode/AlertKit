@@ -17,6 +17,18 @@ class PresetsController: SPDiffableTableController {
         super.viewDidLoad()
         navigationItem.title = "SPAlert Presets"
         setCellProviders(SPDiffableTableCellProviders.default, sections: content)
+        
+        navigationController?.isToolbarHidden = false
+        toolbarItems = [
+            .init(image: .system("chevron.down.circle.fill"), primaryAction: .init(handler: { (action) in
+                #warning("doing next switch")
+            })),
+            .init(barButtonSystemItem: .flexibleSpace, target: nil, action: nil),
+            .init(systemItem: .play, primaryAction: .init(handler: { (action) in
+                SPAlert.present(title: "Test", preset: .done)
+            }), menu: nil),
+            .init(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        ]
     }
     
     fileprivate var presets: [AlertPreset] {
