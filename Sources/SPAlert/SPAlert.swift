@@ -23,7 +23,7 @@ import UIKit
 
 public enum SPAlert {
     
-    public static func present(title: String, message: String? = nil, preset: SPAlertPreset, completion: (() -> Void)? = nil) {
+    public static func present(title: String, message: String? = nil, preset: SPAlertIconPreset, completion: (() -> Void)? = nil) {
         let alertView = SPAlertView(title: title, message: message, preset: preset)
         alertView.present(completion: completion)
     }

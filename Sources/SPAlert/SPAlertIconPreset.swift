@@ -21,7 +21,7 @@
 
 import UIKit
 
-public enum SPAlertPreset: CaseIterable {
+public enum SPAlertIconPreset: CaseIterable {
     
     case done
     case heart
@@ -30,7 +30,12 @@ public enum SPAlertPreset: CaseIterable {
     
     // MARK: - CaseIterable
     
-    public static var allCases: [SPAlertPreset] {
+    public static var allCases: [SPAlertIconPreset] {
         return [.done, .heart]
     }
+}
+
+extension SPAlertLayout {
+    
+    
 }

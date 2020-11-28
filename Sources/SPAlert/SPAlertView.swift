@@ -25,15 +25,9 @@ open class SPAlertView: UIView {
     
     // MARK: - Views
     
-    private lazy var titleLabel: UILabel = {
-        let label = UILabel()
-        return label
-    }()
+    private var titleLabel: UILabel?
     
-    private lazy var subtitleLabel: UILabel = {
-        let label = UILabel()
-        return label
-    }()
+    private var subtitleLabel: UILabel?
     
     private var iconView: UIView?
     
@@ -49,29 +43,26 @@ open class SPAlertView: UIView {
         return view
     }()
     
+    weak open var presentWindow: UIWindow? = UIApplication.shared.windows.first
+    
     // MARK: - Properties
     
     open var dismissByTap: Bool = true
     
     // MARK: - Initializers
     
-    public init(title: String, message: String?, preset: SPAlertPreset) {
+    public init(title: String, message: String?, preset: SPAlertIconPreset) {
         super.init(frame: CGRect.zero)
-        commonInit()
-    }
-    
-    public init(title: String, message: String?, icon view: UIView) {
-        super.init(frame: CGRect.zero)
-        commonInit()
-    }
-    
-    public init(title: String, message: String?, image: UIImage) {
-        super.init(frame: CGRect.zero)
+        setTitle(title)
+        if let message = message {
+            setMessage(message)
+        }
         commonInit()
     }
     
     public init(message: String) {
         super.init(frame: CGRect.zero)
+        setMessage(message)
         commonInit()
     }
     
@@ -80,15 +71,97 @@ open class SPAlertView: UIView {
         commonInit()
     }
     
+    // MARK: Configure
+    
+    private func setTitle(_ text: String) {
+        let label = UILabel()
+        label.font = UIFont.boldSystemFont(ofSize: 22)
+        label.numberOfLines = 0
+        let style = NSMutableParagraphStyle()
+        style.lineSpacing = 3
+        style.alignment = .center
+        label.attributedText = NSAttributedString(string: text, attributes: [.paragraphStyle: style])
+        titleLabel = label
+    }
+    
+    private func setMessage(_ text: String) {
+        let label = UILabel()
+        label.font = UIFont.systemFont(ofSize: 16)
+        label.numberOfLines = 0
+        let style = NSMutableParagraphStyle()
+        style.lineSpacing = 2
+        style.alignment = .center
+        label.attributedText = NSAttributedString(string: text, attributes: [.paragraphStyle: style])
+        subtitleLabel = label
+    }
+    
     func commonInit() {
         layer.masksToBounds = true
         layer.cornerRadius = 8
         backgroundColor = .clear
+        addSubview(backgroundView)
+        
+        [titleLabel, subtitleLabel, iconView].forEach({
+            if let view = $0 {
+                addSubview(view)
+            }
+        })
     }
     
     // MARK: - Present
     
+    fileprivate var presentDismissDuration: TimeInterval = 0.2
+    fileprivate var presentDismissScale: CGFloat = 0.8
+    
     open func present(duration: TimeInterval = 1.5, haptic: SPAlertHaptic = .success, completion: (() -> Void)? = nil) {
+        guard let window = self.presentWindow else { return }
+        window.addSubview(self)
         
+        // Prepare for present
+        alpha = 0
+        layout()
+        transform = transform.scaledBy(x: self.presentDismissScale, y: self.presentDismissScale)
+        
+        UIView.animate(withDuration: presentDismissDuration, animations: {
+            self.alpha = 1
+            self.transform = CGAffineTransform.identity
+        }, completion: { finished in
+            /*if let iconView = self.iconView as? SPAlertIconAnimatable {
+                iconView.animate()
+            }*/
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + duration) {
+                self.dismiss()
+            }
+        })
+    }
+    
+    open func dismiss() {
+        UIView.animate(withDuration: presentDismissDuration, animations: {
+            self.alpha = 0
+            self.transform = self.transform.scaledBy(x: self.presentDismissScale, y: self.presentDismissScale)
+        }, completion: { finished in
+            self.removeFromSuperview()
+        })
+    }
+    
+    // MARK: - Layout
+    
+    //private var layout: SPAlertLayout
+    
+    fileprivate func layout() {
+        guard let window = self.presentWindow else { return }
+        frame = CGRect.init(x: 0, y: 0, width: 250, height: 250)
+        sizeToFit()
+        center = .init(x: window.frame.midX, y: window.frame.midY)
+    }
+    
+    open override func sizeThatFits(_ size: CGSize) -> CGSize {
+        layoutSubviews()
+        return CGSize.init(width: 250, height: 270)
+    }
+    
+    open override func layoutSubviews() {
+        super.layoutSubviews()
+        backgroundView.frame = bounds
     }
 }
