@@ -27,39 +27,9 @@ open class SPAlertLayout {
     var margins: UIEdgeInsets
     var spaceBetweenIconAndTitle: CGFloat
     
-    init() {
-        iconSize = .init(width: 100, height: 100)
-        margins = .init(top: 43, left: 16, bottom: 25, right: 16)
-        spaceBetweenIconAndTitle = 41
-    }
-    
     init(iconSize: CGSize, margins: UIEdgeInsets, spaceBetweenIconAndTitle: CGFloat) {
         self.iconSize = iconSize
         self.margins = margins
         self.spaceBetweenIconAndTitle = spaceBetweenIconAndTitle
-    }
-}
-
-public extension SPAlertLayout {
-    
-    private static var defaultHorizontalInset: CGFloat { return 16 }
-    
-    convenience init(preset: SPAlertIconPreset) {
-        switch preset {
-        case .done:
-            self.init(
-                iconSize: .init(width: 112, height: 112),
-                margins: .init(top: 63, left: Self.defaultHorizontalInset, bottom: 29, right: Self.defaultHorizontalInset),
-                spaceBetweenIconAndTitle: 35
-            )
-        case .heart:
-            self.init(
-                iconSize: .init(width: 112, height: 77),
-                margins: .init(top: 49, left: Self.defaultHorizontalInset, bottom: 25, right: Self.defaultHorizontalInset),
-                spaceBetweenIconAndTitle: 35
-            )
-        default:
-            self.init()
-        }
     }
 }
