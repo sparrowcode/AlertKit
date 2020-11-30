@@ -35,7 +35,30 @@ public enum SPAlertIconPreset: CaseIterable {
     }
 }
 
-extension SPAlertLayout {
+public extension SPAlertLayout {
     
+    convenience init() {
+        self.init(iconSize: .init(width: 100, height: 100), margins: .init(top: 43, left: 16, bottom: 25, right: 16), spaceBetweenIconAndTitle: 41)
+    }
     
+    convenience init(for preset: SPAlertIconPreset) {
+        switch preset {
+        case .done:
+            self.init(
+                iconSize: .init(width: 112, height: 112),
+                margins: .init(top: 63, left: Self.defaultHorizontalInset, bottom: 29, right: Self.defaultHorizontalInset),
+                spaceBetweenIconAndTitle: 35
+            )
+        case .heart:
+            self.init(
+                iconSize: .init(width: 112, height: 77),
+                margins: .init(top: 49, left: Self.defaultHorizontalInset, bottom: 25, right: Self.defaultHorizontalInset),
+                spaceBetweenIconAndTitle: 35
+            )
+        default:
+            self.init()
+        }
+    }
+    
+    private static var defaultHorizontalInset: CGFloat { return 16 }
 }

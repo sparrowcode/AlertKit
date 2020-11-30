@@ -53,17 +53,19 @@ open class SPAlertView: UIView {
     
     public init(title: String, message: String?, preset: SPAlertIconPreset) {
         super.init(frame: CGRect.zero)
+        commonInit()
+        layout = SPAlertLayout(for: preset)
         setTitle(title)
         if let message = message {
             setMessage(message)
         }
-        commonInit()
     }
     
     public init(message: String) {
         super.init(frame: CGRect.zero)
-        setMessage(message)
         commonInit()
+        layout = SPAlertLayout()
+        setMessage(message)
     }
     
     public required init?(coder aDecoder: NSCoder) {
@@ -82,6 +84,7 @@ open class SPAlertView: UIView {
         style.alignment = .center
         label.attributedText = NSAttributedString(string: text, attributes: [.paragraphStyle: style])
         titleLabel = label
+        addSubview(label)
     }
     
     private func setMessage(_ text: String) {
@@ -93,6 +96,7 @@ open class SPAlertView: UIView {
         style.alignment = .center
         label.attributedText = NSAttributedString(string: text, attributes: [.paragraphStyle: style])
         subtitleLabel = label
+        addSubview(label)
     }
     
     func commonInit() {
@@ -100,12 +104,6 @@ open class SPAlertView: UIView {
         layer.cornerRadius = 8
         backgroundColor = .clear
         addSubview(backgroundView)
-        
-        [titleLabel, subtitleLabel, iconView].forEach({
-            if let view = $0 {
-                addSubview(view)
-            }
-        })
     }
     
     // MARK: - Present
@@ -118,17 +116,20 @@ open class SPAlertView: UIView {
         window.addSubview(self)
         
         // Prepare for present
+        
         alpha = 0
-        layout()
+        setFrame()
         transform = transform.scaledBy(x: self.presentDismissScale, y: self.presentDismissScale)
+        
+        // Present
         
         UIView.animate(withDuration: presentDismissDuration, animations: {
             self.alpha = 1
             self.transform = CGAffineTransform.identity
         }, completion: { finished in
             /*if let iconView = self.iconView as? SPAlertIconAnimatable {
-                iconView.animate()
-            }*/
+             iconView.animate()
+             }*/
             DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + duration) {
                 self.dismiss()
             }
@@ -146,13 +147,14 @@ open class SPAlertView: UIView {
     
     // MARK: - Layout
     
-    //private var layout: SPAlertLayout
+    open var layout: SPAlertLayout = .init()
     
-    fileprivate func layout() {
+    fileprivate func setFrame() {
         guard let window = self.presentWindow else { return }
         frame = CGRect.init(x: 0, y: 0, width: 250, height: 250)
         sizeToFit()
         center = .init(x: window.frame.midX, y: window.frame.midY)
+        layoutMargins = layout.margins
     }
     
     open override func sizeThatFits(_ size: CGSize) -> CGSize {
