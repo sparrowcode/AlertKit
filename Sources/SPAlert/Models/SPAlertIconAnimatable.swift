@@ -21,28 +21,7 @@
 
 import UIKit
 
-/*
- TODO:
- 1. Will add dimiss mode with hide all previus alerts.
- And method with competion for it call manually.
- 
- 2. Colorise for icon.
- */
-public enum SPAlert {
+public protocol SPAlertIconAnimatable {
     
-    public static func present(title: String, message: String? = nil, preset: SPAlertIconPreset, completion: (() -> Void)? = nil) {
-        let alertView = SPAlertView(title: title, message: message, preset: preset)
-        alertView.present(completion: completion)
-    }
-    
-    public static func present(message: String, haptic: SPAlertHaptic, completion: (() -> Void)? = nil) {
-        let alertView = SPAlertView(message: message)
-        alertView.present(haptic: haptic, completion: completion)
-    }
-    
-    @available(*, deprecated, message: "For present with custom image use preset `.custom(UIImage)`")
-    public static func present(title: String, message: String? = nil, image: UIImage, haptic: SPAlertHaptic, completion: (() -> Void)? = nil) {
-        let alertView = SPAlertView(title: title, message: message, preset: .custom(image))
-        alertView.present(haptic: haptic, completion: completion)
-    } 
+    func animate()
 }

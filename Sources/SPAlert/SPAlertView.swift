@@ -59,6 +59,7 @@ open class SPAlertView: UIView {
         if let message = message {
             setMessage(message)
         }
+        setIcon(for: preset)
     }
     
     public init(message: String) {
@@ -99,6 +100,12 @@ open class SPAlertView: UIView {
         addSubview(label)
     }
     
+    private func setIcon(for preset: SPAlertIconPreset) {
+        let view = preset.createView()
+        self.iconView = view
+        addSubview(view)
+    }
+    
     func commonInit() {
         layer.masksToBounds = true
         layer.cornerRadius = 8
@@ -127,9 +134,9 @@ open class SPAlertView: UIView {
             self.alpha = 1
             self.transform = CGAffineTransform.identity
         }, completion: { finished in
-            /*if let iconView = self.iconView as? SPAlertIconAnimatable {
-             iconView.animate()
-             }*/
+            if let iconView = self.iconView as? SPAlertIconAnimatable {
+                iconView.animate()
+            }
             DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + duration) {
                 self.dismiss()
             }
@@ -152,18 +159,52 @@ open class SPAlertView: UIView {
     fileprivate func setFrame() {
         guard let window = self.presentWindow else { return }
         frame = CGRect.init(x: 0, y: 0, width: 250, height: 250)
+        layoutMargins = layout.margins
         sizeToFit()
         center = .init(x: window.frame.midX, y: window.frame.midY)
-        layoutMargins = layout.margins
     }
     
     open override func sizeThatFits(_ size: CGSize) -> CGSize {
         layoutSubviews()
-        return CGSize.init(width: 250, height: 270)
+        let bottomY = [subtitleLabel, titleLabel, iconView].first(where: { $0 != nil })??.frame.maxY ?? 150
+        return CGSize.init(width: 250, height: bottomY + layoutMargins.bottom)
     }
     
     open override func layoutSubviews() {
         super.layoutSubviews()
         backgroundView.frame = bounds
+        if let iconView = self.iconView {
+            iconView.frame = .init(origin: .init(x: 0, y: 63), size: layout.iconSize)
+            iconView.center.x = bounds.midX
+        }
+        if let titleLabel = self.titleLabel {
+            layout(
+                label: titleLabel,
+                x: layoutMargins.left,
+                y: iconView == nil ? layoutMargins.top : (iconView?.frame.maxY ?? 0) + layout.spaceBetweenIconAndTitle,
+                width: frame.width - layoutMargins.left - layoutMargins.right
+            )
+        }
+        if let subtitleLabel = self.subtitleLabel {
+            let yPosition: CGFloat = {
+                if let titleLabel = self.titleLabel {
+                    return titleLabel.frame.maxY + 4
+                } else {
+                    return layoutMargins.top
+                }
+            }()
+            layout(
+                label: subtitleLabel,
+                x: layoutMargins.left,
+                y: yPosition,
+                width: frame.width - layoutMargins.left - layoutMargins.right
+            )
+        }
+    }
+    
+    private func layout(label: UILabel, x: CGFloat, y: CGFloat,  width: CGFloat) {
+        label.frame = .init(x: x, y: y, width: width, height: label.frame.height)
+        label.sizeToFit()
+        label.frame = .init(x: x, y: y, width: width, height: label.frame.height)
     }
 }

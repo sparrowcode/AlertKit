@@ -35,6 +35,20 @@ public enum SPAlertIconPreset: CaseIterable {
     }
 }
 
+public extension SPAlertIconPreset {
+    
+    func createView() -> UIView {
+        switch self {
+        case .done: return SPAlertIconDoneView()
+        case .heart: return SPAlertIconDoneView()
+        case .custom(let image):
+            let imageView = UIImageView(image: image)
+            imageView.contentMode = .scaleAspectFit
+            return imageView
+        }
+    }
+}
+
 public extension SPAlertLayout {
     
     convenience init() {
