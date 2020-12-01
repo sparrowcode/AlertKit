@@ -38,7 +38,7 @@ class PresetsController: SPDiffableTableController {
             })),
             .init(barButtonSystemItem: .flexibleSpace, target: nil, action: nil),
             .init(systemItem: .play, primaryAction: .init(handler: { (action) in
-                SPAlert.present(title: "Test", preset: .done)
+                SPAlert.present(title: "Test", message: "Message here", preset: .done)
             }), menu: nil),
             .init(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
         ]
