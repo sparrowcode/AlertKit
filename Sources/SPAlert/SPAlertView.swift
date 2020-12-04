@@ -107,6 +107,8 @@ open class SPAlertView: UIView {
     }
     
     func commonInit() {
+        preservesSuperviewLayoutMargins = false
+        insetsLayoutMarginsFromSafeArea = false
         layer.masksToBounds = true
         layer.cornerRadius = 8
         backgroundColor = .clear
@@ -118,11 +120,30 @@ open class SPAlertView: UIView {
     fileprivate var presentDismissDuration: TimeInterval = 0.2
     fileprivate var presentDismissScale: CGFloat = 0.8
     
+    fileprivate var defaultContentColor: UIColor {
+        let darkColor = UIColor(red: 127 / 255, green: 127 / 255, blue: 129 / 255, alpha: 1)
+        let lightColor = UIColor(red: 88 / 255, green: 87 / 255, blue: 88 / 255, alpha: 1)
+        guard let interfaceStyle = self.window?.traitCollection.userInterfaceStyle else {
+            return lightColor
+        }
+        switch interfaceStyle {
+        case .light: return lightColor
+        case .dark: return darkColor
+        case .unspecified: return lightColor
+        @unknown default: return lightColor
+        }
+    }
+    
     open func present(duration: TimeInterval = 1.5, haptic: SPAlertHaptic = .success, completion: (() -> Void)? = nil) {
         guard let window = self.presentWindow else { return }
         window.addSubview(self)
         
         // Prepare for present
+        
+        let contentСolor = defaultContentColor
+        titleLabel?.textColor = contentСolor
+        subtitleLabel?.textColor = contentСolor
+        iconView?.tintColor = contentСolor
         
         alpha = 0
         setFrame()
@@ -158,7 +179,8 @@ open class SPAlertView: UIView {
     
     fileprivate func setFrame() {
         guard let window = self.presentWindow else { return }
-        frame = CGRect.init(x: 0, y: 0, width: 250, height: 250)
+        frame = CGRect.init(x: 0, y: 0, width: 250, height: 100)
+        center = .init(x: window.frame.midX, y: window.frame.midY)
         layoutMargins = layout.margins
         sizeToFit()
         center = .init(x: window.frame.midX, y: window.frame.midY)
@@ -167,14 +189,14 @@ open class SPAlertView: UIView {
     open override func sizeThatFits(_ size: CGSize) -> CGSize {
         layoutSubviews()
         let bottomY = [subtitleLabel, titleLabel, iconView].first(where: { $0 != nil })??.frame.maxY ?? 150
-        return CGSize.init(width: 250, height: bottomY + layoutMargins.bottom)
+        return CGSize.init(width: frame.width, height: bottomY + layoutMargins.bottom)
     }
     
     open override func layoutSubviews() {
         super.layoutSubviews()
         backgroundView.frame = bounds
         if let iconView = self.iconView {
-            iconView.frame = .init(origin: .init(x: 0, y: 63), size: layout.iconSize)
+            iconView.frame = .init(origin: .init(x: 0, y: layoutMargins.top), size: layout.iconSize)
             iconView.center.x = bounds.midX
         }
         if let titleLabel = self.titleLabel {

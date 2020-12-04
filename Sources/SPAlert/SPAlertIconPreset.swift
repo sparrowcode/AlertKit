@@ -24,6 +24,7 @@ import UIKit
 public enum SPAlertIconPreset: CaseIterable {
     
     case done
+    case error
     case heart
     
     case custom(_ image: UIImage)
@@ -40,7 +41,8 @@ public extension SPAlertIconPreset {
     func createView() -> UIView {
         switch self {
         case .done: return SPAlertIconDoneView()
-        case .heart: return SPAlertIconDoneView()
+        case .error: return SPAlertIconErrorView()
+        case .heart: return SPAlertIconHeartView()
         case .custom(let image):
             let imageView = UIImageView(image: image)
             imageView.contentMode = .scaleAspectFit
@@ -59,18 +61,60 @@ public extension SPAlertLayout {
         switch preset {
         case .done:
             self.init(
-                iconSize: .init(width: 112, height: 112),
-                margins: .init(top: 63, left: Self.defaultHorizontalInset, bottom: 29, right: Self.defaultHorizontalInset),
+                iconSize: .init(
+                    width: 112,
+                    height: 112
+                ),
+                margins: .init(
+                    top: 63,
+                    left: Self.defaultHorizontalInset,
+                    bottom: 29,
+                    right: Self.defaultHorizontalInset
+                ),
                 spaceBetweenIconAndTitle: 35
             )
         case .heart:
             self.init(
-                iconSize: .init(width: 112, height: 77),
-                margins: .init(top: 49, left: Self.defaultHorizontalInset, bottom: 25, right: Self.defaultHorizontalInset),
+                iconSize: .init(
+                    width: 112,
+                    height: 77
+                ),
+                margins: .init(
+                    top: 49,
+                    left: Self.defaultHorizontalInset,
+                    bottom: 25,
+                    right: Self.defaultHorizontalInset
+                ),
                 spaceBetweenIconAndTitle: 35
             )
-        default:
-            self.init()
+        case .error:
+            self.init(
+                iconSize: .init(
+                    width: 86,
+                    height: 86
+                ),
+                margins: .init(
+                    top: 63,
+                    left: Self.defaultHorizontalInset,
+                    bottom: 29,
+                    right: Self.defaultHorizontalInset
+                ),
+                spaceBetweenIconAndTitle: 39
+            )
+        case .custom(_):
+            self.init(
+                iconSize: .init(
+                    width: 100,
+                    height: 100
+                ),
+                margins: .init(
+                    top: 43,
+                    left: Self.defaultHorizontalInset,
+                    bottom: 25,
+                    right: Self.defaultHorizontalInset
+                ),
+                spaceBetweenIconAndTitle: 35
+            )
         }
     }
     
