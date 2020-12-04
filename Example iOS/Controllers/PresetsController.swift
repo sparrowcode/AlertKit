@@ -37,10 +37,11 @@ class PresetsController: SPDiffableTableController {
                 }
             })),
             .init(barButtonSystemItem: .flexibleSpace, target: nil, action: nil),
-            .init(systemItem: .play, primaryAction: .init(handler: { (action) in
-                SPAlert.present(title: "Test", message: "Message here", preset: .done)
+            .init(systemItem: .play, primaryAction: .init(handler: { [weak self] (action) in
+                guard let preset = self?.currentPreset else { return }
+                SPAlert.present(title: preset.title, message: preset.message, preset: preset.preset, completion: nil)
             }), menu: nil),
-            .init(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+            .init(barButtonSystemItem: .flexibleSpace, target: nil, action: nil),
         ]
     }
     
@@ -48,8 +49,30 @@ class PresetsController: SPDiffableTableController {
     
     fileprivate var presets: [AlertPreset] {
         return [
-            AlertPreset(name: "Done", preset: .done),
-            AlertPreset(name: "Heart", preset: .heart)
+            AlertPreset(
+                name: "Done",
+                title: "Added to Library",
+                message: nil,
+                preset: .done
+            ),
+            AlertPreset(
+                name: "Error",
+                title: "Oops",
+                message: "Please try again later",
+                preset: .error
+            ),
+            AlertPreset(
+                name: "Heart",
+                title: "Love",
+                message: "We'll recommend more like this for you",
+                preset: .heart
+            ),
+            AlertPreset(
+                name: "Custom Image",
+                title: "Custom Image",
+                message: "Passed UIImage object for preset with style custom.",
+                preset: .custom(UIImage.init(systemName: "cloud.sun.fill")!)
+            ),
         ]
     }
     
