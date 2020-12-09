@@ -57,6 +57,18 @@ open class SPAlertView: UIView {
      */
     public var dismissByTap: Bool = true
     
+    public var titleFont: UIFont = UIFont.boldSystemFont(ofSize: 22) {
+        didSet {
+            self.titleLabel?.font = titleFont
+        }
+    }
+    
+    public var subtitleFont: UIFont = UIFont.systemFont(ofSize: 16) {
+        didSet {
+            self.subtitleLabel?.font = subtitleFont
+        }
+    }
+    
     /**
      Vibro for this alert. Default value using for presets. If you init custom. haptic not configure.
      */
@@ -150,7 +162,7 @@ open class SPAlertView: UIView {
         }
         
         if let titleLabel = titleLabel {
-            titleLabel.font = UIFont.boldSystemFont(ofSize: 22)
+            titleLabel.font = titleFont
             titleLabel.numberOfLines = 0
             let style = NSMutableParagraphStyle()
             style.lineSpacing = 3
@@ -160,7 +172,7 @@ open class SPAlertView: UIView {
         }
         
         if let subtitleLabel = subtitleLabel {
-            subtitleLabel.font = UIFont.systemFont(ofSize: 16)
+            subtitleLabel.font = subtitleFont
             subtitleLabel.numberOfLines = 0
             let style = NSMutableParagraphStyle()
             style.lineSpacing = 2

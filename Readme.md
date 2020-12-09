@@ -180,6 +180,15 @@ You can change the corner radius by setting the `cornerRadius` property:
 alertView.layer.cornerRadius = 40
 ```
 
+### Fonts
+
+You can change title and subtitle fonts by setting the following properies respectively:
+
+```swift
+alertView.titleFont = UIFont(name: "Montserrat-Medium", size: 22)!
+alertView.subtitleFont = UIFont(name: "Montserrat-Regular", size: 16)!
+```
+
 ## Other Projects
 
 #### [SPPermissions](https://github.com/ivanvorobei/SPPermissions)
