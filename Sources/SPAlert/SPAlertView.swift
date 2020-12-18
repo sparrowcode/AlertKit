@@ -1,5 +1,5 @@
 // The MIT License (MIT)
-// Copyright © 2020 Ivan Vorobei (varabeis@icloud.com)
+// Copyright © 2020 Ivan Vorobei (hello@ivanvorobei.by)
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -113,6 +113,11 @@ open class SPAlertView: UIView {
         layer.cornerRadius = 8
         backgroundColor = .clear
         addSubview(backgroundView)
+        
+        if dismissByTap {
+            let tapGesterRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismiss))
+            addGestureRecognizer(tapGesterRecognizer)
+        }
     }
     
     // MARK: - Present
@@ -164,7 +169,8 @@ open class SPAlertView: UIView {
         })
     }
     
-    open func dismiss() {
+    
+    @objc open func dismiss() {
         UIView.animate(withDuration: presentDismissDuration, animations: {
             self.alpha = 0
             self.transform = self.transform.scaledBy(x: self.presentDismissScale, y: self.presentDismissScale)
