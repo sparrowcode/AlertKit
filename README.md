@@ -54,15 +54,15 @@ SPAlert.present(title: "Title", message: "Message", preset: preset)
 ## Navigate
 
 - [Installation](#installation)
-- [Swift Package Manager](#swift-package-manager)
-- [CocoaPods](#cocoapods)
-- [Manually](#manually)
+    - [Swift Package Manager](#swift-package-manager)
+    - [CocoaPods](#cocoapods)
+    - [Manually](#manually)
 - [Quick Start](#quick-start)
 - [Usage](#usage)
-- [Duration](#duration)
-- [Layout](#layout)
-- [Dismiss by Tap](#dismiss-by-tap)
-- [Haptic](#haptic)
+    - [Duration](#duration)
+    - [Layout](#layout)
+    - [Dismiss by Tap](#dismiss-by-tap)
+    - [Haptic](#haptic)
 - [Other Projects](#other-projects)
 - [Russian Community](#russian-community)
 
@@ -161,6 +161,6 @@ Simplifies working with animated changes in table and collections. Apple's diffa
 
 ## Russian-specking Community
 
-В телеграм-канале [Код Воробья](https://ivanvorobei.by/sparrowcode/telegram) пишу о iOS разработке и дизайне. Видео-туториалы выклыдываю на [YouTube](https://ivanvorobei.by/telegram):
+В телеграм-канале [Код Воробья](https://ivanvorobei.by/sparrowcode/telegram) пишу о iOS разработке. Видео-туториалы выклыдываю на [YouTube](https://ivanvorobei.by/telegram):
 
 [![Tutorials on YouTube](https://cdn.ivanvorobei.by/github/readme/youtube-preview.jpg)](https://sparrowcode.by/youtube)
