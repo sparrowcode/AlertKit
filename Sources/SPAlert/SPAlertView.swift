@@ -51,7 +51,7 @@ open class SPAlertView: UIView {
     
     // MARK: - Initializers
     
-    public init(title: String, message: String?, preset: SPAlertIconPreset) {
+    public init(title: String, message: String? = nil, preset: SPAlertIconPreset) {
         super.init(frame: CGRect.zero)
         commonInit()
         layout = SPAlertLayout(for: preset)

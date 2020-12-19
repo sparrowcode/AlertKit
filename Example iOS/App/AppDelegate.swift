@@ -29,5 +29,12 @@ class AppDelegate: SPAppWindowDelegate {
         let rootController = PresetsController().wrapToNavigationController(prefersLargeTitles: false)
         makeKeyAndVisible(rootController)
         return true
+        
+        let alertView = SPAlertView(title: "Complete", preset: .done)
+        alertView.present(duration: 1.5, haptic: .success, completion: nil)
+        
+        alertView.layout.iconSize = .init(width: 24, height: 24)
+        alertView.layout.margins.top = 12
+        alertView.layout.spaceBetweenIconAndTitle = 8
     }
 }
