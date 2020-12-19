@@ -25,22 +25,17 @@ import UIKit
  Represent icon wrapper.
  Included default styles and can be custom image.
  */
-public enum SPAlertIconPreset: CaseIterable {
+public enum SPAlertIconPreset {
     
     case done
     case error
     case heart
     
     case custom(_ image: UIImage)
-    
-    // MARK: - CaseIterable
-    
-    public static var allCases: [SPAlertIconPreset] {
-        return [.done, .heart]
-    }
 }
 
-// Get view by preset.
+// Get view by preset
+
 public extension SPAlertIconPreset {
     
     func createView() -> UIView {
@@ -56,7 +51,8 @@ public extension SPAlertIconPreset {
     }
 }
 
-// Get layout by preset.
+// Get layout by preset
+
 public extension SPAlertLayout {
     
     convenience init() {
