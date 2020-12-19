@@ -20,12 +20,9 @@ You can create more with custom images and [SFSymbols](https://developer.apple.c
 <img src="https://github.com/varabeis/SPAlert/blob/master/Assets/Readme/Miniatures/Like.svg" width="50">
 <img src="https://github.com/varabeis/SPAlert/blob/master/Assets/Readme/Miniatures/Dislike.svg" width="50">
 <img src="https://github.com/varabeis/SPAlert/blob/master/Assets/Readme/Miniatures/Privacy.svg" width="50">
-<img src="https://github.com/varabeis/SPAlert/blob/master/Assets/Readme/Miniatures/Rotate.svg" width="50">
 <img src="https://github.com/varabeis/SPAlert/blob/master/Assets/Readme/Miniatures/Search.svg" width="50">
 <img src="https://github.com/varabeis/SPAlert/blob/master/Assets/Readme/Miniatures/Add.svg" width="50">
 <img src="https://github.com/varabeis/SPAlert/blob/master/Assets/Readme/Miniatures/Error.svg" width="50">
-<img src="https://github.com/varabeis/SPAlert/blob/master/Assets/Readme/Miniatures/Shuffle.svg" width="50">
-<img src="https://github.com/varabeis/SPAlert/blob/master/Assets/Readme/Miniatures/Repeat.svg" width="50">
 </p>
 
 If you like the project, don't forget to `put star ★` and follow me on GitHub:
