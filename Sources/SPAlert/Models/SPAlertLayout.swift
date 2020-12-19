@@ -21,10 +21,24 @@
 
 import UIKit
 
+/**
+ Layout model for alert view.
+ */
 open class SPAlertLayout {
     
+    /**
+     Icon size.
+     */
     var iconSize: CGSize
+    
+    /**
+     Alert margings for each side.
+     */
     var margins: UIEdgeInsets
+    
+    /**
+     Space between icon and title if both available.
+     */
     var spaceBetweenIconAndTitle: CGFloat
     
     init(iconSize: CGSize, margins: UIEdgeInsets, spaceBetweenIconAndTitle: CGFloat) {

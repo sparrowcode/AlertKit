@@ -21,15 +21,27 @@
 
 import UIKit
 
+/**
+ Main view. Can be customisable if need.
+ 
+ For change duration, check method `present` and pass duration and other specific property if need customise.
+ 
+ Here available set window on which shoud be present.
+ If you have some windows, you shoud configure it. Check property `presentWindow`.
+ 
+ For disable dismiss by tap, check property `.dismissByTap`.
+ 
+ Recomended call `SPAlert` and choose style func.
+ */
 open class SPAlertView: UIView {
     
     // MARK: - Views
     
-    private var titleLabel: UILabel?
+    open var titleLabel: UILabel?
     
-    private var subtitleLabel: UILabel?
+    open var subtitleLabel: UILabel?
     
-    private var iconView: UIView?
+    open var iconView: UIView?
     
     private lazy var backgroundView: UIVisualEffectView = {
         let view: UIVisualEffectView = {
@@ -106,7 +118,7 @@ open class SPAlertView: UIView {
         addSubview(view)
     }
     
-    func commonInit() {
+    private func commonInit() {
         preservesSuperviewLayoutMargins = false
         insetsLayoutMarginsFromSafeArea = false
         layer.masksToBounds = true

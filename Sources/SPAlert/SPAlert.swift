@@ -21,20 +21,33 @@
 
 import UIKit
 
-/*
- TODO:
- 1. Will add dimiss mode with hide all previus alerts.
- And method with competion for it call manually.
- 
- 2. Colorise for icon.
+/**
+ Acess level. Here you get ready-use methods.
+ Recomended use it.
  */
 public enum SPAlert {
     
-    public static func present(title: String, message: String? = nil, preset: SPAlertIconPreset, completion: (() -> Void)? = nil) {
+    /**
+     Present alert with preset and haptic.
+     
+     - parameter title: Title text in alert.
+     - parameter message: Subtitle text in alert. Optional.
+     - parameter preset: Icon ready-use style or custom image.
+     - parameter haptic: Haptic response with present. Default is `.success`.
+     - parameter completion: Will call with dismiss alert.
+     */
+    public static func present(title: String, message: String? = nil, preset: SPAlertIconPreset, haptic: SPAlertHaptic = .success, completion: (() -> Void)? = nil) {
         let alertView = SPAlertView(title: title, message: message, preset: preset)
-        alertView.present(completion: completion)
+        alertView.present(haptic: haptic, completion: completion)
     }
     
+    /**
+     Show only message, without title and icon.
+     
+     - parameter message: Title text.
+     - parameter haptic: Haptic response with present. Default is `.success`.
+     - parameter completion: Will call with dismiss alert.
+     */
     public static func present(message: String, haptic: SPAlertHaptic, completion: (() -> Void)? = nil) {
         let alertView = SPAlertView(message: message)
         alertView.present(haptic: haptic, completion: completion)

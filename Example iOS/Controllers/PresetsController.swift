@@ -1,3 +1,24 @@
+// The MIT License (MIT)
+// Copyright © 2020 Ivan Vorobei (hello@ivanvorobei.by)
+//
+// Permission is hereby granted, free of charge, to any person obtaining a copy
+// of this software and associated documentation files (the "Software"), to deal
+// in the Software without restriction, including without limitation the rights
+// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+// copies of the Software, and to permit persons to whom the Software is
+// furnished to do so, subject to the following conditions:
+//
+// The above copyright notice and this permission notice shall be included in all
+// copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+// SOFTWARE.
+
 import UIKit
 import SparrowKit
 import SPDiffable
@@ -39,7 +60,7 @@ class PresetsController: SPDiffableTableController {
             .init(barButtonSystemItem: .flexibleSpace, target: nil, action: nil),
             .init(systemItem: .play, primaryAction: .init(handler: { [weak self] (action) in
                 guard let preset = self?.currentPreset else { return }
-                SPAlert.present(title: preset.title, message: preset.message, preset: preset.preset, completion: nil)
+                SPAlert.present(title: preset.title, message: preset.message, preset: preset.preset, haptic: preset.haptic, completion: nil)
             }), menu: nil),
             .init(barButtonSystemItem: .flexibleSpace, target: nil, action: nil),
         ]
@@ -53,25 +74,29 @@ class PresetsController: SPDiffableTableController {
                 name: "Done",
                 title: "Added to Library",
                 message: nil,
-                preset: .done
+                preset: .done,
+                haptic: .success
             ),
             AlertPreset(
                 name: "Error",
                 title: "Oops",
                 message: "Please try again later",
-                preset: .error
+                preset: .error,
+                haptic: .error
             ),
             AlertPreset(
                 name: "Heart",
                 title: "Love",
                 message: "We'll recommend more like this for you",
-                preset: .heart
+                preset: .heart,
+                haptic: .success
             ),
             AlertPreset(
                 name: "Custom Image",
                 title: "Custom Image",
                 message: "Passed UIImage object for preset with style custom.",
-                preset: .custom(UIImage.init(systemName: "pencil.and.outline")!)
+                preset: .custom(UIImage.init(systemName: "pencil.and.outline")!),
+                haptic: .success
             ),
         ]
     }
