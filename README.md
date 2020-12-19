@@ -11,17 +11,11 @@
 You can create more with custom images and [SFSymbols](https://developer.apple.com/sf-symbols/) more:
 
 <p float="left">
-<img src="https://github.com/varabeis/SPAlert/blob/master/Assets/Readme/Miniatures/Doc.svg" width="50">
 <img src="https://github.com/varabeis/SPAlert/blob/master/Assets/Readme/Miniatures/Bookmark.svg" width="50">
 <img src="https://github.com/varabeis/SPAlert/blob/master/Assets/Readme/Miniatures/Moon.svg" width="50">
 <img src="https://github.com/varabeis/SPAlert/blob/master/Assets/Readme/Miniatures/Star.svg" width="50">
-<img src="https://github.com/varabeis/SPAlert/blob/master/Assets/Readme/Miniatures/Flag.svg" width="50">
 <img src="https://github.com/varabeis/SPAlert/blob/master/Assets/Readme/Miniatures/Exclamation.svg" width="50">
-<img src="https://github.com/varabeis/SPAlert/blob/master/Assets/Readme/Miniatures/Question.svg" width="50">
-<img src="https://github.com/varabeis/SPAlert/blob/master/Assets/Readme/Miniatures/Message.svg" width="50">
 <img src="https://github.com/varabeis/SPAlert/blob/master/Assets/Readme/Miniatures/Bolt.svg" width="50">
-<img src="https://github.com/varabeis/SPAlert/blob/master/Assets/Readme/Miniatures/Eject.svg" width="50">
-<img src="https://github.com/varabeis/SPAlert/blob/master/Assets/Readme/Miniatures/Card.svg" width="50">
 <img src="https://github.com/varabeis/SPAlert/blob/master/Assets/Readme/Miniatures/Cart.svg" width="50">
 <img src="https://github.com/varabeis/SPAlert/blob/master/Assets/Readme/Miniatures/Like.svg" width="50">
 <img src="https://github.com/varabeis/SPAlert/blob/master/Assets/Readme/Miniatures/Dislike.svg" width="50">
