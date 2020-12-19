@@ -120,7 +120,9 @@ open class SPAlertView: UIView {
     
     private func commonInit() {
         preservesSuperviewLayoutMargins = false
-        insetsLayoutMarginsFromSafeArea = false
+        if #available(iOS 11.0, *) {
+            insetsLayoutMarginsFromSafeArea = false
+        }
         layer.masksToBounds = true
         layer.cornerRadius = 8
         backgroundColor = .clear
@@ -140,14 +142,18 @@ open class SPAlertView: UIView {
     fileprivate var defaultContentColor: UIColor {
         let darkColor = UIColor(red: 127 / 255, green: 127 / 255, blue: 129 / 255, alpha: 1)
         let lightColor = UIColor(red: 88 / 255, green: 87 / 255, blue: 88 / 255, alpha: 1)
-        guard let interfaceStyle = self.window?.traitCollection.userInterfaceStyle else {
+        if #available(iOS 12.0, *) {
+            guard let interfaceStyle = self.window?.traitCollection.userInterfaceStyle else {
+                return lightColor
+            }
+            switch interfaceStyle {
+            case .light: return lightColor
+            case .dark: return darkColor
+            case .unspecified: return lightColor
+            @unknown default: return lightColor
+            }
+        } else {
             return lightColor
-        }
-        switch interfaceStyle {
-        case .light: return lightColor
-        case .dark: return darkColor
-        case .unspecified: return lightColor
-        @unknown default: return lightColor
         }
     }
     
