@@ -13,6 +13,6 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '12.0'
 
   s.source = { :git => 'https://github.com/varabeis/SPAlert.git', :tag => s.version }
-  s.source_files = 'Source/SPAlert/**/*.swift'
+  s.source_files = 'Sources/SPAlert/**/*.swift'
 
 end
