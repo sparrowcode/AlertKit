@@ -511,7 +511,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = by.varabeis.SPAlert;
+				PRODUCT_BUNDLE_IDENTIFIER = by.ivanvorobei.SPAlert;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
@@ -536,7 +536,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = by.varabeis.SPAlert;
+				PRODUCT_BUNDLE_IDENTIFIER = by.ivanvorobei.SPAlert;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
@@ -558,7 +558,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = by.varabeis.SPAlert.example.ios;
+				PRODUCT_BUNDLE_IDENTIFIER = by.ivanvorobei.SPAlert.example.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
@@ -580,7 +580,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = by.varabeis.SPAlert.example.ios;
+				PRODUCT_BUNDLE_IDENTIFIER = by.ivanvorobei.SPAlert.example.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
