@@ -51,6 +51,18 @@ public extension SPAlertIconPreset {
     }
 }
 
+// Get haptic by preset
+
+public extension SPAlertIconPreset {
+    
+    func getHaptic() -> SPAlertHaptic {
+        switch self {
+        case .error: return .error
+        default: return .success
+        }
+    }
+}
+
 // Get layout by preset
 
 public extension SPAlertLayout {

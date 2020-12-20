@@ -30,7 +30,6 @@ struct AlertPreset {
     var title: String
     var message: String?
     var preset: SPAlertIconPreset
-    var haptic: SPAlertHaptic
     
     var id: String {
         return name
