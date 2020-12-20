@@ -60,7 +60,7 @@ class PresetsController: SPDiffableTableController {
             .init(barButtonSystemItem: .flexibleSpace, target: nil, action: nil),
             .init(systemItem: .play, primaryAction: .init(handler: { [weak self] (action) in
                 guard let preset = self?.currentPreset else { return }
-                SPAlert.present(title: preset.title, message: preset.message, preset: preset.preset, haptic: preset.haptic, completion: nil)
+                SPAlert.present(title: preset.title, message: preset.message, preset: preset.preset, completion: nil)
             }), menu: nil),
             .init(barButtonSystemItem: .flexibleSpace, target: nil, action: nil),
         ]
@@ -74,29 +74,25 @@ class PresetsController: SPDiffableTableController {
                 name: "Done",
                 title: "Added to Library",
                 message: nil,
-                preset: .done,
-                haptic: .success
+                preset: .done
             ),
             AlertPreset(
                 name: "Error",
                 title: "Oops",
                 message: "Please try again later",
-                preset: .error,
-                haptic: .error
+                preset: .error
             ),
             AlertPreset(
                 name: "Heart",
                 title: "Love",
                 message: "We'll recommend more like this for you",
-                preset: .heart,
-                haptic: .success
+                preset: .heart
             ),
             AlertPreset(
                 name: "Custom Image",
                 title: "Custom Image",
                 message: "Passed UIImage object for preset with style custom.",
-                preset: .custom(UIImage.init(systemName: "pencil.and.outline")!),
-                haptic: .success
+                preset: .custom(UIImage.init(systemName: "pencil.and.outline")!)
             ),
         ]
     }

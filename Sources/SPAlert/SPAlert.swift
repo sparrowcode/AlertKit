@@ -28,7 +28,7 @@ import UIKit
 public enum SPAlert {
     
     /**
-     Present alert with preset and haptic.
+     Present alert with preset and custom haptic.
      
      - parameter title: Title text in alert.
      - parameter message: Subtitle text in alert. Optional.
@@ -36,8 +36,22 @@ public enum SPAlert {
      - parameter haptic: Haptic response with present. Default is `.success`.
      - parameter completion: Will call with dismiss alert.
      */
-    public static func present(title: String, message: String? = nil, preset: SPAlertIconPreset, haptic: SPAlertHaptic = .success, completion: (() -> Void)? = nil) {
+    public static func present(title: String, message: String? = nil, preset: SPAlertIconPreset, haptic: SPAlertHaptic, completion: (() -> Void)? = nil) {
         let alertView = SPAlertView(title: title, message: message, preset: preset)
+        alertView.present(haptic: haptic, completion: completion)
+    }
+    
+    /**
+     Present alert with preset and automatically detect type haptic.
+     
+     - parameter title: Title text in alert.
+     - parameter message: Subtitle text in alert. Optional.
+     - parameter preset: Icon ready-use style or custom image.
+     - parameter completion: Will call with dismiss alert.
+     */
+    public static func present(title: String, message: String? = nil, preset: SPAlertIconPreset, completion: (() -> Void)? = nil) {
+        let alertView = SPAlertView(title: title, message: message, preset: preset)
+        let haptic = preset.getHaptic()
         alertView.present(haptic: haptic, completion: completion)
     }
     
