@@ -61,6 +61,8 @@ open class SPAlertView: UIView {
     
     open var dismissByTap: Bool = true
     
+    open var completion: (() -> Void)? = nil
+    
     // MARK: - Initializers
     
     public init(title: String, message: String? = nil, preset: SPAlertIconPreset) {
@@ -163,6 +165,8 @@ open class SPAlertView: UIView {
         
         // Prepare for present
         
+        self.completion = completion
+        
         let contentСolor = defaultContentColor
         titleLabel?.textColor = contentСolor
         subtitleLabel?.textColor = contentСolor
@@ -173,6 +177,8 @@ open class SPAlertView: UIView {
         transform = transform.scaledBy(x: self.presentDismissScale, y: self.presentDismissScale)
         
         // Present
+        
+        haptic.impact()
         
         UIView.animate(withDuration: presentDismissDuration, animations: {
             self.alpha = 1
@@ -187,13 +193,13 @@ open class SPAlertView: UIView {
         })
     }
     
-    
     @objc open func dismiss() {
         UIView.animate(withDuration: presentDismissDuration, animations: {
             self.alpha = 0
             self.transform = self.transform.scaledBy(x: self.presentDismissScale, y: self.presentDismissScale)
-        }, completion: { finished in
-            self.removeFromSuperview()
+        }, completion: { [weak self] finished in
+            self?.removeFromSuperview()
+            self?.completion?()
         })
     }
     
