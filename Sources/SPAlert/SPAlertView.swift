@@ -79,7 +79,7 @@ open class SPAlertView: UIView {
     public init(message: String) {
         super.init(frame: CGRect.zero)
         commonInit()
-        layout = SPAlertLayout()
+        layout = SPAlertLayout.message()
         setMessage(message)
     }
     
