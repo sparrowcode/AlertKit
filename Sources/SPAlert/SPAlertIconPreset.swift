@@ -71,6 +71,12 @@ public extension SPAlertLayout {
         self.init(iconSize: .init(width: 100, height: 100), margins: .init(top: 43, left: 16, bottom: 25, right: 16), spaceBetweenIconAndTitle: 41)
     }
     
+    static func message() -> SPAlertLayout {
+        let layout = SPAlertLayout()
+        layout.margins = UIEdgeInsets(top: 23, left: 16, bottom: 23, right: 16)
+        return layout
+    }
+    
     convenience init(for preset: SPAlertIconPreset) {
         switch preset {
         case .done:
