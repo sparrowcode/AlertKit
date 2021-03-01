@@ -29,19 +29,19 @@ open class SPAlertLayout {
     /**
      Icon size.
      */
-    var iconSize: CGSize
+    open var iconSize: CGSize
     
     /**
      Alert margings for each side.
      */
-    var margins: UIEdgeInsets
+    open var margins: UIEdgeInsets
     
     /**
      Space between icon and title if both available.
      */
-    var spaceBetweenIconAndTitle: CGFloat
+    open var spaceBetweenIconAndTitle: CGFloat
     
-    init(iconSize: CGSize, margins: UIEdgeInsets, spaceBetweenIconAndTitle: CGFloat) {
+    public init(iconSize: CGSize, margins: UIEdgeInsets, spaceBetweenIconAndTitle: CGFloat) {
         self.iconSize = iconSize
         self.margins = margins
         self.spaceBetweenIconAndTitle = spaceBetweenIconAndTitle
