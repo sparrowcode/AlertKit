@@ -22,7 +22,7 @@
 import UIKit
 
 /**
- Main view. Can be customisable if need.
+ SPAlert: Main view. Can be customisable if need.
  
  For change duration, check method `present` and pass duration and other specific property if need customise.
  

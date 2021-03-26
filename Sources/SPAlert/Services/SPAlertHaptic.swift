@@ -22,7 +22,7 @@
 import UIKit
 
 /**
- Wrapper of haptic styles.
+ SPAlert: Wrapper of haptic styles.
  */
 public enum SPAlertHaptic {
     
