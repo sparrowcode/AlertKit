@@ -22,22 +22,22 @@
 import UIKit
 
 /**
- Layout model for alert view.
+ SPAlert: Layout model for alert view.
  */
 open class SPAlertLayout {
     
     /**
-     Icon size.
+     SPAlert: Icon size.
      */
     open var iconSize: CGSize
     
     /**
-     Alert margings for each side.
+     SPAlert: Alert margings for each side.
      */
     open var margins: UIEdgeInsets
     
     /**
-     Space between icon and title if both available.
+     SPAlert: Space between icon and title if both available.
      */
     open var spaceBetweenIconAndTitle: CGFloat
     

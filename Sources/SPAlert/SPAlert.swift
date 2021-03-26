@@ -22,13 +22,13 @@
 import UIKit
 
 /**
- Acess level. Here you get ready-use methods.
+ SPAlert: Acess level. Here you get ready-use methods.
  Recomended use it.
  */
 public enum SPAlert {
     
     /**
-     Present alert with preset and custom haptic.
+     SPAlert: Present alert with preset and custom haptic.
      
      - parameter title: Title text in alert.
      - parameter message: Subtitle text in alert. Optional.
@@ -42,7 +42,7 @@ public enum SPAlert {
     }
     
     /**
-     Present alert with preset and automatically detect type haptic.
+     SPAlert: Present alert with preset and automatically detect type haptic.
      
      - parameter title: Title text in alert.
      - parameter message: Subtitle text in alert. Optional.
@@ -56,7 +56,7 @@ public enum SPAlert {
     }
     
     /**
-     Show only message, without title and icon.
+     SPAlert: Show only message, without title and icon.
      
      - parameter message: Title text.
      - parameter haptic: Haptic response with present. Default is `.success`.

@@ -22,12 +22,12 @@
 import UIKit
 
 /**
- Protocol for animatable views.
+ SPAlert: Protocol for animatable views.
  */
 public protocol SPAlertIconAnimatable {
     
     /**
-     Shoud call when need start animation.
+     SPAlert: Shoud call when need start animation.
      */
     func animate()
 }
