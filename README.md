@@ -155,7 +155,7 @@ Simplifies working with animated changes in table and collections. Apple's diffa
 
 You can import stikers for Telegram which develop special for this lib. It's funny.
 
-[![https://sparrowcode.by/telegram/stickers](https://github.com/ivanvorobei/Readme/blob/main/Buttons/open-telegram-stiker.svg)](https://sparrowcode.by/telegram/stickers)
+[![https://sparrowcode.by/telegram/stickers](https://github.com/ivanvorobei/Readme/blob/main/Buttons/open-telegram-stikers.svg)](https://sparrowcode.by/telegram/stickers)
 
 ## Russian Community
 
