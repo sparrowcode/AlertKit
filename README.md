@@ -153,10 +153,12 @@ Simplifies working with animated changes in table and collections. Apple's diffa
 #### [Telegram Stikers](https://sparrowcode.by/telegram/stickers)
 You can import stikers for Telegram about iOS Development. Stickers with Xcode elements you know.
 
-[![https://sparrowcode.by/telegram/stickers](https://github.com/ivanvorobei/Readme/blob/main/Buttons/open-telegram-stikers.svg)](https://sparrowcode.by/telegram/stickers)
-
 ## Russian Community
 
-В телеграм-канале [Код Воробья](https://sparrowcode.by/telegram) пишу о iOS разработке. Видео-туториалы выклыдываю на [YouTube](https://ivanvorobei.by/youtube):
+В телеграм-канале [Код Воробья](https://ivanvorobei.by/sparrowcode/telegram) пишу о iOS разработке. Видео-туториалы выклыдываю на [YouTube](https://ivanvorobei.by/youtube):
 
 [![Tutorials on YouTube](https://cdn.ivanvorobei.by/github/readme/youtube-preview.jpg)](https://ivanvorobei.by/youtube)
+
+[Стикеры в телеграм](https://ivanvorobei.by/sparrowcode/telegram) про iOS разработку:
+
+[![Telegram Stikers](https://cdn.ivanvorobei.by/github/readme/telegram-stikers-preview.png)](https://ivanvorobei.by/sparrowcode/telegram)
