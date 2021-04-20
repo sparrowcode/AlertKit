@@ -55,7 +55,6 @@ SPAlert.present(title: "Title", message: "Message", preset: preset)
     - [Dismiss by Tap](#dismiss-by-tap)
     - [Haptic](#haptic)
 - [Other Projects](#other-projects)
-- [Funny Stuff](#funny-stuff)
 - [Russian Community](#russian-community)
 
 ## Installation
@@ -151,9 +150,9 @@ Animation of widgets from iOS 14. 3D transform with dynamic shadow. [Video previ
 #### [SPDiffable](https://github.com/ivanvorobei/SPDiffable)
 Simplifies working with animated changes in table and collections. Apple's diffable API required models for each object type. If you want use it in many place, you pass time to implement it and get over duplicates codes. This project help do it elegant with shared models and special cell providers. Support side bar iOS14 and already has native cell providers and views.
 
-## Funny Stuff
+#### [Funny Stuff](https://sparrowcode.by/telegram/stickers)
 
-You can import stikers for Telegram which develop special for this lib. It's funny.
+You can import stikers for Telegram about iOS Development. It's funny.
 
 [![https://sparrowcode.by/telegram/stickers](https://github.com/ivanvorobei/Readme/blob/main/Buttons/open-telegram-stikers.svg)](https://sparrowcode.by/telegram/stickers)
 
