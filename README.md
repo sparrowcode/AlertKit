@@ -150,7 +150,7 @@ Animation of widgets from iOS 14. 3D transform with dynamic shadow. [Video previ
 #### [SPDiffable](https://github.com/ivanvorobei/SPDiffable)
 Simplifies working with animated changes in table and collections. Apple's diffable API required models for each object type. If you want use it in many place, you pass time to implement it and get over duplicates codes. This project help do it elegant with shared models and special cell providers. Support side bar iOS14 and already has native cell providers and views.
 
-#### [Telegram Stikers](https://sparrowcode.by/telegram/stickers)
+#### [Telegram Stikers](https://sparrowcode.by/telegram/stickers/spalert)
 You can import stikers for Telegram about iOS Development. Stickers with Xcode elements you know.
 
 ## Russian Community
