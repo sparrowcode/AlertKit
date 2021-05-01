@@ -21,7 +21,7 @@
 		F48672B625762EC900EC1A4E /* SPAlertIconDoneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48672B525762EC900EC1A4E /* SPAlertIconDoneView.swift */; };
 		F48672B725762EC900EC1A4E /* SPAlertIconDoneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48672B525762EC900EC1A4E /* SPAlertIconDoneView.swift */; };
 		F4D6FAE625663EA70046A328 /* PresetsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D6FAE525663EA70046A328 /* PresetsController.swift */; };
-		F4E68B2C2572369F00276B45 /* AlertPreset.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E68B2B2572369F00276B45 /* AlertPreset.swift */; };
+		F4E68B2C2572369F00276B45 /* AlertPresetModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E68B2B2572369F00276B45 /* AlertPresetModel.swift */; };
 		F4F90B96256647BB000594C4 /* SPAlertIconPreset.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4283BE52564ED8D009A03FC /* SPAlertIconPreset.swift */; };
 		F4F90B97256647BB000594C4 /* SPAlertHaptic.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4283BF52564EF2A009A03FC /* SPAlertHaptic.swift */; };
 		F4F90B98256647BB000594C4 /* SPAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4283BEF2564EE87009A03FC /* SPAlertView.swift */; };
@@ -52,7 +52,7 @@
 		F4D0F010256F80F50089ACBC /* SPAlert.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = SPAlert.podspec; sourceTree = "<group>"; };
 		F4D0F011256F80F50089ACBC /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		F4D6FAE525663EA70046A328 /* PresetsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresetsController.swift; sourceTree = "<group>"; };
-		F4E68B2B2572369F00276B45 /* AlertPreset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertPreset.swift; sourceTree = "<group>"; };
+		F4E68B2B2572369F00276B45 /* AlertPresetModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertPresetModel.swift; sourceTree = "<group>"; };
 		F4FBB22A2563ACBB00344472 /* SPAlert_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SPAlert_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4FBB22D2563ACBB00344472 /* SPAlert.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPAlert.h; sourceTree = "<group>"; };
 		F4FBB22E2563ACBB00344472 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -121,7 +121,7 @@
 		F4E68B2A2572369700276B45 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				F4E68B2B2572369F00276B45 /* AlertPreset.swift */,
+				F4E68B2B2572369F00276B45 /* AlertPresetModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -353,7 +353,7 @@
 				F4F90B97256647BB000594C4 /* SPAlertHaptic.swift in Sources */,
 				F48672AE25762E9400EC1A4E /* SPAlertIconAnimatable.swift in Sources */,
 				F4D6FAE625663EA70046A328 /* PresetsController.swift in Sources */,
-				F4E68B2C2572369F00276B45 /* AlertPreset.swift in Sources */,
+				F4E68B2C2572369F00276B45 /* AlertPresetModel.swift in Sources */,
 				F48672B625762EC900EC1A4E /* SPAlertIconDoneView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

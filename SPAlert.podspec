@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name = 'SPAlert'
-  s.version = '3.0.6'
+  s.version = '3.0.7'
   s.summary = 'Native alert from Apple Music & Feedback. Contains Done, Heart & Message and other presets.'
   s.homepage = 'https://github.com/ivanvorobei/SPAlert'
   s.license = { :type => "MIT", :file => "LICENSE" }
