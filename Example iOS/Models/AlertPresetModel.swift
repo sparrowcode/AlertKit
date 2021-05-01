@@ -24,7 +24,7 @@ import UIKit
 /**
  Example wrapper model.
  */
-struct AlertPreset {
+struct AlertPresetModel {
     
     var name: String
     var title: String

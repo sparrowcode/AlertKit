@@ -68,27 +68,27 @@ class PresetsController: SPDiffableTableController {
     
     // MARK: - Data
     
-    fileprivate var presets: [AlertPreset] {
+    fileprivate var presets: [AlertPresetModel] {
         return [
-            AlertPreset(
+            AlertPresetModel(
                 name: "Done",
                 title: "Added to Library",
                 message: nil,
                 preset: .done
             ),
-            AlertPreset(
+            AlertPresetModel(
                 name: "Error",
                 title: "Oops",
                 message: "Please try again later",
                 preset: .error
             ),
-            AlertPreset(
+            AlertPresetModel(
                 name: "Heart",
                 title: "Love",
                 message: "We'll recommend more like this for you",
                 preset: .heart
             ),
-            AlertPreset(
+            AlertPresetModel(
                 name: "Custom Image",
                 title: "Custom Image",
                 message: "Passed UIImage object for preset with style custom.",
@@ -99,7 +99,7 @@ class PresetsController: SPDiffableTableController {
     
     // MARK: - Diffable
     
-    var currentPreset: AlertPreset? {
+    var currentPreset: AlertPresetModel? {
         willSet {
             guard let id = self.currentPreset?.id else { return }
             let cell = diffableDataSource?.cell(UITableViewCell.self, for: id)
