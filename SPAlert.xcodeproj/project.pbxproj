@@ -45,6 +45,7 @@
 		F43905ED257A19C200F3C1A4 /* SPAlertIconErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPAlertIconErrorView.swift; sourceTree = "<group>"; };
 		F48672AD25762E9400EC1A4E /* SPAlertIconAnimatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPAlertIconAnimatable.swift; sourceTree = "<group>"; };
 		F48672B525762EC900EC1A4E /* SPAlertIconDoneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPAlertIconDoneView.swift; sourceTree = "<group>"; };
+		F4CFBFF22640839600BA1903 /* CODESTYLE.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CODESTYLE.md; sourceTree = "<group>"; };
 		F4D0F00B256F80F50089ACBC /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		F4D0F00C256F80F50089ACBC /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		F4D0F00E256F80F50089ACBC /* FUNDING.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = FUNDING.yml; sourceTree = "<group>"; };
@@ -132,6 +133,7 @@
 				F4D0F00D256F80F50089ACBC /* .github */,
 				F4D0F00F256F80F50089ACBC /* .gitignore */,
 				F4D0F00C256F80F50089ACBC /* LICENSE */,
+				F4CFBFF22640839600BA1903 /* CODESTYLE.md */,
 				F4D0F011256F80F50089ACBC /* README.md */,
 				F4D0F00B256F80F50089ACBC /* Package.swift */,
 				F4D0F010256F80F50089ACBC /* SPAlert.podspec */,
@@ -633,7 +635,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ivanvorobei/SparrowKit";
 			requirement = {
-				branch = master;
+				branch = main;
 				kind = branch;
 			};
 		};
