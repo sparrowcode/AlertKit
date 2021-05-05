@@ -3,26 +3,26 @@
 **Popup from Apple Music & Feedback in AppStore**. Contains `Done`, `Heart`, `Error` and other presets. Supports Dark Mode. I tried to recreate Apple's alerts as much as possible. You can find these alerts in the AppStore after feedback and after you add a song to your library in Apple Music.
 
 <p float="left">
-<img src="https://github.com/ivanvorobei/SPAlert/blob/master/Assets/Readme/Animatable/Done.gif" width="230">
-<img src="https://github.com/ivanvorobei/SPAlert/blob/master/Assets/Readme/Animatable/Heart.gif" width="230">
-<img src="https://github.com/ivanvorobei/SPAlert/blob/master/Assets/Readme/Animatable/Message.gif" width="230">
+<img src="https://github.com/ivanvorobei/SPAlert/blob/main/Assets/Readme/Animatable/Done.gif" width="230">
+<img src="https://github.com/ivanvorobei/SPAlert/blob/main/Assets/Readme/Animatable/Heart.gif" width="230">
+<img src="https://github.com/ivanvorobei/SPAlert/blob/main/Assets/Readme/Animatable/Message.gif" width="230">
 </p>
 
 You can create more with custom images and [SFSymbols](https://developer.apple.com/sf-symbols/) more:
 
 <p float="left">
-<img src="https://github.com/ivanvorobei/SPAlert/blob/master/Assets/Readme/Miniatures/Bookmark.svg" width="50">
-<img src="https://github.com/ivanvorobei/SPAlert/blob/master/Assets/Readme/Miniatures/Moon.svg" width="50">
-<img src="https://github.com/ivanvorobei/SPAlert/blob/master/Assets/Readme/Miniatures/Star.svg" width="50">
-<img src="https://github.com/ivanvorobei/SPAlert/blob/master/Assets/Readme/Miniatures/Exclamation.svg" width="50">
-<img src="https://github.com/ivanvorobei/SPAlert/blob/master/Assets/Readme/Miniatures/Bolt.svg" width="50">
-<img src="https://github.com/ivanvorobei/SPAlert/blob/master/Assets/Readme/Miniatures/Cart.svg" width="50">
-<img src="https://github.com/ivanvorobei/SPAlert/blob/master/Assets/Readme/Miniatures/Like.svg" width="50">
-<img src="https://github.com/ivanvorobei/SPAlert/blob/master/Assets/Readme/Miniatures/Dislike.svg" width="50">
-<img src="https://github.com/ivanvorobei/SPAlert/blob/master/Assets/Readme/Miniatures/Privacy.svg" width="50">
-<img src="https://github.com/ivanvorobei/SPAlert/blob/master/Assets/Readme/Miniatures/Search.svg" width="50">
-<img src="https://github.com/ivanvorobei/SPAlert/blob/master/Assets/Readme/Miniatures/Add.svg" width="50">
-<img src="https://github.com/ivanvorobei/SPAlert/blob/master/Assets/Readme/Miniatures/Error.svg" width="50">
+<img src="https://github.com/ivanvorobei/SPAlert/blob/main/Assets/Readme/Miniatures/Bookmark.svg" width="50">
+<img src="https://github.com/ivanvorobei/SPAlert/blob/main/Assets/Readme/Miniatures/Moon.svg" width="50">
+<img src="https://github.com/ivanvorobei/SPAlert/blob/main/Assets/Readme/Miniatures/Star.svg" width="50">
+<img src="https://github.com/ivanvorobei/SPAlert/blob/main/Assets/Readme/Miniatures/Exclamation.svg" width="50">
+<img src="https://github.com/ivanvorobei/SPAlert/blob/main/Assets/Readme/Miniatures/Bolt.svg" width="50">
+<img src="https://github.com/ivanvorobei/SPAlert/blob/main/Assets/Readme/Miniatures/Cart.svg" width="50">
+<img src="https://github.com/ivanvorobei/SPAlert/blob/main/Assets/Readme/Miniatures/Like.svg" width="50">
+<img src="https://github.com/ivanvorobei/SPAlert/blob/main/Assets/Readme/Miniatures/Dislike.svg" width="50">
+<img src="https://github.com/ivanvorobei/SPAlert/blob/main/Assets/Readme/Miniatures/Privacy.svg" width="50">
+<img src="https://github.com/ivanvorobei/SPAlert/blob/main/Assets/Readme/Miniatures/Search.svg" width="50">
+<img src="https://github.com/ivanvorobei/SPAlert/blob/main/Assets/Readme/Miniatures/Add.svg" width="50">
+<img src="https://github.com/ivanvorobei/SPAlert/blob/main/Assets/Readme/Miniatures/Error.svg" width="50">
 </p>
 
 If you like the project, don't forget to `put star ★` and follow me on GitHub:
