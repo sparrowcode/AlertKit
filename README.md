@@ -157,8 +157,6 @@ You can import stikers for Telegram about iOS Development. Stickers with Xcode e
 
 В телеграм-канале [Код Воробья](https://sparrowcode.by/telegram) пишу о iOS разработке. Помощь можно найти в [нашем чате](https://sparrowcode.by/telegram/chat).
 
-[![https://sparrowcode.by/telegram](https://github.com/ivanvorobei/Readme/blob/main/Buttons/open-telegram-channel.svg)](https://sparrowcode.by/telegram)
-
 Видео-туториалы выклыдываю на [YouTube](https://sparrowcode.by/youtube):
 
 [![Tutorials on YouTube](https://cdn.ivanvorobei.by/github/readme/youtube-preview.jpg)](https://sparrowcode.by/youtube)
