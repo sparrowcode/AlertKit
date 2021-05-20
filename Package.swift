@@ -5,13 +5,23 @@ import PackageDescription
 let package = Package(
     name: "SPAlert",
     platforms: [
-       .iOS(.v10)
+        .iOS(.v10)
     ],
     products: [
-        .library(name: "SPAlert", targets: ["SPAlert"])
+        .library(
+            name: "SPAlert",
+            targets: ["SPAlert"]
+        )
     ],
+    dependencies: [],
     targets: [
-        .target(name: "SPAlert")
-    ]
+        .target(
+            name: "SPAlert",
+            swiftSettings: [
+                .define("SPPALERT_SPM")
+            ]
+        )
+    ],
+    swiftLanguageVersions: [.v5]
 )
 

@@ -38,9 +38,7 @@ open class SPAlertView: UIView {
     // MARK: - Views
     
     open var titleLabel: UILabel?
-    
     open var subtitleLabel: UILabel?
-    
     open var iconView: UIView?
     
     private lazy var backgroundView: UIVisualEffectView = {
@@ -60,10 +58,9 @@ open class SPAlertView: UIView {
     // MARK: - Properties
     
     open var dismissByTap: Bool = true
-    
     open var completion: (() -> Void)? = nil
     
-    // MARK: - Initializers
+    // MARK: - Init
     
     public init(title: String, message: String? = nil, preset: SPAlertIconPreset) {
         super.init(frame: CGRect.zero)
@@ -88,38 +85,6 @@ open class SPAlertView: UIView {
         commonInit()
     }
     
-    // MARK: Configure
-    
-    private func setTitle(_ text: String) {
-        let label = UILabel()
-        label.font = UIFont.boldSystemFont(ofSize: 22)
-        label.numberOfLines = 0
-        let style = NSMutableParagraphStyle()
-        style.lineSpacing = 3
-        style.alignment = .center
-        label.attributedText = NSAttributedString(string: text, attributes: [.paragraphStyle: style])
-        titleLabel = label
-        addSubview(label)
-    }
-    
-    private func setMessage(_ text: String) {
-        let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 16)
-        label.numberOfLines = 0
-        let style = NSMutableParagraphStyle()
-        style.lineSpacing = 2
-        style.alignment = .center
-        label.attributedText = NSAttributedString(string: text, attributes: [.paragraphStyle: style])
-        subtitleLabel = label
-        addSubview(label)
-    }
-    
-    private func setIcon(for preset: SPAlertIconPreset) {
-        let view = preset.createView()
-        self.iconView = view
-        addSubview(view)
-    }
-    
     private func commonInit() {
         preservesSuperviewLayoutMargins = false
         if #available(iOS 11.0, *) {
@@ -134,6 +99,38 @@ open class SPAlertView: UIView {
             let tapGesterRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismiss))
             addGestureRecognizer(tapGesterRecognizer)
         }
+    }
+    
+    // MARK: - Configure
+    
+    private func setTitle(_ text: String) {
+        let label = UILabel()
+        label.font = UIFont.preferredFont(forTextStyle: .title2, weight: .bold)
+        label.numberOfLines = 0
+        let style = NSMutableParagraphStyle()
+        style.lineSpacing = 3
+        style.alignment = .center
+        label.attributedText = NSAttributedString(string: text, attributes: [.paragraphStyle: style])
+        titleLabel = label
+        addSubview(label)
+    }
+    
+    private func setMessage(_ text: String) {
+        let label = UILabel()
+        label.font = UIFont.preferredFont(forTextStyle: .body)
+        label.numberOfLines = 0
+        let style = NSMutableParagraphStyle()
+        style.lineSpacing = 2
+        style.alignment = .center
+        label.attributedText = NSAttributedString(string: text, attributes: [.paragraphStyle: style])
+        subtitleLabel = label
+        addSubview(label)
+    }
+    
+    private func setIcon(for preset: SPAlertIconPreset) {
+        let view = preset.createView()
+        self.iconView = view
+        addSubview(view)
     }
     
     // MARK: - Present
@@ -230,12 +227,10 @@ open class SPAlertView: UIView {
             iconView.center.x = bounds.midX
         }
         if let titleLabel = self.titleLabel {
-            layout(
-                label: titleLabel,
+            titleLabel.layoutDynamicHeight(
                 x: layoutMargins.left,
                 y: iconView == nil ? layoutMargins.top : (iconView?.frame.maxY ?? 0) + layout.spaceBetweenIconAndTitle,
-                width: frame.width - layoutMargins.left - layoutMargins.right
-            )
+                width: frame.width - layoutMargins.left - layoutMargins.right)
         }
         if let subtitleLabel = self.subtitleLabel {
             let yPosition: CGFloat = {
@@ -245,18 +240,7 @@ open class SPAlertView: UIView {
                     return layoutMargins.top
                 }
             }()
-            layout(
-                label: subtitleLabel,
-                x: layoutMargins.left,
-                y: yPosition,
-                width: frame.width - layoutMargins.left - layoutMargins.right
-            )
+            subtitleLabel.layoutDynamicHeight(x: layoutMargins.left, y: yPosition, width: frame.width - layoutMargins.left - layoutMargins.right)
         }
-    }
-    
-    private func layout(label: UILabel, x: CGFloat, y: CGFloat,  width: CGFloat) {
-        label.frame = .init(x: x, y: y, width: width, height: label.frame.height)
-        label.sizeToFit()
-        label.frame = .init(x: x, y: y, width: width, height: label.frame.height)
     }
 }
