@@ -1,6 +1,7 @@
 # SPAlert
 
-**Popup from Apple Music & Feedback in AppStore**. Contains `Done`, `Heart`, `Error` and other presets. Supports Dark Mode. I tried to recreate Apple's alerts as much as possible. You can find these alerts in the AppStore after feedback and after you add a song to your library in Apple Music. If you want have popover like `silent mode`, check my library [SPIndicator](https://github.com/ivanvorobei/SPIndicator)
+**Popup from Apple Music & Feedback in AppStore**. Contains `Done`, `Heart`, `Error` and other presets. Supports Dark Mode. I tried to recreate Apple's alerts as much as possible. You can find these alerts in the AppStore after feedback and after you add a song to your library in Apple Music. 
+If you want have popover like `silent mode`, check my library [SPIndicator](https://github.com/ivanvorobei/SPIndicator).
 
 <p float="left">
 <img src="https://github.com/ivanvorobei/SPAlert/blob/main/Assets/Readme/Animatable/Done.gif" width="230">
