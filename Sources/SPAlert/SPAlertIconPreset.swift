@@ -52,8 +52,10 @@ public extension SPAlertIconPreset {
     
     func getHaptic() -> SPAlertHaptic {
         switch self {
+        case .done: return .success
         case .error: return .error
-        default: return .success
+        case .heart: return .success
+        case .custom(_): return .none
         }
     }
 }

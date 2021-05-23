@@ -66,10 +66,4 @@ public enum SPAlert {
         let alertView = SPAlertView(message: message)
         alertView.present(haptic: haptic, completion: completion)
     }
-    
-    @available(*, deprecated, message: "For present with custom image use preset `.custom(UIImage)`")
-    public static func present(title: String, message: String? = nil, image: UIImage, haptic: SPAlertHaptic, completion: (() -> Void)? = nil) {
-        let alertView = SPAlertView(title: title, message: message, preset: .custom(image))
-        alertView.present(haptic: haptic, completion: completion)
-    } 
 }

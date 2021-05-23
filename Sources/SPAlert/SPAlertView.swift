@@ -35,6 +35,11 @@ import UIKit
  */
 open class SPAlertView: UIView {
     
+    // MARK: - Properties
+    
+    open var dismissByTap: Bool = true
+    open var completion: (() -> Void)? = nil
+    
     // MARK: - Views
     
     open var titleLabel: UILabel?
@@ -54,11 +59,6 @@ open class SPAlertView: UIView {
     }()
     
     weak open var presentWindow: UIWindow? = UIApplication.shared.windows.first
-    
-    // MARK: - Properties
-    
-    open var dismissByTap: Bool = true
-    open var completion: (() -> Void)? = nil
     
     // MARK: - Init
     
