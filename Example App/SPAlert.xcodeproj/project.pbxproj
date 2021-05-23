@@ -48,7 +48,6 @@
 				F43A587826564DDF009098ED /* SPAlert */,
 				F47E1DFC26564B6A008D901C /* iOS Example */,
 				F47E1DFB26564B6A008D901C /* Products */,
-				F47E1E2026564BD4008D901C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -95,13 +94,6 @@
 				F47E1E1926564BB3008D901C /* PresetsController.swift */,
 			);
 			path = Controllers;
-			sourceTree = "<group>";
-		};
-		F47E1E2026564BD4008D901C /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
