@@ -22,7 +22,7 @@
 import UIKit
 
 /**
- SPAlert: Layout model for alert view.
+ SPAlert: Layout model for view.
  */
 open class SPAlertLayout {
     
