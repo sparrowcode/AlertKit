@@ -22,7 +22,7 @@
 import UIKit
 
 /**
- Represent icon wrapper.
+ SPAlert: Represent icon wrapper.
  Included default styles and can be custom image.
  */
 public enum SPAlertIconPreset {
