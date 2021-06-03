@@ -58,7 +58,7 @@ open class SPAlertView: UIView {
         return view
     }()
     
-    weak open var presentWindow: UIWindow? = UIApplication.shared.windows.first
+    weak open var presentWindow: UIWindow?
     
     // MARK: - Init
     
@@ -157,7 +157,13 @@ open class SPAlertView: UIView {
     }
     
     open func present(duration: TimeInterval = 1.5, haptic: SPAlertHaptic = .success, completion: (() -> Void)? = nil) {
+        
+        if self.presentWindow == nil {
+            self.presentWindow = UIApplication.shared.windows.first
+        }
+        
         guard let window = self.presentWindow else { return }
+        
         window.addSubview(self)
         
         // Prepare for present
