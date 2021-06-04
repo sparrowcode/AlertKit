@@ -130,6 +130,36 @@ alertView.present(duration: 1.5, haptic: .success, completion: nil)
 
 You can remove duration and completion, its have default values.
 
+### SwiftUI
+
+Use like system alert:
+
+* only show message tips
+
+```swift
+Button("Show alert") {
+    showAlert = true
+}.alert(isPresent: $showAlert, message: "this is message only")
+```
+
+* show message, title, image and other configuration
+
+```swift
+Button("Show alert") {
+    showAlert = true
+}.alert(isPresent: $showAlert, 
+        title: "Alert title", 
+        message: "Alert message",
+        duration: 2.0, 
+        dismissOnTap: false, 
+        present: .custom(UIImage(systemName: "heart")!), 
+        haptic: .success, 
+        layout: .init(), 
+        completion: {
+            print("Alert is destory")
+        })
+```
+
 ## Other Projects
 
 #### [SPPermissions](https://github.com/ivanvorobei/SPPermissions)
