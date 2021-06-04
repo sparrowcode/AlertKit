@@ -41,7 +41,7 @@ If you like the project, don't forget to `put star ★` and follow me on GitHub:
     - [Layout](#layout)
     - [Dismiss by Tap](#dismiss-by-tap)
     - [Haptic](#haptic)
-    - [SwiftUI](#swiftui)
+- [SwiftUI](#swiftui)
 - [Other Projects](#other-projects)
 - [Russian Community](#russian-community)
 
@@ -131,7 +131,7 @@ alertView.present(duration: 1.5, haptic: .success, completion: nil)
 
 You can remove duration and completion, its have default values.
 
-### SwiftUI
+## SwiftUI
 
 Use like system alert only show message tips:
 
