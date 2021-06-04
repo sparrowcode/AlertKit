@@ -1,6 +1,6 @@
 # SPAlert
 
-**Popup from Apple Music & Feedback in AppStore**. Contains `Done`, `Heart`, `Error` and other presets. Supports Dark Mode. I tried to recreate Apple's alerts as much as possible. You can find these alerts in the AppStore after feedback and after you add a song to your library in Apple Music. 
+**Popup from Apple Music & Feedback in AppStore**. Contains `Done`, `Heart`, `Error` and other presets. Supports Dark Mode. I tried to recreate Apple's alerts as much as possible. You can find these alerts in the AppStore after feedback and after you add a song to your library in Apple Music. Support `SwiftUI`.
 
 <p float="left">
 <img src="https://github.com/ivanvorobei/SPAlert/blob/main/Assets/Readme/Animatable/Done.gif" width="230">
@@ -41,6 +41,7 @@ If you like the project, don't forget to `put star ★` and follow me on GitHub:
     - [Layout](#layout)
     - [Dismiss by Tap](#dismiss-by-tap)
     - [Haptic](#haptic)
+    - [SwiftUI](#swiftui)
 - [Other Projects](#other-projects)
 - [Russian Community](#russian-community)
 
@@ -132,22 +133,20 @@ You can remove duration and completion, its have default values.
 
 ### SwiftUI
 
-Use like system alert:
-
-* only show message tips
+Use like system alert only show message tips:
 
 ```swift
 Button("Show alert") {
     showAlert = true
-}.alert(isPresent: $showAlert, message: "this is message only")
+}.spAlert(isPresent: $showAlert, message: "this is message only")
 ```
 
-* show message, title, image and other configuration
+or show message, title, image and other configuration:
 
 ```swift
 Button("Show alert") {
     showAlert = true
-}.alert(isPresent: $showAlert, 
+}.spAlert(isPresent: $showAlert, 
         title: "Alert title", 
         message: "Alert message",
         duration: 2.0, 
