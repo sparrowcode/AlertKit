@@ -91,7 +91,7 @@ open class SPAlertView: UIView {
             insetsLayoutMarginsFromSafeArea = false
         }
         layer.masksToBounds = true
-        layer.cornerRadius = 8
+        layer.cornerRadius = SPAlertConfiguration.cornerRadius ?? 8
         backgroundColor = .clear
         addSubview(backgroundView)
         
@@ -156,7 +156,7 @@ open class SPAlertView: UIView {
         }
     }
     
-    open func present(duration: TimeInterval = 1.5, haptic: SPAlertHaptic = .success, completion: (() -> Void)? = nil) {
+    open func present(duration: TimeInterval = SPAlertConfiguration.duration, haptic: SPAlertHaptic = .success, completion: (() -> Void)? = nil) {
         
         if self.presentWindow == nil {
             self.presentWindow = UIApplication.shared.keyWindow
