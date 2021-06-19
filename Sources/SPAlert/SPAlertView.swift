@@ -91,7 +91,7 @@ open class SPAlertView: UIView {
             insetsLayoutMarginsFromSafeArea = false
         }
         layer.masksToBounds = true
-        layer.cornerRadius = SPAlertConfiguration.cornerRadius ?? 8
+        layer.cornerRadius = SPAlertConfiguration.cornerRadius
         backgroundColor = .clear
         addSubview(backgroundView)
         
