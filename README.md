@@ -141,7 +141,7 @@ SPAlertConfiguration.duration = 2
 SPAlertConfiguration.cornerRadius = 12
 ```
 
-It will apply for all alerts. Shoud set configuration before present any alerts.
+It will apply for all alerts. Shoud set configuration before present any alerts. I recomend set it in app delegate.
 
 ## SwiftUI
 
