@@ -181,8 +181,7 @@ Button("Show alert") {
 
 ## Other Projects
 
-I love being helpful. Here I have provided a list of libraries that I keep up to date. For see previews of libraries without install open [opensource.ivanvorobei.by](https://opensource.ivanvorobei.by) website. 
-
+I love being helpful. Here I have provided a list of libraries that I keep up to date. For see previews of libraries without install open [opensource.ivanvorobei.by](https://opensource.ivanvorobei.by) website.<br>
 I have libraries with native interface and managing permissions. Also available pack of useful extensions for boost your development process.
 
 <p float="left">
@@ -193,7 +192,7 @@ I have libraries with native interface and managing permissions. Also available 
 
 ## Russian Community
 
-В телеграм-канале [Код Воробья](https://sparrowcode.by/telegram) пишу о iOS разработке. Помощь можно найти в [нашем чате](https://sparrowcode.by/telegram/chat).
+В телеграм-канале [Код Воробья](https://sparrowcode.by/telegram) пишу о iOS разработке. Помощь можно найти в [нашем чате](https://sparrowcode.by/telegram/chat).<br>
 Видео-туториалы выклыдываю на [YouTube](https://sparrowcode.by/youtube):
 
 [![Tutorials on YouTube](https://cdn.ivanvorobei.by/github/readme/youtube-preview.jpg)](https://sparrowcode.by/youtube)
