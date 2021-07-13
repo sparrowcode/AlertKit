@@ -181,9 +181,15 @@ Button("Show alert") {
 
 ## Other Projects
 
-I love being helpful. Here I have provided a list of libraries that I keep up to date. For see previews of libraries without intall open [opensource.ivanvorobei.by](https://opensource.ivanvorobei.by) website.
+I love being helpful. Here I have provided a list of libraries that I keep up to date. For see previews of libraries without intall open [opensource.ivanvorobei.by](https://opensource.ivanvorobei.by) website. 
 
-[SPPermissions](https://github.com/ivanvorobei/SPPermissions), [SPPerspective](https://github.com/ivanvorobei/SPPerspective), [SPDiffable](https://github.com/ivanvorobei/SPDiffable), [SparrowKit](https://github.com/ivanvorobei/SparrowKit), [SPIndicator](https://github.com/ivanvorobei/SPIndicator)
+I have [SPPermissions](https://github.com/ivanvorobei/SPPermissions) for manage iOS permissions, [SPPerspective](https://github.com/ivanvorobei/SPPerspective) for animation like widgets, [SPIndicator](https://github.com/ivanvorobei/SPIndicator) mimicrate to indicator which appear when silent mode turn on / off, [SPDiffable](https://github.com/ivanvorobei/SPDiffable) easy way to dynamic update collection and tables and [SparrowKit](https://github.com/ivanvorobei/SparrowKit) pack of useful extension for boost develop.
+
+<p float="left">
+    <a href="https://opensource.ivanvorobei.by">
+        <img src="https://github.com/ivanvorobei/Readme/blob/main/Buttons/more-libraries.svg">
+    </a>
+</p>
 
 ## Russian Community
 
