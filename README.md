@@ -37,9 +37,6 @@ If you like the project, don't forget to `put star ★` and follow me on GitHub:
     </a>
 </p>
 
-
-[![https://github.com/ivanvorobei](https://github.com/ivanvorobei/Readme/blob/main/Buttons/follow-me-ivanvorobei.svg)](https://github.com/ivanvorobei)
-
 ## Navigate
 
 - [Installation](#installation)
