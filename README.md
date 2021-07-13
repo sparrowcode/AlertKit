@@ -27,6 +27,17 @@ You can create more with custom images and [SFSymbols](https://developer.apple.c
 
 If you like the project, don't forget to `put star ★` and follow me on GitHub:
 
+
+<p float="left">
+    <a href="https://github.com/ivanvorobei">
+        <img src="https://github.com/ivanvorobei/Readme/blob/main/Buttons/follow-me-ivanvorobei.svg">
+    </a>
+    <a href="https://github.com/ivanvorobei">
+        <img src="https://github.com/ivanvorobei/Readme/blob/main/Buttons/follow-me-ivanvorobei.svg">
+    </a>
+</p>
+
+
 [![https://github.com/ivanvorobei](https://github.com/ivanvorobei/Readme/blob/main/Buttons/follow-me-ivanvorobei.svg)](https://github.com/ivanvorobei)
 
 ## Navigate
