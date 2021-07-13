@@ -181,9 +181,9 @@ Button("Show alert") {
 
 ## Other Projects
 
-I love being helpful. Here I have provided a list of libraries that I keep up to date. For see previews of libraries without intall open [opensource.ivanvorobei.by](https://opensource.ivanvorobei.by) website. 
+I love being helpful. Here I have provided a list of libraries that I keep up to date. For see previews of libraries without install open [opensource.ivanvorobei.by](https://opensource.ivanvorobei.by) website. 
 
-I have [SPPermissions](https://github.com/ivanvorobei/SPPermissions) for manage iOS permissions, [SPPerspective](https://github.com/ivanvorobei/SPPerspective) for animation like widgets, [SPIndicator](https://github.com/ivanvorobei/SPIndicator) mimicrate to indicator which appear when silent mode turn on / off, [SPDiffable](https://github.com/ivanvorobei/SPDiffable) easy way to dynamic update collection and tables and [SparrowKit](https://github.com/ivanvorobei/SparrowKit) pack of useful extension for boost develop.
+I have libraries with native interface and managing permissions. Also available pack of useful extensions for boost your development process.
 
 <p float="left">
     <a href="https://opensource.ivanvorobei.by">
