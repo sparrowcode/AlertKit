@@ -195,14 +195,14 @@ I have libraries with native interface and managing permissions. Also available 
 Я веду каналы про iOS разработку. Один с туториалами и новостями, другой с обзором библиотек. Помощь можно найти в нашем чате.
 
 <p float="left">
-    <a href="https://opensource.ivanvorobei.by">
-        <img src="https://github.com/ivanvorobei/Readme/blob/main/Buttons/russian-comunity-tutorials.svg">
+    <a href="https://sparrowcode.by/telegram/channel">
+        <img src="https://github.com/ivanvorobei/Readme/blob/main/Buttons/russian-community-tutorials.svg">
     </a>
-    <a href="https://opensource.ivanvorobei.by">
-        <img src="https://github.com/ivanvorobei/Readme/blob/main/Buttons/russian-comunity-libraries.svg">
+    <a href="https://sparrowcode.by/telegram/libs">
+        <img src="https://github.com/ivanvorobei/Readme/blob/main/Buttons/russian-community-libraries.svg">
     </a>
-    <a href="https://opensource.ivanvorobei.by">
-        <img src="https://github.com/ivanvorobei/Readme/blob/main/Buttons/russian-comunity-chat">
+    <a href="https://sparrowcode.by/telegram/chat">
+        <img src="https://github.com/ivanvorobei/Readme/blob/main/Buttons/russian-community-chat">
     </a>
 </p>
 
