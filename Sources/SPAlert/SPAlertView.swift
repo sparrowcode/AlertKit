@@ -33,6 +33,7 @@ import UIKit
  
  Recomended call `SPAlert` and choose style func.
  */
+@available(iOSApplicationExtension, unavailable)
 open class SPAlertView: UIView {
     
     // MARK: - Properties
