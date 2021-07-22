@@ -25,6 +25,7 @@ import UIKit
  SPAlert: Acess level. Here you get ready-use methods.
  Recomended use it.
  */
+@available(iOSApplicationExtension, unavailable)
 public enum SPAlert {
     
     /**
