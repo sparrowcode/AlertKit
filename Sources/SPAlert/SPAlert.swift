@@ -67,4 +67,16 @@ public enum SPAlert {
         let alertView = SPAlertView(message: message)
         alertView.present(haptic: haptic, completion: completion)
     }
+    
+    /**
+     SPAlert: Show only message, without title and icon.
+     
+     - parameter message: Title attributed string.
+     - parameter haptic: Haptic response with present. Default is `.success`.
+     - parameter completion: Will call with dismiss alert.
+     */
+    public static func present(message: NSAttributedString, haptic: SPAlertHaptic, completion: (() -> Void)? = nil) {
+        let alertView = SPAlertView(message: message)
+        alertView.present(haptic: haptic, completion: completion)
+    }
 }

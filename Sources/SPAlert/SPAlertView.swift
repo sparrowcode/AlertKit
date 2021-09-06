@@ -81,6 +81,13 @@ open class SPAlertView: UIView {
         setMessage(message)
     }
     
+    public init(message: NSAttributedString) {
+        super.init(frame: CGRect.zero)
+        commonInit()
+        layout = SPAlertLayout.message()
+        setMessage(message)
+    }
+    
     public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         commonInit()
@@ -124,6 +131,15 @@ open class SPAlertView: UIView {
         style.lineSpacing = 2
         style.alignment = .center
         label.attributedText = NSAttributedString(string: text, attributes: [.paragraphStyle: style])
+        subtitleLabel = label
+        addSubview(label)
+    }
+    
+    private func setMessage(_ text: NSAttributedString) {
+        let label = UILabel()
+        label.font = UIFont.preferredFont(forTextStyle: .body)
+        label.numberOfLines = 0
+        label.attributedText = text
         subtitleLabel = label
         addSubview(label)
     }
