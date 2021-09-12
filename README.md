@@ -141,11 +141,11 @@ You can remove duration and completion, its have default values.
 Also you can change some default values for alerts. For example you can change default duration and corner radius for alert with next code:
 
 ```swift
-SPAlertConfiguration.duration = 2
-SPAlertConfiguration.cornerRadius = 12
+SPAlertView.appearance().duration = 2
+SPAlertView.appearance().cornerRadius = 12
 ```
 
-It will apply for all alerts. Shoud set configuration before present any alerts. I recomend set it in app delegate.
+It will apply for all alerts. I recomend set it in app delegate. But you can change it in runtime.
 
 ## SwiftUI
 
@@ -192,17 +192,17 @@ I have libraries with native interface and managing permissions. Also available 
 Со сложными и непонятными задачами помогут в чате.
 
 <p float="left">
-    <a href="https://sparrowcode.by/telegram/channel">
+    <a href="https://tutorials.ivanvorobei.by/telegram/channel">
         <img src="https://github.com/ivanvorobei/Readme/blob/main/Buttons/russian-community-tutorials.svg">
     </a>
-    <a href="https://sparrowcode.by/telegram/libs">
+    <a href="https://tutorials.ivanvorobei.by/telegram/libs">
         <img src="https://github.com/ivanvorobei/Readme/blob/main/Buttons/russian-community-libraries.svg">
     </a>
-    <a href="https://sparrowcode.by/telegram/chat">
+    <a href="https://tutorials.ivanvorobei.by/telegram/chat">
         <img src="https://github.com/ivanvorobei/Readme/blob/main/Buttons/russian-community-chat.svg">
     </a>
 </p>
 
-Видео-туториалы выклыдываю на [YouTube](https://sparrowcode.by/youtube):
+Видео-туториалы выклыдываю на [YouTube](https://tutorials.ivanvorobei.by/youtube):
 
-[![Tutorials on YouTube](https://cdn.ivanvorobei.by/github/readme/youtube-preview.jpg)](https://sparrowcode.by/youtube)
+[![Tutorials on YouTube](https://cdn.ivanvorobei.by/github/readme/youtube-preview.jpg)](https://tutorials.ivanvorobei.by/youtube)

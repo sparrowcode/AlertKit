@@ -41,6 +41,16 @@ open class SPAlertView: UIView {
     open var dismissByTap: Bool = true
     open var completion: (() -> Void)? = nil
     
+    // MARK: - UIAppearance
+    
+    @objc dynamic open var cornerRadius: CGFloat = 8 {
+        didSet {
+            layer.cornerRadius = self.cornerRadius
+        }
+    }
+    
+    @objc dynamic open var duration: TimeInterval = 1.5
+    
     // MARK: - Views
     
     open var titleLabel: UILabel?
@@ -91,8 +101,8 @@ open class SPAlertView: UIView {
         if #available(iOS 11.0, *) {
             insetsLayoutMarginsFromSafeArea = false
         }
+        
         layer.masksToBounds = true
-        layer.cornerRadius = SPAlertConfiguration.cornerRadius
         backgroundColor = .clear
         addSubview(backgroundView)
         
@@ -100,6 +110,8 @@ open class SPAlertView: UIView {
             let tapGesterRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismiss))
             addGestureRecognizer(tapGesterRecognizer)
         }
+        
+        setCornerRadius(self.cornerRadius)
     }
     
     // MARK: - Configure
@@ -134,6 +146,10 @@ open class SPAlertView: UIView {
         addSubview(view)
     }
     
+    private func setCornerRadius(_ value: CGFloat) {
+        layer.cornerRadius = value
+    }
+    
     // MARK: - Present
     
     fileprivate var presentDismissDuration: TimeInterval = 0.2
@@ -157,7 +173,11 @@ open class SPAlertView: UIView {
         }
     }
     
-    open func present(duration: TimeInterval = SPAlertConfiguration.duration, haptic: SPAlertHaptic = .success, completion: (() -> Void)? = nil) {
+    open func present(haptic: SPAlertHaptic = .success, completion: (() -> Void)? = nil) {
+        present(duration: self.duration, haptic: haptic, completion: completion)
+    }
+    
+    open func present(duration: TimeInterval, haptic: SPAlertHaptic = .success, completion: (() -> Void)? = nil) {
         
         if self.presentWindow == nil {
             self.presentWindow = UIApplication.shared.keyWindow

@@ -21,6 +21,7 @@
 
 import UIKit
 import SparrowKit
+import SPAlert
 
 @UIApplicationMain
 class AppDelegate: SPAppWindowDelegate {
@@ -28,6 +29,11 @@ class AppDelegate: SPAppWindowDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         let rootController = PresetsController().wrapToNavigationController(prefersLargeTitles: false)
         makeKeyAndVisible(viewController: rootController, tint: .systemBlue)
+        
+        // If need to change for all alerts.
+        // SPAlertView.appearance().duration = 2
+        // SPAlertView.appearance().cornerRadius = 8
+        
         return true
     }
 }
