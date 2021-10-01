@@ -47,6 +47,7 @@ If you like the project, don't forget to `put star ★`<br>Check out my other li
     - [Haptic](#haptic)
     - [Shared Configuration](#shared-configuration)
 - [SwiftUI](#swiftui)
+- [Сontribution](#сontribution)
 - [Other Projects](#other-projects)
 - [Russian Community](#russian-community)
 
