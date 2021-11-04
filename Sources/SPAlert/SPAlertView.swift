@@ -49,6 +49,14 @@ open class SPAlertView: UIView {
         }
     }
     
+    /**
+     SPAlert: Automatically dismiss in time or not. Duration of dismiss can be changed by property `duration`.
+     */
+    @objc dynamic open var dismissInTime: Bool = true
+    
+    /**
+     SPAlert: Duration for showing alert. If `dismissInTime` disabled, this property ignoring.
+     */
     @objc dynamic open var duration: TimeInterval = 1.5
     
     // MARK: - Views
@@ -75,6 +83,14 @@ open class SPAlertView: UIView {
     
     public init(title: String, message: String? = nil, preset: SPAlertIconPreset) {
         super.init(frame: CGRect.zero)
+        
+        switch preset {
+        case .spinner:
+            self.dismissInTime = false
+        default:
+            self.dismissInTime = true
+        }
+        
         commonInit()
         layout = SPAlertLayout(for: preset)
         setTitle(title)
@@ -174,10 +190,6 @@ open class SPAlertView: UIView {
     }
     
     open func present(haptic: SPAlertHaptic = .success, completion: (() -> Void)? = nil) {
-        present(duration: self.duration, haptic: haptic, completion: completion)
-    }
-    
-    open func present(duration: TimeInterval, haptic: SPAlertHaptic = .success, completion: (() -> Void)? = nil) {
         
         if self.presentWindow == nil {
             self.presentWindow = UIApplication.shared.keyWindow
@@ -207,12 +219,17 @@ open class SPAlertView: UIView {
         UIView.animate(withDuration: presentDismissDuration, animations: {
             self.alpha = 1
             self.transform = CGAffineTransform.identity
-        }, completion: { finished in
+        }, completion: { [weak self] finished in
+            guard let self = self else { return }
+            
             if let iconView = self.iconView as? SPAlertIconAnimatable {
                 iconView.animate()
             }
-            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + duration) {
-                self.dismiss()
+            
+            if self.dismissInTime {
+                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + self.duration) {
+                    self.dismiss()
+                }
             }
         })
     }

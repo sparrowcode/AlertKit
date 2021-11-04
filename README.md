@@ -45,7 +45,8 @@ If you like the project, don't forget to `put star ★`<br>Check out my other li
     - [Layout](#layout)
     - [Dismiss by Tap](#dismiss-by-tap)
     - [Haptic](#haptic)
-    - [Shared Configuration](#shared-configuration)
+    - [Spinner](#spinner)
+    - [Shared Appearance](#shared-appearance)
 - [SwiftUI](#swiftui)
 - [Сontribution](#сontribution)
 - [Other Projects](#other-projects)
@@ -107,8 +108,11 @@ For change duration of present time, create alert view and call `present` method
 
 ```swift
 let alertView = SPAlertView(title: "Complete", preset: .done)
-alertView.present(duration: 3)
+alertView.duration = 4
+alertView.present()
 ```
+
+If you don't want to dimiss alert in time, set `dismissInTime` to `false`. After it `duration` property will be ignored.
 
 ### Layout
 
@@ -137,7 +141,19 @@ alertView.present(duration: 1.5, haptic: .success, completion: nil)
 
 You can remove duration and completion, its have default values.
 
-### Shared Configuration
+### Spinner
+
+I added preset `.spinner`, for use it simple call this:
+
+```swift
+let 
+let alertView = SPAlertView(title: "Please, wait", preset: .spinner)
+alertView.present()
+```
+
+By default for this preset `dismissInTime` disabled and need manually dismiss alert.
+
+### Shared Appearance
 
 Also you can change some default values for alerts. For example you can change default duration and corner radius for alert with next code:
 

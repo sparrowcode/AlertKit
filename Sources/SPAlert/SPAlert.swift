@@ -52,8 +52,7 @@ public enum SPAlert {
      */
     public static func present(title: String, message: String? = nil, preset: SPAlertIconPreset, completion: (() -> Void)? = nil) {
         let alertView = SPAlertView(title: title, message: message, preset: preset)
-        let haptic = preset.getHaptic()
-        alertView.present(haptic: haptic, completion: completion)
+        alertView.present(haptic: preset.haptic, completion: completion)
     }
     
     /**

@@ -30,6 +30,7 @@ public enum SPAlertIconPreset {
     case done
     case error
     case heart
+    case spinner
     
     case custom(_ image: UIImage)
 }
@@ -43,6 +44,7 @@ public extension SPAlertIconPreset {
         case .done: return SPAlertIconDoneView()
         case .error: return SPAlertIconErrorView()
         case .heart: return SPAlertIconHeartView()
+        case .spinner: return SPAlertSpinnerView()
         case .custom(let image):
             let imageView = UIImageView(image: image)
             imageView.contentMode = .scaleAspectFit
@@ -50,11 +52,12 @@ public extension SPAlertIconPreset {
         }
     }
     
-    func getHaptic() -> SPAlertHaptic {
+    var haptic: SPAlertHaptic {
         switch self {
         case .done: return .success
         case .error: return .error
         case .heart: return .success
+        case .spinner: return .none
         case .custom(_): return .none
         }
     }
@@ -114,6 +117,20 @@ public extension SPAlertLayout {
                     top: 63,
                     left: Self.defaultHorizontalInset,
                     bottom: 29,
+                    right: Self.defaultHorizontalInset
+                ),
+                spaceBetweenIconAndTitle: 39
+            )
+        case .spinner:
+            self.init(
+                iconSize: .init(
+                    width: 16,
+                    height: 16
+                ),
+                margins: .init(
+                    top: 58,
+                    left: Self.defaultHorizontalInset,
+                    bottom: 27,
                     right: Self.defaultHorizontalInset
                 ),
                 spaceBetweenIconAndTitle: 39

@@ -39,7 +39,8 @@ extension View {
                 isPresent.wrappedValue = false
                 alertCompletion?()
             }
-            alertView.present(duration: duration, haptic: haptic, completion: alertDismiss)
+            alertView.duration = duration
+            alertView.present(haptic: haptic, completion: alertDismiss)
         }
         return self
     }

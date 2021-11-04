@@ -71,29 +71,35 @@ class PresetsController: SPDiffableTableController {
     
     fileprivate var presets: [AlertPresetModel] {
         return [
-            AlertPresetModel(
+            .init(
                 name: "Done",
                 title: "Added to Library",
                 message: nil,
                 preset: .done
             ),
-            AlertPresetModel(
+            .init(
                 name: "Error",
                 title: "Oops",
                 message: "Please try again later",
                 preset: .error
             ),
-            AlertPresetModel(
+            .init(
                 name: "Heart",
                 title: "Love",
                 message: "We'll recommend more like this for you",
                 preset: .heart
             ),
-            AlertPresetModel(
+            .init(
+                name: "Spinner (Loading)",
+                title: "Please, wait",
+                message: "It take some time",
+                preset: .spinner
+            ),
+            .init(
                 name: "Custom Image",
                 title: "Custom Image",
                 message: "Passed UIImage object for preset with style custom.",
-                preset: .custom(UIImage.init(systemName: "pencil.and.outline")!)
+                preset: .custom(UIImage.init(systemName: "pencil.and.outline")!.withRenderingMode(.alwaysOriginal))
             ),
         ]
     }
