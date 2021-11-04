@@ -36,18 +36,23 @@ import UIKit
 @available(iOSApplicationExtension, unavailable)
 open class SPAlertView: UIView {
     
-    // MARK: - Properties
-    
-    open var dismissByTap: Bool = true
     open var completion: (() -> Void)? = nil
     
-    // MARK: - UIAppearance
+    // MARK: - Properties
     
+    /**
+     SPAlert: Wrapper of corner radius of alert.
+     */
     @objc dynamic open var cornerRadius: CGFloat = 8 {
         didSet {
             layer.cornerRadius = self.cornerRadius
         }
     }
+    
+    /**
+     SPAlert: Dismiss alert by tap in any place inside. By default is on.
+     */
+    @objc dynamic open var dismissByTap: Bool = true
     
     /**
      SPAlert: Automatically dismiss in time or not. Duration of dismiss can be changed by property `duration`.

@@ -60,12 +60,14 @@ Ready for use on iOS 11+. Works with Swift 5+. Required Xcode 12.0 and higher.
 
 ### Swift Package Manager
 
-The [Swift Package Manager](https://swift.org/package-manager/) is a tool for managing the distribution of Swift code. It’s integrated with the Swift build system to automate the process of downloading, compiling, and linking dependencies.
+The [Swift Package Manager](https://swift.org/package-manager/) is a tool for automating the distribution of Swift code and is integrated into the `swift` compiler. It’s integrated with the Swift build system to automate the process of downloading, compiling, and linking dependencies.
 
-To integrate using Xcode 12, specify it in `File > Swift Packages > Add Package Dependency...`:
+Once you have your Swift package set up, adding as a dependency is as easy as adding it to the `dependencies` value of your `Package.swift`.
 
-```ogdl
-https://github.com/ivanvorobei/SPAlert
+```swift
+dependencies: [
+    .package(url: "https://github.com/ivanvorobei/SPAlert", .upToNextMajor(from: "3.5.0"))
+]
 ```
 
 ### CocoaPods:
@@ -112,7 +114,13 @@ alertView.duration = 4
 alertView.present()
 ```
 
-If you don't want to dimiss alert in time, set `dismissInTime` to `false`. After it `duration` property will be ignored.
+If you don't want to dimiss alert in time, disable `dismissInTime`. After it `duration` property will be ignored.
+
+```swift
+alertView.dismissInTime = false
+```
+
+In this case you shoud dismiss alert manually.
 
 ### Layout
 
