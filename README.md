@@ -154,7 +154,6 @@ You can remove duration and completion, its have default values.
 I added preset `.spinner`, for use it simple call this:
 
 ```swift
-let 
 let alertView = SPAlertView(title: "Please, wait", preset: .spinner)
 alertView.present()
 ```
