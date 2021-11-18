@@ -48,8 +48,6 @@ If you like the project, don't forget to `put star ★`<br>Check out my other li
     - [Spinner](#spinner)
     - [Shared Appearance](#shared-appearance)
 - [SwiftUI](#swiftui)
-- [Сontribution](#сontribution)
-- [Other Projects](#other-projects)
 - [Russian Community](#russian-community)
 
 ## Installation
@@ -198,24 +196,6 @@ Button("Show alert") {
             print("Alert is destory")
         })
 ```
-
-## Сontribution
-
-My English is very bad. You can see this once you read the documentation. I would really like to have clean and nice documentation. If you see gramatical errors and can help fix the Readme, please contact me hello@ivanvorobei.by or make a Pull Request. Thank you in advance!
-
-## Other Projects
-
-I love being helpful. Here I have provided a list of libraries that I keep up to date. For see `video previews` of libraries without install open [opensource.ivanvorobei.by](https://opensource.ivanvorobei.by) website.<br>
-I have libraries with native interface and managing permissions. Also available pack of useful extensions for boost your development process.
-
-<p float="left">
-    <a href="https://opensource.ivanvorobei.by">
-        <img src="https://github.com/ivanvorobei/Readme/blob/main/Buttons/more-libraries.svg">
-    </a>
-        <a href="https://xcodeshop.ivanvorobei.by">
-        <img src="https://github.com/ivanvorobei/Readme/blob/main/Buttons/xcode-shop.svg">
-    </a>
-</p>
 
 ## Russian Community
 
