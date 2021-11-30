@@ -18,7 +18,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		F43A587826564DDF009098ED /* SPAlert */ = {isa = PBXFileReference; lastKnownFileType = folder; name = SPAlert; path = ..; sourceTree = "<group>"; };
 		F47E1DFA26564B6A008D901C /* iOS Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F47E1E0B26564B6C008D901C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F47E1E1226564BB3008D901C /* AlertPresetModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertPresetModel.swift; sourceTree = "<group>"; };
@@ -26,6 +25,7 @@
 		F47E1E1626564BB3008D901C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F47E1E1726564BB3008D901C /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F47E1E1926564BB3008D901C /* PresetsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresetsController.swift; sourceTree = "<group>"; };
+		F482FBF42756A77100E40FDA /* SPAlert */ = {isa = PBXFileReference; lastKnownFileType = folder; name = SPAlert; path = ..; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,7 +45,7 @@
 		F47E1DF126564B6A008D901C = {
 			isa = PBXGroup;
 			children = (
-				F43A587826564DDF009098ED /* SPAlert */,
+				F482FBF42756A77100E40FDA /* SPAlert */,
 				F47E1DFC26564B6A008D901C /* iOS Example */,
 				F47E1DFB26564B6A008D901C /* Products */,
 			);

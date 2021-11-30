@@ -88,14 +88,6 @@ open class SPAlertView: UIView {
     
     public init(title: String, message: String? = nil, preset: SPAlertIconPreset) {
         super.init(frame: CGRect.zero)
-        
-        switch preset {
-        case .spinner:
-            self.dismissInTime = false
-        default:
-            self.dismissInTime = true
-        }
-        
         commonInit()
         layout = SPAlertLayout(for: preset)
         setTitle(title)
@@ -103,6 +95,15 @@ open class SPAlertView: UIView {
             setMessage(message)
         }
         setIcon(for: preset)
+        
+        switch preset {
+        case .spinner:
+            dismissInTime = false
+            dismissByTap = false
+        default:
+            dismissInTime = true
+            dismissByTap = true
+        }
     }
     
     public init(message: String) {
@@ -110,11 +111,15 @@ open class SPAlertView: UIView {
         commonInit()
         layout = SPAlertLayout.message()
         setMessage(message)
+        dismissInTime = true
+        dismissByTap = true
     }
     
     public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         commonInit()
+        dismissInTime = true
+        dismissByTap = true
     }
     
     private func commonInit() {
@@ -126,11 +131,6 @@ open class SPAlertView: UIView {
         layer.masksToBounds = true
         backgroundColor = .clear
         addSubview(backgroundView)
-        
-        if dismissByTap {
-            let tapGesterRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismiss))
-            addGestureRecognizer(tapGesterRecognizer)
-        }
         
         setCornerRadius(self.cornerRadius)
     }
@@ -216,6 +216,11 @@ open class SPAlertView: UIView {
         alpha = 0
         setFrame()
         transform = transform.scaledBy(x: self.presentDismissScale, y: self.presentDismissScale)
+        
+        if dismissByTap {
+            let tapGesterRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismiss))
+            addGestureRecognizer(tapGesterRecognizer)
+        }
         
         // Present
         
