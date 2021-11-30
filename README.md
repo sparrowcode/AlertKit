@@ -3,26 +3,26 @@
 **Popup from Apple Music & Feedback in AppStore**. Contains `Done`, `Heart`, `Error` and other presets. Supports Dark Mode. I tried to recreate Apple's alerts as much as possible. You can find these alerts in the AppStore after feedback and after you add a song to your library in Apple Music. Support `SwiftUI`.
 
 <p float="left">
-<img src="https://github.com/ivanvorobei/SPAlert/blob/main/Assets/Readme/Animatable/Done.gif" width="230">
-<img src="https://github.com/ivanvorobei/SPAlert/blob/main/Assets/Readme/Animatable/Heart.gif" width="230">
-<img src="https://github.com/ivanvorobei/SPAlert/blob/main/Assets/Readme/Animatable/Message.gif" width="230">
+<img src="https://cdn.ivanvorobei.by/github/spalert/done.gif" width="230">
+<img src="https://cdn.ivanvorobei.by/github/spalert/heart.gif" width="230">
+<img src="https://cdn.ivanvorobei.by/github/spalert/message.gif" width="230">
 </p>
 
 You can create more with custom images and [SFSymbols](https://developer.apple.com/sf-symbols/) more:
 
 <p float="left">
-<img src="https://github.com/ivanvorobei/SPAlert/blob/main/Assets/Readme/Miniatures/Bookmark.svg" width="50">
-<img src="https://github.com/ivanvorobei/SPAlert/blob/main/Assets/Readme/Miniatures/Moon.svg" width="50">
-<img src="https://github.com/ivanvorobei/SPAlert/blob/main/Assets/Readme/Miniatures/Star.svg" width="50">
-<img src="https://github.com/ivanvorobei/SPAlert/blob/main/Assets/Readme/Miniatures/Exclamation.svg" width="50">
-<img src="https://github.com/ivanvorobei/SPAlert/blob/main/Assets/Readme/Miniatures/Bolt.svg" width="50">
-<img src="https://github.com/ivanvorobei/SPAlert/blob/main/Assets/Readme/Miniatures/Cart.svg" width="50">
-<img src="https://github.com/ivanvorobei/SPAlert/blob/main/Assets/Readme/Miniatures/Like.svg" width="50">
-<img src="https://github.com/ivanvorobei/SPAlert/blob/main/Assets/Readme/Miniatures/Dislike.svg" width="50">
-<img src="https://github.com/ivanvorobei/SPAlert/blob/main/Assets/Readme/Miniatures/Privacy.svg" width="50">
-<img src="https://github.com/ivanvorobei/SPAlert/blob/main/Assets/Readme/Miniatures/Search.svg" width="50">
-<img src="https://github.com/ivanvorobei/SPAlert/blob/main/Assets/Readme/Miniatures/Add.svg" width="50">
-<img src="https://github.com/ivanvorobei/SPAlert/blob/main/Assets/Readme/Miniatures/Error.svg" width="50">
+<img src="https://cdn.ivanvorobei.by/github/spalert/miniatures/bookmark.svg" width="50">
+<img src="https://cdn.ivanvorobei.by/github/spalert/miniatures/moon.svg" width="50">
+<img src="https://cdn.ivanvorobei.by/github/spalert/miniatures/star.svg" width="50">
+<img src="https://cdn.ivanvorobei.by/github/spalert/miniatures/exclamation.svg" width="50">
+<img src="https://cdn.ivanvorobei.by/github/spalert/miniatures/bolt.svg" width="50">
+<img src="https://cdn.ivanvorobei.by/github/spalert/miniatures/cart.svg" width="50">
+<img src="https://cdn.ivanvorobei.by/github/spalert/miniatures/like.svg" width="50">
+<img src="https://cdn.ivanvorobei.by/github/spalert/miniatures/dislike.svg" width="50">
+<img src="https://cdn.ivanvorobei.by/github/spalert/miniatures/privacy.svg" width="50">
+<img src="https://cdn.ivanvorobei.by/github/spalert/miniatures/search.svg" width="50">
+<img src="https://cdn.ivanvorobei.by/github/spalert/miniatures/add.svg" width="50">
+<img src="https://cdn.ivanvorobei.by/github/spalert/miniatures/error.svg" width="50">
 </p>
 
 If you like the project, don't forget to `put star ★`<br>Check out my other libraries:
@@ -54,7 +54,7 @@ If you like the project, don't forget to `put star ★`<br>Check out my other li
 
 Ready for use on iOS 11+. Works with Swift 5+. Required Xcode 12.0 and higher.
 
-<img align="right" src="https://github.com/ivanvorobei/SPAlert/blob/main/Assets/Readme/spm-install-preview.png" width="520"/>
+<img align="right" src="https://cdn.ivanvorobei.by/github/spalert/spm-install-preview.png" width="520"/>
 
 ### Swift Package Manager
 
@@ -64,7 +64,7 @@ Once you have your Swift package set up, adding as a dependency is as easy as ad
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/ivanvorobei/SPAlert", .upToNextMajor(from: "3.5.0"))
+    .package(url: "https://github.com/ivanvorobei/SPAlert", .upToNextMajor(from: "3.5.1"))
 ]
 ```
 
