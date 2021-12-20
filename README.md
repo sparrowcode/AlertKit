@@ -1,37 +1,13 @@
 # SPAlert
 
-**Popup from Apple Music & Feedback in AppStore**. Contains `Done`, `Heart`, `Error` and other presets. Supports Dark Mode. I tried to recreate Apple's alerts as much as possible. You can find these alerts in the AppStore after feedback and after you add a song to your library in Apple Music. Support `SwiftUI`.
-
 <p float="left">
 <img src="https://cdn.ivanvorobei.by/github/spalert/done.gif" width="230">
 <img src="https://cdn.ivanvorobei.by/github/spalert/heart.gif" width="230">
 <img src="https://cdn.ivanvorobei.by/github/spalert/message.gif" width="230">
 </p>
 
-You can create more with custom images and [SFSymbols](https://developer.apple.com/sf-symbols/) more:
-
-<p float="left">
-<img src="https://cdn.ivanvorobei.by/github/spalert/miniatures/bookmark.svg" width="50">
-<img src="https://cdn.ivanvorobei.by/github/spalert/miniatures/moon.svg" width="50">
-<img src="https://cdn.ivanvorobei.by/github/spalert/miniatures/star.svg" width="50">
-<img src="https://cdn.ivanvorobei.by/github/spalert/miniatures/exclamation.svg" width="50">
-<img src="https://cdn.ivanvorobei.by/github/spalert/miniatures/bolt.svg" width="50">
-<img src="https://cdn.ivanvorobei.by/github/spalert/miniatures/cart.svg" width="50">
-<img src="https://cdn.ivanvorobei.by/github/spalert/miniatures/like.svg" width="50">
-<img src="https://cdn.ivanvorobei.by/github/spalert/miniatures/dislike.svg" width="50">
-<img src="https://cdn.ivanvorobei.by/github/spalert/miniatures/privacy.svg" width="50">
-<img src="https://cdn.ivanvorobei.by/github/spalert/miniatures/search.svg" width="50">
-<img src="https://cdn.ivanvorobei.by/github/spalert/miniatures/add.svg" width="50">
-<img src="https://cdn.ivanvorobei.by/github/spalert/miniatures/error.svg" width="50">
-</p>
-
-If you like the project, don't forget to `put star ★`<br>Check out my other libraries:
-
-<p float="left">
-    <a href="https://opensource.ivanvorobei.by">
-        <img src="https://github.com/ivanvorobei/Readme/blob/main/Buttons/more-libraries.svg">
-    </a>
-</p>
+**Popup from Apple Music & Feedback in AppStore**. Contains `Done`, `Heart`, `Error` and other. Supports Dark Mode. Support `SwiftUI`.
+I tried to recreate Apple's alerts as much as possible. You can find these alerts in the AppStore after feedback and after you add a song to your library in Apple Music. 
 
 ## Navigate
 
@@ -42,8 +18,8 @@ If you like the project, don't forget to `put star ★`<br>Check out my other li
 - [Quick Start](#quick-start)
 - [Usage](#usage)
     - [Duration](#duration)
+    - [Dismiss](#dismiss)
     - [Layout](#layout)
-    - [Dismiss by Tap](#dismiss-by-tap)
     - [Haptic](#haptic)
     - [Spinner](#spinner)
     - [Shared Appearance](#shared-appearance)
@@ -52,9 +28,7 @@ If you like the project, don't forget to `put star ★`<br>Check out my other li
 
 ## Installation
 
-Ready for use on iOS 11+. Works with Swift 5+. Required Xcode 12.0 and higher.
-
-<img align="right" src="https://cdn.ivanvorobei.by/github/spalert/spm-install-preview.png" width="520"/>
+Ready for use on iOS 11+.
 
 ### Swift Package Manager
 
@@ -64,13 +38,13 @@ Once you have your Swift package set up, adding as a dependency is as easy as ad
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/ivanvorobei/SPAlert", .upToNextMajor(from: "3.5.1"))
+    .package(url: "https://github.com/ivanvorobei/SPAlert", .upToNextMajor(from: "4.0.0"))
 ]
 ```
 
 ### CocoaPods:
 
-[CocoaPods](https://cocoapods.org) is a dependency manager for Cocoa projects. For usage and installation instructions, visit their website. To integrate using CocoaPods, specify it in your `Podfile`:
+[CocoaPods](https://cocoapods.org) is a dependency manager. For usage and installation instructions, visit their website. To integrate using CocoaPods, specify it in your `Podfile`:
 
 ```ruby
 pod 'SPAlert'
@@ -120,6 +94,20 @@ alertView.dismissInTime = false
 
 In this case you shoud dismiss alert manually.
 
+### Dismiss
+
+If you tap the alert, it will disappear. This can be disabled:
+
+```swift
+alertView.dismissByTap = false
+```
+
+Also you can manually dismiss all alerts, simple call this:
+
+```swift
+SPAlert.dismiss()
+```
+
 ### Layout
 
 For customise layout and margins, use `layout` property. You can manage margins for each side, icon size and space between image and titles:
@@ -130,13 +118,6 @@ alertView.layout.margins.top = 12
 alertView.layout.spaceBetweenIconAndTitle = 8
 ```
 
-### Dismiss by Tap
-
-If you tap the alert, it will disappear. This can be disabled:
-
-```swift
-alertView.dismissByTap = false
-```
 ### Haptic
 
 For manage haptic, you shoud pass it in present method:
@@ -156,7 +137,15 @@ let alertView = SPAlertView(title: "Please, wait", preset: .spinner)
 alertView.present()
 ```
 
-By default for this preset `dismissInTime` disabled and need manually dismiss alert.
+By default for this preset `dismissInTime` disabled and need manually dismiss alert. You can do it only for one view or dimiss all alerts:
+
+```swift
+// For one alert
+alertView.dismiss()
+
+// For all alerts
+SPAlert.dismiss()
+```
 
 ### Shared Appearance
 
@@ -176,7 +165,7 @@ Use like system alert only show message tips:
 ```swift
 Button("Show alert") {
     showAlert = true
-}.spAlert(isPresent: $showAlert, message: "this is message only")
+}.SPAlert(isPresent: $showAlert, message: "this is message only")
 ```
 
 or show message, title, image and other configuration:
@@ -184,32 +173,24 @@ or show message, title, image and other configuration:
 ```swift
 Button("Show alert") {
     showAlert = true
-}.spAlert(isPresent: $showAlert, 
-        title: "Alert title", 
-        message: "Alert message",
-        duration: 2.0, 
-        dismissOnTap: false, 
-        present: .custom(UIImage(systemName: "heart")!), 
-        haptic: .success, 
-        layout: .init(), 
-        completion: {
-            print("Alert is destory")
-        })
+}.SPAlert(
+    isPresent: $showAlert, 
+    title: "Alert title", 
+    message: "Alert message",
+    duration: 2.0, 
+    dismissOnTap: false, 
+    present: .custom(UIImage(systemName: "heart")!), 
+    haptic: .success, 
+    layout: .init(), 
+    completion: {
+        print("Alert is destory")
+    })
 ```
 
 ## Russian Community
 
-Подписывайся в телеграм-канал, если хочешь получать уведомления о новых туториалах.<br>
-Со сложными и непонятными задачами помогут в чате.
-
-<p float="left">
-    <a href="https://sparrowcode.by/telegram">
-        <img src="https://github.com/ivanvorobei/Readme/blob/main/Buttons/open-telegram-channel.svg">
-    </a>
-    <a href="https://sparrowcode.by/telegram/chat">
-        <img src="https://github.com/ivanvorobei/Readme/blob/main/Buttons/russian-community-chat.svg">
-    </a>
-</p>
+Я веду [телеграм-канал](https://sparrowcode.by/telegram), там публикую новости и туториалы.<br>
+С проблемой помогут [в чате](https://sparrowcode.by/telegram/chat).
 
 Видео-туториалы выклыдываю на [YouTube](https://ivanvorobei.by/youtube):
 

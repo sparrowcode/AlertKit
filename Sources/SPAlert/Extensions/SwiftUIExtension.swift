@@ -27,7 +27,7 @@ import SwiftUI
 @available(iOSApplicationExtension, unavailable)
 extension View {
     
-    public func spAlert(
+    public func SPAlert(
         isPresent: Binding<Bool>,
         alertView: SPAlertView,
         duration: TimeInterval = 2.0,
@@ -45,7 +45,7 @@ extension View {
         return self
     }
     
-    public func spAlert(isPresent: Binding<Bool>,
+    public func SPAlert(isPresent: Binding<Bool>,
                         title: String = "",
                         message: String? = nil,
                         duration: TimeInterval = 2.0,
@@ -60,10 +60,10 @@ extension View {
         alertView.layout = layout ??  SPAlertLayout(for: preset)
         alertView.completion = completion
         
-        return spAlert(isPresent: isPresent, alertView: alertView, duration: duration, haptic: haptic)
+        return SPAlert(isPresent: isPresent, alertView: alertView, duration: duration, haptic: haptic)
     }
     
-    public func spAlert(isPresent: Binding<Bool>,
+    public func SPAlert(isPresent: Binding<Bool>,
                         message: String,
                         duration: TimeInterval = 2.0,
                         dismissOnTap: Bool = true,
@@ -75,6 +75,6 @@ extension View {
         alertView.dismissByTap = dismissOnTap
         alertView.completion = completion
         
-        return spAlert(isPresent: isPresent, alertView: alertView, duration: duration, haptic: haptic)
+        return SPAlert(isPresent: isPresent, alertView: alertView, duration: duration, haptic: haptic)
     }
 }

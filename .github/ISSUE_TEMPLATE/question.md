@@ -2,7 +2,7 @@
 name: Question
 about: Something is not clear with the project
 title: ''
-labels: ''
+labels: 'question'
 assignees: ivanvorobei
 
 ---

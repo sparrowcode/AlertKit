@@ -66,4 +66,28 @@ public enum SPAlert {
         let alertView = SPAlertView(message: message)
         alertView.present(haptic: haptic, completion: completion)
     }
+    
+    /**
+     SPAlert: Dismiss all `SPAlert` views.
+     */
+    public static func dismiss() {
+        if #available(iOS 13.0, *) {
+            for scene in UIApplication.shared.connectedScenes {
+                if let windowScene = scene as? UIWindowSceneDelegate {
+                    for view in windowScene.window??.subviews ?? [] {
+                        if let alertView = view as? SPAlertView {
+                            alertView.dismiss()
+                        }
+                    }
+                }
+            }
+        } else {
+            guard let window = UIApplication.shared.keyWindow else { return }
+            for view in window.subviews {
+                if let alertView = view as? SPAlertView {
+                    alertView.dismiss()
+                }
+            }
+        }
+    }
 }
