@@ -22,7 +22,7 @@ I tried to recreate Apple's alerts as much as possible. You can find these alert
     - [Layout](#layout)
     - [Haptic](#haptic)
     - [Spinner](#spinner)
-    - [Shared Appearance](#shared-appearance)
+    - [Appearance](#appearance)
 - [SwiftUI](#swiftui)
 - [Russian Community](#russian-community)
 
@@ -147,7 +147,7 @@ alertView.dismiss()
 SPAlert.dismiss()
 ```
 
-### Shared Appearance
+### Appearance
 
 Also you can change some default values for alerts. For example you can change default duration and corner radius for alert with next code:
 
