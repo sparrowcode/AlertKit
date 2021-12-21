@@ -99,7 +99,7 @@ class PresetsController: SPDiffableTableController {
                 name: "Custom Image",
                 title: "Custom Image",
                 message: "Passed UIImage object for preset with style custom.",
-                preset: .custom(UIImage.init(systemName: "pencil.and.outline")!.withRenderingMode(.alwaysOriginal))
+                preset: .custom(UIImage.init(systemName: "pencil.and.outline")!.withRenderingMode(.alwaysTemplate))
             ),
         ]
     }

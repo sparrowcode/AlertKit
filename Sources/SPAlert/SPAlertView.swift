@@ -145,6 +145,7 @@ open class SPAlertView: UIView {
         style.lineSpacing = 3
         style.alignment = .center
         label.attributedText = NSAttributedString(string: text, attributes: [.paragraphStyle: style])
+        label.textColor = defaultContentColor
         titleLabel = label
         addSubview(label)
     }
@@ -157,12 +158,14 @@ open class SPAlertView: UIView {
         style.lineSpacing = 2
         style.alignment = .center
         label.attributedText = NSAttributedString(string: text, attributes: [.paragraphStyle: style])
+        label.textColor = defaultContentColor
         subtitleLabel = label
         addSubview(label)
     }
     
     private func setIcon(for preset: SPAlertIconPreset) {
         let view = preset.createView()
+        view.tintColor = defaultContentColor
         self.iconView = view
         addSubview(view)
     }
@@ -207,11 +210,6 @@ open class SPAlertView: UIView {
         // Prepare for present
         
         self.completion = completion
-        
-        let contentСolor = defaultContentColor
-        titleLabel?.textColor = contentСolor
-        subtitleLabel?.textColor = contentСolor
-        iconView?.tintColor = contentСolor
         
         alpha = 0
         setFrame()
