@@ -68,6 +68,16 @@ public enum SPAlert {
     }
     
     /**
+     SPAlert: Show present only.
+     
+     - parameter completion: Will call with dismiss alert.
+     */
+    public static func present(preset: SPAlertIconPreset, completion: (() -> Void)? = nil) {
+        let alertView = SPAlertView(preset: preset)
+        alertView.present(haptic: preset.haptic, completion: completion)
+    }
+    
+    /**
      SPAlert: Dismiss all `SPAlert` views.
      */
     public static func dismiss() {

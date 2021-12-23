@@ -39,7 +39,7 @@ Once you have your Swift package set up, adding as a dependency is as easy as ad
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/ivanvorobei/SPAlert", .upToNextMajor(from: "4.0.1"))
+    .package(url: "https://github.com/ivanvorobei/SPAlert", .upToNextMajor(from: "4.1.0"))
 ]
 ```
 

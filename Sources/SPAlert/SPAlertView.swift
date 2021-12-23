@@ -86,10 +86,8 @@ open class SPAlertView: UIView {
     
     // MARK: - Init
     
-    public init(title: String, message: String? = nil, preset: SPAlertIconPreset) {
-        super.init(frame: CGRect.zero)
-        commonInit()
-        layout = SPAlertLayout(for: preset)
+    public convenience init(title: String, message: String? = nil, preset: SPAlertIconPreset) {
+        self.init(preset: preset)
         setTitle(title)
         if let message = message {
             setMessage(message)
@@ -104,6 +102,12 @@ open class SPAlertView: UIView {
             dismissInTime = true
             dismissByTap = true
         }
+    }
+    
+    public init(preset: SPAlertIconPreset) {
+        super.init(frame: CGRect.zero)
+        commonInit()
+        layout = SPAlertLayout(for: preset)
     }
     
     public init(message: String) {
