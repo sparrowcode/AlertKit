@@ -6,8 +6,10 @@
 <img src="https://cdn.ivanvorobei.by/github/spalert/message.gif" width="230">
 </p>
 
-**Popup from Apple Music & Feedback in AppStore**. Contains `Done`, `Heart`, `Error` and other. Supports Dark Mode. Support `SwiftUI`.
-I tried to recreate Apple's alerts as much as possible. You can find these alerts in the AppStore after feedback and after you add a song to your library in Apple Music. 
+**Popup from Apple Music & Feedback in AppStore**. Contains `Done`, `Heart`, `Error` and other. Supports Dark Mode and `SwiftUI`.
+I tried to recreate Apple's alerts as much as possible. You can find these alerts in the AppStore after feedback and after you add a song to your library in Apple Music.
+
+For get alert from switch silent mode, check library [SPIndicator](https://github.com/ivanvorobei/SPIndicator).
 
 ## Navigate
 
