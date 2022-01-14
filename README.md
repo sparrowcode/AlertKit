@@ -203,8 +203,8 @@ Button("Show alert") {
 
 ## Russian Community
 
-Я веду [телеграм-канал](https://sparrowcode.by/telegram), там публикую новости и туториалы.<br>
-С проблемой помогут [в чате](https://sparrowcode.by/telegram/chat).
+Я веду [телеграм-канал](https://sparrowcode.io/telegram), там публикую новости и туториалы.<br>
+С проблемой помогут [в чате](https://sparrowcode.io/telegram/chat).
 
 Видео-туториалы выклыдываю на [YouTube](https://ivanvorobei.by/youtube):
 
