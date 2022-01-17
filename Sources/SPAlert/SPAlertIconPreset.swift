@@ -25,7 +25,7 @@ import UIKit
  SPAlert: Represent icon wrapper.
  Included default styles and can be custom image.
  */
-public enum SPAlertIconPreset {
+public enum SPAlertIconPreset: Equatable {
     
     case done
     case error

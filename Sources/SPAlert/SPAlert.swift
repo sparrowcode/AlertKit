@@ -83,10 +83,12 @@ public enum SPAlert {
     public static func dismiss() {
         if #available(iOS 13.0, *) {
             for scene in UIApplication.shared.connectedScenes {
-                if let windowScene = scene as? UIWindowSceneDelegate {
-                    for view in windowScene.window??.subviews ?? [] {
-                        if let alertView = view as? SPAlertView {
-                            alertView.dismiss()
+                if let windowScene = scene as? UIWindowScene {
+                    windowScene.windows.forEach { window in
+                        for view in window.subviews {
+                            if let alertView = view as? SPAlertView {
+                                alertView.dismiss()
+                            }
                         }
                     }
                 }

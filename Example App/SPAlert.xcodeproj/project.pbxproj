@@ -379,7 +379,7 @@
 			repositoryURL = "https://github.com/ivanvorobei/SparrowKit";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 3.0.7;
+				minimumVersion = 3.5.0;
 			};
 		};
 		F43A587526564C7D009098ED /* XCRemoteSwiftPackageReference "SPDiffable" */ = {
@@ -387,7 +387,7 @@
 			repositoryURL = "https://github.com/ivanvorobei/SPDiffable";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 1.2.2;
+				minimumVersion = 4.0.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */

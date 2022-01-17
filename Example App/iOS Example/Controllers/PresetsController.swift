@@ -43,7 +43,7 @@ class PresetsController: SPDiffableTableController {
         navigationItem.title = "SPAlert Presets"
         
         currentPreset = presets.first!
-        setCellProviders(SPDiffableTableCellProviders.default, sections: content)
+        configureDiffable(sections: content, cellProviders: SPDiffableTableDataSource.CellProvider.default)
         
         navigationController?.isToolbarHidden = false
         toolbarItems = [
@@ -61,7 +61,19 @@ class PresetsController: SPDiffableTableController {
             .init(barButtonSystemItem: .flexibleSpace, target: nil, action: nil),
             .init(systemItem: .play, primaryAction: .init(handler: { [weak self] (action) in
                 guard let preset = self?.currentPreset else { return }
-                SPAlert.present(title: preset.title, message: preset.message, preset: preset.preset, completion: nil)
+                SPAlert.present(
+                    title: preset.title,
+                    message: preset.message,
+                    preset: preset.preset,
+                    completion: nil
+                )
+                
+                if preset.preset == SPAlertIconPreset.spinner {
+                    delay(2, closure: {
+                        SPAlert.dismiss()
+                    })
+                }
+                
             }), menu: nil),
             .init(barButtonSystemItem: .flexibleSpace, target: nil, action: nil),
         ]
@@ -107,15 +119,8 @@ class PresetsController: SPDiffableTableController {
     // MARK: - Diffable
     
     var currentPreset: AlertPresetModel? {
-        willSet {
-            guard let id = self.currentPreset?.id else { return }
-            let cell = diffableDataSource?.cell(UITableViewCell.self, for: id)
-            cell?.accessoryType = .none
-        }
         didSet {
-            guard let id = self.currentPreset?.id else { return }
-            let cell = diffableDataSource?.cell(UITableViewCell.self, for: id)
-            cell?.accessoryType = .checkmark
+            self.diffableDataSource?.set(content, animated: false)
         }
     }
     
@@ -124,13 +129,13 @@ class PresetsController: SPDiffableTableController {
             return SPDiffableTableRow(
                 text: preset.name,
                 accessoryType: (preset.id == currentPreset?.id) ? .checkmark : .none,
-                selectionStyle: .none) { [weak self] _ in
+                selectionStyle: .none) { [weak self] _,_  in
                     guard let self = self else { return }
                     self.currentPreset = preset
             }
         }
         return [
-            SPDiffableSection(identifier: "presets", header: nil, footer: nil, items: items)
+            SPDiffableSection(id: "presets", header: nil, footer: nil, items: items)
         ]
     }
 }
