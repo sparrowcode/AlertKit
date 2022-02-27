@@ -1,9 +1,9 @@
 # SPAlert
 
 <p float="left">
-<img src="https://cdn.ivanvorobei.by/github/spalert/done.gif" width="230">
-<img src="https://cdn.ivanvorobei.by/github/spalert/heart.gif" width="230">
-<img src="https://cdn.ivanvorobei.by/github/spalert/message.gif" width="230">
+<img src="https://cdn.ivanvorobei.io/github/spalert/done.gif" width="230">
+<img src="https://cdn.ivanvorobei.io/github/spalert/heart.gif" width="230">
+<img src="https://cdn.ivanvorobei.io/github/spalert/message.gif" width="230">
 </p>
 
 **Popup from Apple Music & Feedback in AppStore**. Contains `Done`, `Heart`, `Error` and other. Supports Dark Mode and `SwiftUI`.
@@ -206,6 +206,6 @@ Button("Show alert") {
 Я веду [телеграм-канал](https://sparrowcode.io/telegram), там публикую новости и туториалы.<br>
 С проблемой помогут [в чате](https://sparrowcode.io/telegram/chat).
 
-Видео-туториалы выклыдываю на [YouTube](https://ivanvorobei.by/youtube):
+Видео-туториалы выклыдываю на [YouTube](https://ivanvorobei.io/youtube):
 
-[![Tutorials on YouTube](https://cdn.ivanvorobei.by/github/readme/youtube-preview.jpg)](https://ivanvorobei.by/youtube)
+[![Tutorials on YouTube](https://cdn.ivanvorobei.io/github/readme/youtube-preview.jpg)](https://ivanvorobei.io/youtube)
