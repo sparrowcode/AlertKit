@@ -1,4 +1,4 @@
-# SPAlert
+# SPAlert [Sponsor via GitHub](https://github.com/sponsors/sparrowcode)
 
 <p float="left">
 <img src="https://cdn.ivanvorobei.io/github/spalert/done.gif" width="230">
