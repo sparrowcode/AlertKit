@@ -193,7 +193,7 @@ Button("Show alert") {
     message: "Alert message",
     duration: 2.0, 
     dismissOnTap: false, 
-    present: .custom(UIImage(systemName: "heart")!), 
+    preset: .custom(UIImage(systemName: "heart")!), 
     haptic: .success, 
     layout: .init(), 
     completion: {
