@@ -55,11 +55,11 @@ pod 'SPAlert'
 
 ### Manually
 
-If you prefer not to use any of dependency managers, you can integrate manually. Put `Sources/SPAlert` folder in your Xcode project. Make sure to enable `Copy items if needed` and `Create groups`.
+If you prefer not to use any of the dependency managers, you can integrate manually. Put `Sources/SPAlert` folder in your Xcode project. Make sure to enable `Copy items if needed` and `Create groups`.
 
 ## Quick Start
 
-For best experience, I recommend presenting alerts by calling the class functions `SPAlert`. These functions are updated regularly and show the alerts as Apple way: 
+For the best experience, I recommend presenting alerts by calling the class functions `SPAlert`. These functions are updated regularly and show the alerts as Apple way: 
 
 ```swift
 SPAlert.present(title: "Added to Library", preset: .done)
@@ -81,7 +81,7 @@ SPAlert.present(message: "Something going wrong", haptic: .error)
 
 ### Duration
 
-For change duration of present time, create alert view and call `present` method with custom duration:
+To change the duration of present time, create an alert view and call `present` method with custom duration:
 
 ```swift
 let alertView = SPAlertView(title: "Complete", preset: .done)
@@ -89,13 +89,13 @@ alertView.duration = 4
 alertView.present()
 ```
 
-If you don't want to dimiss alert in time, disable `dismissInTime`. After it `duration` property will be ignored.
+If you don't want to dismiss alert in time, disable `dismissInTime`. After it, `duration` property will be ignored.
 
 ```swift
 alertView.dismissInTime = false
 ```
 
-In this case you shoud dismiss alert manually.
+In this case, you should dismiss the alert manually.
 
 ### Dismiss
 
@@ -105,7 +105,7 @@ If you tap the alert, it will disappear. This can be disabled:
 alertView.dismissByTap = false
 ```
 
-Also you can manually dismiss all alerts, simple call this:
+Also, you can manually dismiss all alerts, simply call this:
 
 ```swift
 SPAlert.dismiss()
@@ -123,24 +123,24 @@ alertView.layout.spaceBetweenIconAndTitle = 8
 
 ### Haptic
 
-For manage haptic, you shoud pass it in present method:
+To manage haptic, you should pass it in present method:
 
 ```swift
 alertView.present(duration: 1.5, haptic: .success, completion: nil)
 ```
 
-You can remove duration and completion, its have default values.
+You can remove duration and completion, because they have default values.
 
 ### Spinner
 
-I added preset `.spinner`, for use it simple call this:
+I added the preset `.spinner`, to use it simply call this:
 
 ```swift
 let alertView = SPAlertView(title: "Please, wait", preset: .spinner)
 alertView.present()
 ```
 
-By default for this preset `dismissInTime` disabled and need manually dismiss alert. You can do it only for one view or dimiss all alerts:
+By default this preset `dismissInTime` is disabled and the alert needs to be manually dismissed. You can do it only for one view or dismiss all alerts:
 
 ```swift
 // For one alert
@@ -170,7 +170,7 @@ SPAlertView.appearance().duration = 2
 SPAlertView.appearance().cornerRadius = 12
 ```
 
-It will apply for all alerts. I recomend set it in app delegate. But you can change it in runtime.
+It will apply to all alerts. I recommend setting it in the app delegate, but you can change it in runtime.
 
 ## SwiftUI
 
