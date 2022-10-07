@@ -107,13 +107,26 @@ open class SPAlertView: UIView {
     public init(preset: SPAlertIconPreset) {
         super.init(frame: CGRect.zero)
         commonInit()
+        setIcon(for: preset)
         layout = SPAlertLayout(for: preset)
+        switch preset {
+        case .spinner:
+            dismissInTime = false
+            dismissByTap = false
+        default:
+            dismissInTime = true
+            dismissByTap = true
+        }
     }
     
     public init(message: String) {
         super.init(frame: CGRect.zero)
         commonInit()
-        layout = SPAlertLayout.message()
+        layout = SPAlertLayout(
+            iconSize: CGSize(width: 16, height: 16),
+            margins: UIEdgeInsets(top: 58, left: 16, bottom: 58, right: 58),
+            spaceBetweenIconAndTitle: 0
+        )
         setMessage(message)
         dismissInTime = true
         dismissByTap = true
