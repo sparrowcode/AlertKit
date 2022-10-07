@@ -108,7 +108,11 @@ open class SPAlertView: UIView {
         super.init(frame: CGRect.zero)
         commonInit()
         setIcon(for: preset)
-        layout = SPAlertLayout(for: preset)
+        layout = SPAlertLayout(
+            iconSize: CGSize(width: 16, height: 16),
+            margins: UIEdgeInsets(top: 58, left: 16, bottom: 58, right: 58),
+            spaceBetweenIconAndTitle: 0
+        )
         switch preset {
         case .spinner:
             dismissInTime = false
@@ -122,11 +126,7 @@ open class SPAlertView: UIView {
     public init(message: String) {
         super.init(frame: CGRect.zero)
         commonInit()
-        layout = SPAlertLayout(
-            iconSize: CGSize(width: 16, height: 16),
-            margins: UIEdgeInsets(top: 58, left: 16, bottom: 58, right: 58),
-            spaceBetweenIconAndTitle: 0
-        )
+        layout = SPAlertLayout.message()
         setMessage(message)
         dismissInTime = true
         dismissByTap = true
