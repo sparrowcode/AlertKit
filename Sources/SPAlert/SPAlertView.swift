@@ -186,15 +186,25 @@ open class SPAlertView: UIView {
     fileprivate var defaultContentColor: UIColor {
         let darkColor = UIColor(red: 127 / 255, green: 127 / 255, blue: 129 / 255, alpha: 1)
         let lightColor = UIColor(red: 88 / 255, green: 87 / 255, blue: 88 / 255, alpha: 1)
-        if #available(iOS 12.0, *) {
+        if #available(iOS 13.0, *) {
+            return UIColor { traitCollection in
+                switch traitCollection.userInterfaceStyle {
+                case .dark:
+                    return darkColor
+                default:
+                    return lightColor
+                }
+            }
+        } else if #available(iOS 12.0, *) {
+            // FIXME: sometime, self.window is not yet defined
             guard let interfaceStyle = self.window?.traitCollection.userInterfaceStyle else {
                 return lightColor
             }
             switch interfaceStyle {
-            case .light: return lightColor
-            case .dark: return darkColor
-            case .unspecified: return lightColor
-            @unknown default: return lightColor
+            case .dark:
+                return darkColor
+            default:
+                return lightColor
             }
         } else {
             return lightColor
