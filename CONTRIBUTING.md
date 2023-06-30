@@ -1,7 +1,6 @@
 # Contributing
 
-Here provided more info about project, contribution process and recomended changes.
-Please, read it before pull request or create issue.
+Here provided info about contribution process and recommendations.
 
 ## Codestyle 
 
@@ -28,5 +27,3 @@ Here you find all which using in project:
 - // MARK: - Internal
 - // MARK: - Models
 - // MARK: - Ovveride
-
-If you can't find valid, add new to codestyle agreements please. Other can be use if class is large and need struct it even without adding to codestyle agreements.

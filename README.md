@@ -1,19 +1,30 @@
-# SPAlert
+# AlertKit
 
-<p float="left">
-<img src="https://cdn.ivanvorobei.io/github/spalert/done.gif" width="230">
-<img src="https://cdn.ivanvorobei.io/github/spalert/heart.gif" width="230">
-<img src="https://cdn.ivanvorobei.io/github/spalert/message.gif" width="230">
-</p>
-
-**Popup from Apple Music & Feedback in AppStore**. Contains `Done`, `Heart`, `Error` and other. Supports Dark Mode and `SwiftUI`.
+**Popup from Apple Music & Feedback in AppStore**. Contains `Done`, `Heart`, `Error` and other. Supports Dark Mode.
 I tried to recreate Apple's alerts as much as possible. You can find these alerts in the AppStore after feedback and after you add a song to your library in Apple Music.
 
-For get alert from switch silent mode, check library [SPIndicator](https://github.com/ivanvorobei/SPIndicator).
+![Alert Kit v5](https://cdn.sparrowcode.io/github/alertkit/v5/preview-v1.png)
+
+For run alert just call this:
+
+```swift
+AlertKitAPI.present(title: "Added to Library", icon: .done, style: .iOS17AppleMusic, haptic: .success)
+```
+
+Available 2 styles:
+
+```swift
+public enum AlertViewStyle {
+    
+    case iOS16AppleMusic
+    case iOS17AppleMusic
+}
+```
 
 ### Community
 
 <p float="left">
+    English Speacking:
     <a href="https://twitter.com/sparrowcode_en">
         <img src="https://cdn.sparrowcode.io/github%2Fbadges%2Ftwitter.png?version=4" height="52">
     </a>
@@ -26,203 +37,56 @@ For get alert from switch silent mode, check library [SPIndicator](https://githu
     <a href="#apps-using">
         <img src="https://cdn.sparrowcode.io/github/badges/download-on-the-appstore.png?version=4" height="52">
     </a>
+    Russian Speacking:
 </p>
-
-## Navigate
-
-- [Installation](#installation)
-    - [Swift Package Manager](#swift-package-manager)
-    - [CocoaPods](#cocoapods)
-    - [Manually](#manually)
-- [Quick Start](#quick-start)
-- [Usage](#usage)
-    - [Duration](#duration)
-    - [Dismiss](#dismiss)
-    - [Layout](#layout)
-    - [Haptic](#haptic)
-    - [Spinner](#spinner)
-    - [Colors](#colors)
-    - [Global Appearance](#global-appearance)
-- [SwiftUI](#swiftui)
-- [Russian Community](#russian-community)
 
 ## Installation
 
-Ready for use on iOS 11+.
+Ready to use on iOS 13+.
 
 ### Swift Package Manager
 
-The [Swift Package Manager](https://swift.org/package-manager/) is a tool for automating the distribution of Swift code and is integrated into the `swift` compiler. It’s integrated with the Swift build system to automate the process of downloading, compiling, and linking dependencies.
+In Xcode go to Project -> Your Project Name -> `Package Dependencies` -> Tap *Plus*. Insert url:
 
-Once you have your Swift package set up, adding as a dependency is as easy as adding it to the `dependencies` value of your `Package.swift`.
+```
+https://github.com/sparrowcode/AlertKit
+```
+
+or adding it to the `dependencies` of your `Package.swift`:
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/ivanvorobei/SPAlert", .upToNextMajor(from: "4.2.0"))
+    .package(url: "https://github.com/sparrowcode/AlertKit", .upToNextMajor(from: "5.0.0"))
 ]
 ```
 
 ### CocoaPods:
+
+This is an outdated way of doing things. I advise you to use [SPM](#swift-package-manager). However, I will continue to support Cocoapods for some time.
+
+<details><summary>Cocoapods Instalation</summary>
 
 [CocoaPods](https://cocoapods.org) is a dependency manager. For usage and installation instructions, visit their website. To integrate using CocoaPods, specify it in your `Podfile`:
 
 ```ruby
 pod 'SPAlert'
 ```
+</details>
 
 ### Manually
 
-If you prefer not to use any of the dependency managers, you can integrate manually. Put `Sources/SPAlert` folder in your Xcode project. Make sure to enable `Copy items if needed` and `Create groups`.
+If you prefer not to use any of dependency managers, you can integrate manually. Put `Sources/AlertKit` folder in your Xcode project. Make sure to enable `Copy items if needed` and `Create groups`.
 
-## Quick Start
+## Apps Using
 
-For the best experience, I recommend presenting alerts by calling the class functions `SPAlert`. These functions are updated regularly and show the alerts as Apple way: 
+<p float="left">
+    <a href="https://apps.apple.com/app/id1624477055"><img src="https://cdn.sparrowcode.io/github/apps-using/id1624477055.png?version=2" height="65"></a>
+    <a href="https://apps.apple.com/app/id1625641322"><img src="https://cdn.sparrowcode.io/github/apps-using/id1625641322.png?version=2" height="65"></a>
+    <a href="https://apps.apple.com/app/id875280793"><img src="https://cdn.sparrowcode.io/github/apps-using/id875280793.png?version=2" height="65"></a>
+    <a href="https://apps.apple.com/app/id743843090"><img src="https://cdn.sparrowcode.io/github/apps-using/id743843090.png?version=2" height="65"></a>
+    <a href="https://apps.apple.com/app/id537070378"><img src="https://cdn.sparrowcode.io/github/apps-using/id537070378.png?version=2" height="65"></a>
+    <a href="https://apps.apple.com/app/id1570676244"><img src="https://cdn.sparrowcode.io/github/apps-using/id1570676244.png?version=2" height="65"></a>
+    <a href="https://apps.apple.com/app/id1617055933"><img src="https://cdn.sparrowcode.io/github/apps-using/id1617055933.png?version=2" height="65"></a>
+</p>
 
-```swift
-SPAlert.present(title: "Added to Library", preset: .done)
-```
-
-For using a custom image:
-
-```swift 
-SPAlert.present(title: "Love", message: "We'll recommend more like this in For You", preset: .custom(UIImage.init(named: "heart")!))
-```
-
-For showing a simple text message:
-
-```swift 
-SPAlert.present(message: "Something going wrong", haptic: .error)
-```
-
-## Usage
-
-### Duration
-
-To change the duration of present time, create an alert view and call `present` method with custom duration:
-
-```swift
-let alertView = SPAlertView(title: "Complete", preset: .done)
-alertView.duration = 4
-alertView.present()
-```
-
-If you don't want to dismiss alert in time, disable `dismissInTime`. After it, `duration` property will be ignored.
-
-```swift
-alertView.dismissInTime = false
-```
-
-In this case, you should dismiss the alert manually.
-
-### Dismiss
-
-If you tap the alert, it will disappear. This can be disabled:
-
-```swift
-alertView.dismissByTap = false
-```
-
-Also, you can manually dismiss all alerts, simply call this:
-
-```swift
-SPAlert.dismiss()
-```
-
-### Layout
-
-For customise layout and margins, use `layout` property. You can manage margins for each side, icon size and space between image and titles:
-
-```swift
-alertView.layout.iconSize = .init(width: 24, height: 24)
-alertView.layout.margins.top = 12
-alertView.layout.spaceBetweenIconAndTitle = 8
-```
-
-### Haptic
-
-To manage haptic, you should pass it in present method:
-
-```swift
-alertView.present(duration: 1.5, haptic: .success, completion: nil)
-```
-
-You can remove duration and completion, because they have default values.
-
-### Spinner
-
-I added the preset `.spinner`, to use it simply call this:
-
-```swift
-let alertView = SPAlertView(title: "Please, wait", preset: .spinner)
-alertView.present()
-```
-
-By default this preset `dismissInTime` is disabled and the alert needs to be manually dismissed. You can do it only for one view or dismiss all alerts:
-
-```swift
-// For one alert
-alertView.dismiss()
-
-// For all alerts
-SPAlert.dismiss()
-```
-
-### Colors
-
-For change color of icon, simple set tint color for any preset:
-
-```swift
-alertView.iconView?.tintColor = .systemRed
-
-//If you set custom image, don't forget set rendering mode:
-UIImage(systemName: "pencil.and.outline")!.withRenderingMode(.alwaysTemplate)
-```
-
-### Global Appearance
-
-Also you can change some default values for alerts. For example you can change default duration and corner radius for alert with next code:
-
-```swift
-SPAlertView.appearance().duration = 2
-SPAlertView.appearance().cornerRadius = 12
-```
-
-It will apply to all alerts. I recommend setting it in the app delegate, but you can change it in runtime.
-
-## SwiftUI
-
-Use like system alert only show message tips:
-
-```swift
-Button("Show alert") {
-    showAlert = true
-}.SPAlert(isPresent: $showAlert, message: "this is message only")
-```
-
-or show message, title, image and other configuration:
-
-```swift
-Button("Show alert") {
-    showAlert = true
-}.SPAlert(
-    isPresent: $showAlert, 
-    title: "Alert title", 
-    message: "Alert message",
-    duration: 2.0, 
-    dismissOnTap: false, 
-    preset: .custom(UIImage(systemName: "heart")!), 
-    haptic: .success, 
-    layout: .init(), 
-    completion: {
-        print("Alert is destory")
-    })
-```
-
-## Russian Community
-
-Я веду [телеграм-канал](https://sparrowcode.io/telegram), там публикую новости и туториалы.<br>
-С проблемой помогут [в чате](https://sparrowcode.io/telegram/chat).
-
-Видео-туториалы выклыдываю на [YouTube](https://ivanvorobei.io/youtube):
-
-[![Tutorials on YouTube](https://cdn.ivanvorobei.io/github/readme/youtube-preview.jpg)](https://ivanvorobei.io/youtube)
+If you use a `SwiftBoost`, add your app via Pull Request.
