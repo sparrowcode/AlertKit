@@ -8,7 +8,12 @@ I tried to recreate Apple's alerts as much as possible. You can find these alert
 For run alert just call this:
 
 ```swift
-AlertKitAPI.present(title: "Added to Library", icon: .done, style: .iOS17AppleMusic, haptic: .success)
+AlertKitAPI.present(
+    title: "Added to Library", 
+    icon: .done, 
+    style: .iOS17AppleMusic, 
+    haptic: .success
+)
 ```
 
 Available 2 styles:
