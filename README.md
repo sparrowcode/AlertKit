@@ -3,7 +3,7 @@
 **Popup from Apple Music & Feedback in AppStore**. Contains `Done`, `Heart`, `Error` and other. Supports Dark Mode.
 I tried to recreate Apple's alerts as much as possible. You can find these alerts in the AppStore after feedback and after you add a song to your library in Apple Music.
 
-![Alert Kit v5](https://cdn.sparrowcode.io/github/alertkit/v5/preview-v1.png)
+![Alert Kit v5](https://cdn.sparrowcode.io/github/alertkit/v5/preview-v1_1.png)
 
 For run alert just call this:
 
@@ -23,8 +23,9 @@ public enum AlertViewStyle {
 
 ### Community
 
+English Speacking:
+    
 <p float="left">
-    English Speacking:
     <a href="https://twitter.com/sparrowcode_en">
         <img src="https://cdn.sparrowcode.io/github%2Fbadges%2Ftwitter.png?version=4" height="52">
     </a>
@@ -37,8 +38,25 @@ public enum AlertViewStyle {
     <a href="#apps-using">
         <img src="https://cdn.sparrowcode.io/github/badges/download-on-the-appstore.png?version=4" height="52">
     </a>
-    Russian Speacking:
 </p>
+
+Russian Speacking:
+
+<p float="left">
+    <a href="https://t.me/sparrowcode">
+        <img src="https://cdn.sparrowcode.io/github/badges/telegram.png?version=1" height="52">
+    </a>
+    <a href="https://twitter.com/sparrowcode_">
+        <img src="https://cdn.sparrowcode.io/github%2Fbadges%2Ftwitter.png?version=4" height="52">
+    </a>
+    <a href="https://mastodon.social/@sparrowcode_en">
+        <img src="https://cdn.sparrowcode.io/github/badges/mastodon.png?version=2" height="52">
+    </a>
+    <a href="#apps-using">
+        <img src="https://cdn.sparrowcode.io/github/badges/download-on-the-appstore.png?version=4" height="52">
+    </a>
+</p>
+
 
 ## Installation
 
