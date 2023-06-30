@@ -92,4 +92,4 @@ If you prefer not to use any of dependency managers, you can integrate manually.
     <a href="https://apps.apple.com/app/id1617055933"><img src="https://cdn.sparrowcode.io/github/apps-using/id1617055933.png?version=2" height="65"></a>
 </p>
 
-If you use a `SwiftBoost`, add your app via Pull Request.
+If you use a `AlertKit`, add your app via Pull Request.
