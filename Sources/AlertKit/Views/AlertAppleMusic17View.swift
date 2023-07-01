@@ -1,6 +1,6 @@
 import UIKit
 
-class AlertAppleMusic17View: UIView {
+public class AlertAppleMusic17View: UIView {
     
     open var dismissByTap: Bool = true
     open var dismissInTime: Bool = true
@@ -29,7 +29,7 @@ class AlertAppleMusic17View: UIView {
         return view
     }()
     
-    init(title: String?, subtitle: String?, icon: AlertIcon?) {
+    public init(title: String?, subtitle: String?, icon: AlertIcon?) {
         
         if let title = title {
             let label = UILabel()
@@ -176,13 +176,13 @@ class AlertAppleMusic17View: UIView {
         })
     }
     
-    override func layoutSubviews() {
+    public override func layoutSubviews() {
         super.layoutSubviews()
         backgroundView.frame = self.bounds
         layout(maxWidth: frame.width)
     }
     
-    override func sizeThatFits(_ size: CGSize) -> CGSize {
+    public override func sizeThatFits(_ size: CGSize) -> CGSize {
         layout(maxWidth: nil)
         
         let maxX = subviews.sorted(by: { $0.frame.maxX > $1.frame.maxX }).first?.frame.maxX ?? .zero

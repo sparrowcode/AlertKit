@@ -1,6 +1,6 @@
 import UIKit
 
-class AlertAppleMusic16View: UIView {
+public class AlertAppleMusic16View: UIView {
     
     open var dismissByTap: Bool = true
     open var dismissInTime: Bool = true
@@ -15,7 +15,7 @@ class AlertAppleMusic16View: UIView {
     fileprivate var presentDismissDuration: TimeInterval = 0.2
     fileprivate var presentDismissScale: CGFloat = 0.8
     
-    open var completion: (() -> Void)? = nil
+    var completion: (() -> Void)? = nil
     
     private lazy var backgroundView: UIVisualEffectView = {
         let view: UIVisualEffectView = {
@@ -29,7 +29,7 @@ class AlertAppleMusic16View: UIView {
         return view
     }()
     
-    init(title: String?, subtitle: String?, icon: AlertIcon?) {
+    public init(title: String?, subtitle: String?, icon: AlertIcon?) {
         
         if let title = title {
             let label = UILabel()
@@ -179,7 +179,7 @@ class AlertAppleMusic16View: UIView {
     
     private let layout: AlertLayout
     
-    override func layoutSubviews() {
+    public override func layoutSubviews() {
         super.layoutSubviews()
         backgroundView.frame = self.bounds
         
@@ -205,7 +205,7 @@ class AlertAppleMusic16View: UIView {
         }
     }
     
-    override func sizeThatFits(_ size: CGSize) -> CGSize {
+    public override func sizeThatFits(_ size: CGSize) -> CGSize {
         let width: CGFloat = 250
         self.frame = .init(x: frame.origin.x, y: frame.origin.y, width: width, height: frame.height)
         layoutSubviews()
