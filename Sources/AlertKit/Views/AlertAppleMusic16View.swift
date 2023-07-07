@@ -19,11 +19,15 @@ public class AlertAppleMusic16View: UIView {
     
     private lazy var backgroundView: UIVisualEffectView = {
         let view: UIVisualEffectView = {
+            #if !os(tvOS)
             if #available(iOS 13.0, *) {
                 return UIVisualEffectView(effect: UIBlurEffect(style: .systemThickMaterial))
             } else {
                 return UIVisualEffectView(effect: UIBlurEffect(style: .light))
             }
+            #else
+            return UIVisualEffectView(effect: UIBlurEffect(style: .light))
+            #endif
         }()
         view.isUserInteractionEnabled = false
         return view
