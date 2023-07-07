@@ -8,6 +8,7 @@ public enum AlertHaptic {
     case none
     
     func impact() {
+        #if os(iOS)
         let generator = UINotificationFeedbackGenerator()
         switch self {
         case .success:
@@ -19,5 +20,6 @@ public enum AlertHaptic {
         case .none:
             break
         }
+        #endif
     }
 }
