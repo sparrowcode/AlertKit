@@ -5,7 +5,7 @@ public class AlertAppleMusic16View: UIView {
     open var dismissByTap: Bool = true
     open var dismissInTime: Bool = true
     open var duration: TimeInterval = 1.5
-    open var haptic: AlertHaptic? = nil
+	open var haptic: AlertHaptic = .none
     
     fileprivate let titleLabel: UILabel?
     fileprivate let subtitleLabel: UILabel?
@@ -33,7 +33,7 @@ public class AlertAppleMusic16View: UIView {
         return view
     }()
     
-    public init(title: String?, subtitle: String?, icon: AlertIcon?) {
+    public init(title: String?, subtitle: String? = nil, icon: AlertIcon?) {
         
         if let title = title {
             let label = UILabel()
@@ -151,8 +151,7 @@ public class AlertAppleMusic16View: UIView {
         
         // Present
         
-        haptic?.impact()
-        
+        haptic.impact()
         UIView.animate(withDuration: presentDismissDuration, animations: {
             self.alpha = 1
             self.transform = CGAffineTransform.identity
@@ -170,7 +169,7 @@ public class AlertAppleMusic16View: UIView {
             }
         })
     }
-    
+
     @objc open func dismiss() {
         UIView.animate(withDuration: presentDismissDuration, animations: {
             self.alpha = 0
