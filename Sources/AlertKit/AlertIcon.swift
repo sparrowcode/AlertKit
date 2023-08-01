@@ -8,7 +8,7 @@ public enum AlertIcon: Equatable {
     case spinnerSmall
     case spinnerLarge
     
-    case custom(_ image: UIImage?)
+    case custom(_ image: UIImage)
     
     func createView(lineThick: CGFloat) -> UIView {
         switch self {
