@@ -7,6 +7,7 @@ public enum AlertKitAPI {
 		subtitle: String? = nil,
 		icon: AlertIcon? = nil,
 		style: AlertViewStyle,
+		position: AlertPosition = .bottom,
 		haptic: AlertHaptic = .none,
 		duration: TimeInterval = 1.5,
 		cornerRadius: CGFloat = 8,
@@ -29,7 +30,7 @@ public enum AlertKitAPI {
 			view.haptic = haptic
 			view.duration = duration
 			view.layer.cornerRadius = cornerRadius
-			view.present(on: window) {
+			view.present(on: window, position: position) {
 				completion?()
 			}
 		}
