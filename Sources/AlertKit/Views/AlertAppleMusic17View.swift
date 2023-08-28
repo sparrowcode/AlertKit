@@ -1,5 +1,10 @@
 import UIKit
 
+public enum AlertPosition {
+	case top
+	case bottom
+}
+
 public class AlertAppleMusic17View: UIView {
     
     open var dismissByTap: Bool = true
@@ -33,7 +38,7 @@ public class AlertAppleMusic17View: UIView {
         return view
     }()
     
-    public init(title: String?, subtitle: String? = nil, icon: AlertIcon?) {
+	public init(title: String?, subtitle: String? = nil, icon: AlertIcon?) {
         
         if let title = title {
             let label = UILabel()
@@ -110,7 +115,7 @@ public class AlertAppleMusic17View: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    open func present(on view: UIView, completion: @escaping ()->Void = {}) {
+	open func present(on view: UIView, position: AlertPosition = .bottom, completion: @escaping ()->Void = {}) {
         
         let contentColor = {
             let darkColor = UIColor(red: 127 / 255, green: 127 / 255, blue: 129 / 255, alpha: 1)
@@ -140,7 +145,13 @@ public class AlertAppleMusic17View: UIView {
         alpha = 0
         sizeToFit()
         center.x = viewForPresent.frame.midX
-        frame.origin.y = viewForPresent.frame.height - viewForPresent.safeAreaInsets.bottom - frame.height - 64
+		
+		if position == .bottom {
+			frame.origin.y = viewForPresent.frame.height - viewForPresent.safeAreaInsets.bottom - frame.height - 64
+		} else {
+			frame.origin.y =  viewForPresent.safeAreaInsets.top + 64
+		}
+
         transform = transform.scaledBy(x: self.presentDismissScale, y: self.presentDismissScale)
         
         if dismissByTap {
