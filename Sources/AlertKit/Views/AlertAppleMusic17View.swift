@@ -205,9 +205,9 @@ public class AlertAppleMusic17View: UIView {
         
         let maxWidth = {
             if let viewForPresent = self.viewForPresent {
-                return min(viewForPresent.frame.width * 0.8, 270)
+                return min(viewForPresent.frame.width * 0.8, 280)
             } else {
-                return 270
+                return 280
             }
         }()
         
