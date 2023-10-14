@@ -1,15 +1,22 @@
 import UIKit
 
-public class AlertAppleMusic17View: UIView {
+public class AlertAppleMusic17View: UIView, AlertViewProtocol {
     
     open var dismissByTap: Bool = true
     open var dismissInTime: Bool = true
     open var duration: TimeInterval = 1.5
     open var haptic: AlertHaptic? = nil
     
-    fileprivate let titleLabel: UILabel?
-    fileprivate let subtitleLabel: UILabel?
-    fileprivate let iconView: UIView?
+    public let titleLabel: UILabel?
+    public let subtitleLabel: UILabel?
+    public let iconView: UIView?
+    
+    public var contentColor = UIColor { trait in
+        switch trait.userInterfaceStyle {
+        case .dark: UIColor(red: 127 / 255, green: 127 / 255, blue: 129 / 255, alpha: 1)
+        default: UIColor(red: 88 / 255, green: 87 / 255, blue: 88 / 255, alpha: 1)
+        }
+    }
     
     fileprivate weak var viewForPresent: UIView?
     fileprivate var presentDismissDuration: TimeInterval = 0.2
@@ -111,22 +118,6 @@ public class AlertAppleMusic17View: UIView {
     }
     
     open func present(on view: UIView, completion: @escaping ()->Void = {}) {
-        
-        let contentColor = {
-            let darkColor = UIColor(red: 127 / 255, green: 127 / 255, blue: 129 / 255, alpha: 1)
-            let lightColor = UIColor(red: 88 / 255, green: 87 / 255, blue: 88 / 255, alpha: 1)
-            if #available(iOS 12.0, *) {
-                let interfaceStyle = view.traitCollection.userInterfaceStyle
-                switch interfaceStyle {
-                case .light: return lightColor
-                case .dark: return darkColor
-                case .unspecified: return lightColor
-                @unknown default: return lightColor
-                }
-            } else {
-                return lightColor
-            }
-        }()
         
         self.titleLabel?.textColor = contentColor
         self.subtitleLabel?.textColor = contentColor

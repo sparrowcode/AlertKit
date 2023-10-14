@@ -24,7 +24,6 @@ public class AlertIconDoneView: UIView, AlertIconAnimatable {
         animatableLayer.path = animatablePath.cgPath
         animatableLayer.fillColor = UIColor.clear.cgColor
         animatableLayer.strokeColor = tintColor?.cgColor
-        //animatableLayer.lineWidth = 9
         animatableLayer.lineWidth = lineThick
         animatableLayer.lineCap = .round
         animatableLayer.lineJoin = .round
