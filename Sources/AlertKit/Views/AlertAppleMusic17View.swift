@@ -1,5 +1,7 @@
 import UIKit
+import SwiftUI
 
+@available(iOS 13, visionOS 1, *)
 public class AlertAppleMusic17View: UIView, AlertViewProtocol {
     
     open var dismissByTap: Bool = true
@@ -11,11 +13,15 @@ public class AlertAppleMusic17View: UIView, AlertViewProtocol {
     public let subtitleLabel: UILabel?
     public let iconView: UIView?
     
-    public var contentColor = UIColor { trait in
+    public static var defaultContentColor = UIColor { trait in
+        #if os(visionOS)
+        return .label
+        #else
         switch trait.userInterfaceStyle {
         case .dark: UIColor(red: 127 / 255, green: 127 / 255, blue: 129 / 255, alpha: 1)
         default: UIColor(red: 88 / 255, green: 87 / 255, blue: 88 / 255, alpha: 1)
         }
+        #endif
     }
     
     fileprivate weak var viewForPresent: UIView?
@@ -24,20 +30,18 @@ public class AlertAppleMusic17View: UIView, AlertViewProtocol {
     
     open var completion: (() -> Void)? = nil
     
-    private lazy var backgroundView: UIVisualEffectView = {
-        let view: UIVisualEffectView = {
-            #if !os(tvOS)
-            if #available(iOS 13.0, *) {
-                return UIVisualEffectView(effect: UIBlurEffect(style: .systemThickMaterial))
-            } else {
-                return UIVisualEffectView(effect: UIBlurEffect(style: .light))
-            }
-            #else
-            return UIVisualEffectView(effect: UIBlurEffect(style: .light))
-            #endif
-        }()
+    private lazy var backgroundView: UIView = {
+        #if os(visionOS)
+        let swiftUIView = VisionGlassBackgroundView(cornerRadius: 12)
+        let host = UIHostingController(rootView: swiftUIView)
+        let hostView = host.view ?? UIView()
+        hostView.isUserInteractionEnabled = false
+        return hostView
+        #else
+        let view = UIVisualEffectView(effect: UIBlurEffect())
         view.isUserInteractionEnabled = false
         return view
+        #endif
     }()
     
     public init(title: String?, subtitle: String?, icon: AlertIcon?) {
@@ -75,6 +79,10 @@ public class AlertAppleMusic17View: UIView, AlertViewProtocol {
             self.iconView = nil
         }
         
+        self.titleLabel?.textColor = Self.defaultContentColor
+        self.subtitleLabel?.textColor = Self.defaultContentColor
+        self.iconView?.tintColor = Self.defaultContentColor
+        
         super.init(frame: .zero)
         
         preservesSuperviewLayoutMargins = false
@@ -89,6 +97,7 @@ public class AlertAppleMusic17View: UIView, AlertViewProtocol {
         if let subtitleLabel = self.subtitleLabel {
             addSubview(subtitleLabel)
         }
+        
         if let iconView = self.iconView {
             addSubview(iconView)
         }
@@ -118,11 +127,6 @@ public class AlertAppleMusic17View: UIView, AlertViewProtocol {
     }
     
     open func present(on view: UIView, completion: @escaping ()->Void = {}) {
-        
-        self.titleLabel?.textColor = contentColor
-        self.subtitleLabel?.textColor = contentColor
-        self.iconView?.tintColor = contentColor
-        
         self.completion = completion
         self.viewForPresent = view
         viewForPresent?.addSubview(self)
@@ -131,7 +135,12 @@ public class AlertAppleMusic17View: UIView, AlertViewProtocol {
         alpha = 0
         sizeToFit()
         center.x = viewForPresent.frame.midX
+        #if os(visionOS)
+        frame.origin.y = viewForPresent.safeAreaInsets.top + 24
+        #elseif os(iOS)
         frame.origin.y = viewForPresent.frame.height - viewForPresent.safeAreaInsets.bottom - frame.height - 64
+        #endif
+        
         transform = transform.scaledBy(x: self.presentDismissScale, y: self.presentDismissScale)
         
         if dismissByTap {
@@ -258,4 +267,19 @@ public class AlertAppleMusic17View: UIView, AlertViewProtocol {
         
         iconView?.center.y = frame.height / 2
     }
+    
+    #if os(visionOS)
+    struct VisionGlassBackgroundView: View {
+        
+        let cornerRadius: CGFloat
+        
+        var body: some View {
+            ZStack {
+                Color.clear
+            }
+            .glassBackgroundEffect(in: .rect(cornerRadius: cornerRadius))
+            .opacity(0.4)
+        }
+    }
+    #endif
 }

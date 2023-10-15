@@ -1,5 +1,6 @@
 import UIKit
 
+@available(iOS 13, *)
 public class AlertAppleMusic16View: UIView, AlertViewProtocol {
     
     open var dismissByTap: Bool = true
@@ -11,7 +12,7 @@ public class AlertAppleMusic16View: UIView, AlertViewProtocol {
     public let subtitleLabel: UILabel?
     public let iconView: UIView?
     
-    public var contentColor = UIColor { trait in
+    public static var defaultContentColor = UIColor { trait in
         switch trait.userInterfaceStyle {
         case .dark: UIColor(red: 127 / 255, green: 127 / 255, blue: 129 / 255, alpha: 1)
         default: UIColor(red: 88 / 255, green: 87 / 255, blue: 88 / 255, alpha: 1)
@@ -81,6 +82,10 @@ public class AlertAppleMusic16View: UIView, AlertViewProtocol {
             layout = AlertLayout(for: icon ?? .heart)
         }
         
+        self.titleLabel?.textColor = Self.defaultContentColor
+        self.subtitleLabel?.textColor = Self.defaultContentColor
+        self.iconView?.tintColor = Self.defaultContentColor
+        
         super.init(frame: .zero)
         
         preservesSuperviewLayoutMargins = false
@@ -120,11 +125,6 @@ public class AlertAppleMusic16View: UIView, AlertViewProtocol {
     }
     
     open func present(on view: UIView, completion: @escaping ()->Void = {}) {
-        
-        self.titleLabel?.textColor = contentColor
-        self.subtitleLabel?.textColor = contentColor
-        self.iconView?.tintColor = contentColor
-        
         self.completion = completion
         self.viewForPresent = view
         viewForPresent?.addSubview(self)

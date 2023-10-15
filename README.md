@@ -103,10 +103,10 @@ If you need customisation fonts, icon, colors or any other, make view:
 
 ```swift
 let alertView = AlertAppleMusic17View(title: "Added to Library", subtitle: nil, icon: .done)
-// Change content color
-alertView.contentColor = .systemBlue
-// Change font
+// Change Font
 alertView.titleLabel.font = UIFont.systemFont(ofSize: 21)
+// Change Color
+alertView.titleLabel.textColor = .white
 ```
 
 ## Apps Using
