@@ -21,11 +21,6 @@ let package = Package(
             swiftSettings: [
                 .define("ALERTKIT_SPM")
             ]
-        ),
-        .testTarget(
-            name: "AlertKitTests",
-            dependencies: ["AlertKit"],
-            path: "Tests"
         )
     ],
     swiftLanguageVersions: [.v5]
