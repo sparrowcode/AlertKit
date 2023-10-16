@@ -41,6 +41,9 @@ public enum AlertViewStyle {
         <a href="https://t.me/sparrowcode">
         <img src="https://cdn.sparrowcode.io/github/badges/telegram-ru.png?version=2" height="52">
     </a>
+        <a href="https://youtube.com/@sparrowcode">
+        <img src="https://cdn.sparrowcode.io/github/badges/youtube-ru.png?version=1" height="52">
+    </a>
     <a href="#apps-using">
         <img src="https://cdn.sparrowcode.io/github/badges/download-on-the-appstore.png?version=4" height="52">
     </a>
