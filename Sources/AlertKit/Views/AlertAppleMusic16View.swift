@@ -14,8 +14,8 @@ public class AlertAppleMusic16View: UIView, AlertViewProtocol {
     
     public static var defaultContentColor = UIColor { trait in
         switch trait.userInterfaceStyle {
-        case .dark: UIColor(red: 127 / 255, green: 127 / 255, blue: 129 / 255, alpha: 1)
-        default: UIColor(red: 88 / 255, green: 87 / 255, blue: 88 / 255, alpha: 1)
+        case .dark: return UIColor(red: 127 / 255, green: 127 / 255, blue: 129 / 255, alpha: 1)
+        default: return UIColor(red: 88 / 255, green: 87 / 255, blue: 88 / 255, alpha: 1)
         }
     }
     
