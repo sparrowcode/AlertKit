@@ -122,7 +122,6 @@ alertView.titleLabel.textColor = .white
 ## Apps Using
 
 <p float="left">
-    <a href="https://apps.apple.com/app/id1668579869"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple116/v4/fe/de/6b/fede6ba2-932c-92ec-0445-7bf6b330e562/AppIcon-0-0-1x_U007epad-0-85-220.png/460x0w.webp" height="65"></a>
     <a href="https://apps.apple.com/app/id1624477055"><img src="https://cdn.sparrowcode.io/github/apps-using/id1624477055.png?version=2" height="65"></a>
     <a href="https://apps.apple.com/app/id1625641322"><img src="https://cdn.sparrowcode.io/github/apps-using/id1625641322.png?version=2" height="65"></a>
     <a href="https://apps.apple.com/app/id1625641322"><img src="https://cdn.sparrowcode.io/github/apps-using/id6449774982.png?version=2" height="65"></a>
@@ -131,6 +130,7 @@ alertView.titleLabel.textColor = .white
     <a href="https://apps.apple.com/app/id537070378"><img src="https://cdn.sparrowcode.io/github/apps-using/id537070378.png?version=2" height="65"></a>
     <a href="https://apps.apple.com/app/id1570676244"><img src="https://cdn.sparrowcode.io/github/apps-using/id1570676244.png?version=2" height="65"></a>
     <a href="https://apps.apple.com/app/id1617055933"><img src="https://cdn.sparrowcode.io/github/apps-using/id1617055933.png?version=2" height="65"></a>
+    <a href="https://apps.apple.com/app/id1668579869"><img src="https://cdn.sparrowcode.io/github/apps-using/id1668579869.png?version=1" height="65"></a>
 </p>
 
 If you use a `AlertKit`, add your app via Pull Request.
