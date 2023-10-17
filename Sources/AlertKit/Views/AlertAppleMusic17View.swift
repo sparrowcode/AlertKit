@@ -38,7 +38,7 @@ public class AlertAppleMusic17View: UIView, AlertViewProtocol {
         hostView.isUserInteractionEnabled = false
         return hostView
         #else
-        let view = UIVisualEffectView(effect: UIBlurEffect())
+        let view = UIVisualEffectView(effect: UIBlurEffect(style: .systemMaterial))
         view.isUserInteractionEnabled = false
         return view
         #endif
