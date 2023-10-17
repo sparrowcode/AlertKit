@@ -9,9 +9,9 @@ For UIKit & SwiftUI call this:
 
 ```swift
 AlertKitAPI.present(
-    title: "Added to Library", 
-    icon: .done, 
-    style: .iOS17AppleMusic, 
+    title: "Added to Library",
+    icon: .done,
+    style: .iOS17AppleMusic,
     haptic: .success
 )
 ```
@@ -20,7 +20,7 @@ Available 2 styles:
 
 ```swift
 public enum AlertViewStyle {
-    
+
     case iOS16AppleMusic
     case iOS17AppleMusic
 }
@@ -52,8 +52,8 @@ public enum AlertViewStyle {
 ## Navigate
 
 - [Installation](#installation)
-    - [Swift Package Manager](#swift-package-manager)
-    - [CocoaPods](#cocoapods)
+  - [Swift Package Manager](#swift-package-manager)
+  - [CocoaPods](#cocoapods)
 - [SwiftUI](#swiftui)
 - [Customisation](#customisation)
 - [Apps Using](#apps-using)
@@ -64,7 +64,7 @@ Ready to use on iOS 13+. Supports iOS and visionOS. Working with `UIKit` and `Sw
 
 ### Swift Package Manager
 
-In Xcode go to Project -> Your Project Name -> `Package Dependencies` -> Tap *Plus*. Insert url:
+In Xcode go to Project -> Your Project Name -> `Package Dependencies` -> Tap _Plus_. Insert url:
 
 ```
 https://github.com/sparrowcode/AlertKit
@@ -89,6 +89,7 @@ This is an outdated way of doing things. I advise you to use [SPM](#swift-packag
 ```ruby
 pod 'SPAlert'
 ```
+
 </details>
 
 ### Manually
@@ -97,7 +98,7 @@ If you prefer not to use any of dependency managers, you can integrate manually.
 
 ## SwiftUI
 
-You can use basic way via AlertKitAPI or call via modifier: 
+You can use basic way via AlertKitAPI or call via modifier:
 
 ```swift
 let alertView = AlertAppleMusic17View(title: "Hello", subtitle: nil, icon: .done)
@@ -108,7 +109,7 @@ VStack {}
 
 ## Customisation
 
-If you need customisation fonts, icon, colors or any other, make view: 
+If you need customisation fonts, icon, colors or any other, make view:
 
 ```swift
 let alertView = AlertAppleMusic17View(title: "Added to Library", subtitle: nil, icon: .done)
@@ -121,6 +122,7 @@ alertView.titleLabel.textColor = .white
 ## Apps Using
 
 <p float="left">
+    <a href="https://apps.apple.com/app/id1668579869"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple116/v4/fe/de/6b/fede6ba2-932c-92ec-0445-7bf6b330e562/AppIcon-0-0-1x_U007epad-0-85-220.png/460x0w.webp" height="65"></a>
     <a href="https://apps.apple.com/app/id1624477055"><img src="https://cdn.sparrowcode.io/github/apps-using/id1624477055.png?version=2" height="65"></a>
     <a href="https://apps.apple.com/app/id1625641322"><img src="https://cdn.sparrowcode.io/github/apps-using/id1625641322.png?version=2" height="65"></a>
     <a href="https://apps.apple.com/app/id1625641322"><img src="https://cdn.sparrowcode.io/github/apps-using/id6449774982.png?version=2" height="65"></a>
