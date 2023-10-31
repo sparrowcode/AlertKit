@@ -55,6 +55,7 @@ public enum AlertViewStyle {
   - [Swift Package Manager](#swift-package-manager)
   - [CocoaPods](#cocoapods)
 - [SwiftUI](#swiftui)
+- [Present & Dismiss](#present-dismiss)
 - [Customisation](#customisation)
 - [Apps Using](#apps-using)
 
@@ -117,6 +118,24 @@ let alertView = AlertAppleMusic17View(title: "Added to Library", subtitle: nil, 
 alertView.titleLabel.font = UIFont.systemFont(ofSize: 21)
 // Change Color
 alertView.titleLabel.textColor = .white
+```
+
+## Present & Dismiss
+
+You can present and dismiss alerts manually via view.
+
+```swift
+let alertView = AlertAppleMusic17View(title: "Added to Library", subtitle: nil, icon: .done)
+alertView.present(on: self)
+
+// and dismiss
+alertView.dismiss()
+```
+
+For dismiss all alerts that was presented: 
+
+```swift
+AlertKitAPI.dismissAllAlerts()
 ```
 
 ## Apps Using
