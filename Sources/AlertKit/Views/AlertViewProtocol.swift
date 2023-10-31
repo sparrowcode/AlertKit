@@ -3,6 +3,7 @@ import UIKit
 public protocol AlertViewProtocol {
     
     func present(on view: UIView, completion: @escaping ()->Void)
+    func dismiss()
     
     var completion: (() -> Void)? { get set }
 }

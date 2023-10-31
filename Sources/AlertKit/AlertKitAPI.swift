@@ -25,4 +25,14 @@ public enum AlertKitAPI {
         #endif
         }
     }
+    
+    public static func dismissAllAlerts() {
+        for window in UIApplication.shared.windows {
+            for view in window.subviews {
+                if let view = view as? AlertViewProtocol {
+                    view.dismiss()
+                }
+            }
+        }
+    }
 }
