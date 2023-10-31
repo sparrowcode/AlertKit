@@ -55,7 +55,7 @@ public enum AlertViewStyle {
   - [Swift Package Manager](#swift-package-manager)
   - [CocoaPods](#cocoapods)
 - [SwiftUI](#swiftui)
-- [Present & Dismiss](#present-dismiss)
+- [Present & Dismiss](#present--dismiss)
 - [Customisation](#customisation)
 - [Apps Using](#apps-using)
 
