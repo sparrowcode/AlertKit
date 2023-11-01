@@ -182,6 +182,7 @@ public class AlertAppleMusic17View: UIView, AlertViewProtocol {
     
     public override func layoutSubviews() {
         super.layoutSubviews()
+        guard self.transform == .identity else { return }
         backgroundView.frame = self.bounds
         layout(maxWidth: frame.width)
     }

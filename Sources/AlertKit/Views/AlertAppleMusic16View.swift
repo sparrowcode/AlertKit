@@ -176,6 +176,8 @@ public class AlertAppleMusic16View: UIView, AlertViewProtocol {
     
     public override func layoutSubviews() {
         super.layoutSubviews()
+        
+        guard self.transform == .identity else { return }
         backgroundView.frame = self.bounds
         
         if let iconView = self.iconView {
