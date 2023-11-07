@@ -166,8 +166,8 @@ public class AlertAppleMusic16View: UIView, AlertViewProtocol {
         UIView.animate(withDuration: presentDismissDuration, animations: {
             self.alpha = 0
             self.transform = self.transform.scaledBy(x: self.presentDismissScale, y: self.presentDismissScale)
-        }, completion: { [weak self] finished in
-            self?.removeFromSuperview()
+        }, completion: { finished in
+            self.removeFromSuperview()
             completion?()
         })
     }
