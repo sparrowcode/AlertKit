@@ -23,6 +23,8 @@ public class AlertAppleMusic16View: UIView, AlertViewProtocol {
     fileprivate var presentDismissDuration: TimeInterval = 0.2
     fileprivate var presentDismissScale: CGFloat = 0.8
     
+    fileprivate var completion: (()->Void)? = nil
+    
     private lazy var backgroundView: UIVisualEffectView = {
         let view: UIVisualEffectView = {
             #if !os(tvOS)
@@ -124,6 +126,7 @@ public class AlertAppleMusic16View: UIView, AlertViewProtocol {
     
     open func present(on view: UIView, completion: (()->Void)? = nil) {
         self.viewForPresent = view
+        self.completion = completion
         viewForPresent?.addSubview(self)
         guard let viewForPresent = viewForPresent else { return }
         
@@ -155,20 +158,24 @@ public class AlertAppleMusic16View: UIView, AlertViewProtocol {
                 DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + self.duration) {
                     // If dismiss manually no need call original completion.
                     if self.alpha != 0 {
-                        self.dismiss(completion: completion)
+                        self.dismiss()
                     }
                 }
             }
         })
     }
     
-    @objc open func dismiss(completion: (()->Void)? = nil) {
+    @objc open func dismiss() {
+        self.dismiss(customCompletion: self.completion)
+    }
+    
+    func dismiss(customCompletion: (()->Void)? = nil) {
         UIView.animate(withDuration: presentDismissDuration, animations: {
             self.alpha = 0
             self.transform = self.transform.scaledBy(x: self.presentDismissScale, y: self.presentDismissScale)
         }, completion: { [weak self] finished in
             self?.removeFromSuperview()
-            completion?()
+            customCompletion?()
         })
     }
     

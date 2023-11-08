@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name = 'SPAlert'
-  s.version = '5.1.6'
+  s.version = '5.1.8'
   s.summary = 'Native alert from Apple Music & Feedback. Contains Done, Heart & Message and other presets. Support SwiftUI.'
   s.homepage = 'https://github.com/sparrowcode/AlertKit'
   s.source = { :git => 'https://github.com/sparrowcode/AlertKit.git', :tag => s.version }

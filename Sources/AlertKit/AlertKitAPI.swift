@@ -26,13 +26,16 @@ public enum AlertKitAPI {
         }
     }
     
+    /**
+     Call only with this one `completion`. Internal ones is canceled.
+     */
     public static func dismissAllAlerts(completion: (() -> Void)? = nil) {
         
-        var alertViews: [AlertViewProtocol] = []
+        var alertViews: [AlertViewInternalDismissProtocol] = []
         
         for window in UIApplication.shared.windows {
             for view in window.subviews {
-                if let view = view as? AlertViewProtocol {
+                if let view = view as? AlertViewInternalDismissProtocol {
                     alertViews.append(view)
                 }
             }
@@ -43,13 +46,12 @@ public enum AlertKitAPI {
         } else {
             for (index, view) in alertViews.enumerated() {
                 if index == .zero {
-                    view.dismiss(completion: completion)
+                    view.dismiss(customCompletion: {
+                        completion?()
+                    })
                 } else {
-                    view.dismiss(completion: nil)
+                    view.dismiss(customCompletion: nil)
                 }
-            }
-            alertViews.first?.dismiss {
-                completion?()
             }
         }
     }

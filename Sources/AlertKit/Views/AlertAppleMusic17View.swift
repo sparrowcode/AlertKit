@@ -2,7 +2,7 @@ import UIKit
 import SwiftUI
 
 @available(iOS 13, visionOS 1, *)
-public class AlertAppleMusic17View: UIView, AlertViewProtocol {
+public class AlertAppleMusic17View: UIView, AlertViewProtocol, AlertViewInternalDismissProtocol {
     
     open var dismissByTap: Bool = true
     open var dismissInTime: Bool = true
@@ -27,6 +27,8 @@ public class AlertAppleMusic17View: UIView, AlertViewProtocol {
     fileprivate weak var viewForPresent: UIView?
     fileprivate var presentDismissDuration: TimeInterval = 0.2
     fileprivate var presentDismissScale: CGFloat = 0.8
+    
+    fileprivate var completion: (()->Void)? = nil
     
     private lazy var backgroundView: UIView = {
         #if os(visionOS)
@@ -126,6 +128,7 @@ public class AlertAppleMusic17View: UIView, AlertViewProtocol {
     
     open func present(on view: UIView, completion: (()->Void)? = nil) {
         self.viewForPresent = view
+        self.completion = completion
         viewForPresent?.addSubview(self)
         guard let viewForPresent = viewForPresent else { return }
         
@@ -163,20 +166,24 @@ public class AlertAppleMusic17View: UIView, AlertViewProtocol {
                 DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + self.duration) {
                     // If dismiss manually no need call original completion.
                     if self.alpha != 0 {
-                        self.dismiss(completion: completion)
+                        self.dismiss()
                     }
                 }
             }
         })
     }
     
-    @objc open func dismiss(completion: (()->Void)? = nil) {
+    @objc open func dismiss() {
+        self.dismiss(customCompletion: self.completion)
+    }
+    
+    func dismiss(customCompletion: (()->Void)? = nil) {
         UIView.animate(withDuration: presentDismissDuration, animations: {
             self.alpha = 0
             self.transform = self.transform.scaledBy(x: self.presentDismissScale, y: self.presentDismissScale)
         }, completion: { [weak self] finished in
             self?.removeFromSuperview()
-            completion?()
+            customCompletion?()
         })
     }
     

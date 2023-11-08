@@ -75,7 +75,7 @@ or adding it to the `dependencies` of your `Package.swift`:
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/sparrowcode/AlertKit", .upToNextMajor(from: "5.1.5"))
+    .package(url: "https://github.com/sparrowcode/AlertKit", .upToNextMajor(from: "5.1.8"))
 ]
 ```
 
@@ -99,7 +99,7 @@ If you prefer not to use any of dependency managers, you can integrate manually.
 
 ## SwiftUI
 
-You can use basic way via AlertKitAPI or call via modifier:
+You can use basic way via `AlertKitAPI` or call via modifier:
 
 ```swift
 let alertView = AlertAppleMusic17View(title: "Hello", subtitle: nil, icon: .done)
@@ -114,9 +114,10 @@ If you need customisation fonts, icon, colors or any other, make view:
 
 ```swift
 let alertView = AlertAppleMusic17View(title: "Added to Library", subtitle: nil, icon: .done)
-// Change Font
+
+// change font
 alertView.titleLabel.font = UIFont.systemFont(ofSize: 21)
-// Change Color
+// change color
 alertView.titleLabel.textColor = .white
 ```
 
@@ -126,8 +127,9 @@ You can present and dismiss alerts manually via view.
 
 ```swift
 let alertView = AlertAppleMusic17View(title: "Added to Library", subtitle: nil, icon: .done)
-alertView.present(on: self)
 
+// present
+alertView.present(on: self)
 // and dismiss
 alertView.dismiss()
 ```
