@@ -140,6 +140,7 @@ AlertKitAPI.dismissAllAlerts()
     <a href="https://apps.apple.com/app/id1617055933"><img src="https://cdn.sparrowcode.io/github/apps-using/id1617055933.png?v=2" height="65"></a>
     <a href="https://apps.apple.com/app/id1668579869"><img src="https://cdn.sparrowcode.io/github/apps-using/id1668579869.png?v=1" height="65"></a>
     <a href="https://apps.apple.com/app/id6451087813"><img src="https://cdn.sparrowcode.io/github/apps-using/id6451087813.png?v=1" height="65"></a>
+    <a href="https://apps.apple.com/us/app/id1462481042"><img src="https://firebasestorage.googleapis.com/v0/b/linetime-197b7.appspot.com/o/iOS%20Icon%20More%20Space.png?alt=media&token=5d6fc783-6499-4ba0-9401-229ab88cb328" height="65"></a>
 </p>
 
 If you use a `AlertKit`, add your app via Pull Request.
