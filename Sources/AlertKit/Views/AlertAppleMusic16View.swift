@@ -1,7 +1,7 @@
 import UIKit
 
 @available(iOS 13, *)
-public class AlertAppleMusic16View: UIView, AlertViewProtocol {
+public class AlertAppleMusic16View: UIView, AlertViewProtocol, AlertViewInternalDismissProtocol {
     
     open var dismissByTap: Bool = true
     open var dismissInTime: Bool = true
