@@ -41,7 +41,6 @@ public enum AlertViewStyle {
 
 - [Installation](#installation)
   - [Swift Package Manager](#swift-package-manager)
-  - [CocoaPods](#cocoapods)
 - [SwiftUI](#swiftui)
 - [Present & Dismiss](#present--dismiss)
 - [Customisation](#customisation)
@@ -56,30 +55,16 @@ Ready to use on iOS 13+. Supports iOS and visionOS. Working with `UIKit` and `Sw
 In Xcode go to Project -> Your Project Name -> `Package Dependencies` -> Tap _Plus_. Insert url:
 
 ```
-https://github.com/sparrowcode/AlertKit
+https://github.com/eladdekel/AlertKit
 ```
 
 or adding it to the `dependencies` of your `Package.swift`:
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/sparrowcode/AlertKit", .upToNextMajor(from: "5.1.8"))
+    .package(url: "https://github.com/eladdekel/AlertKit", .upToNextMajor(from: "5.1.8"))
 ]
 ```
-
-### CocoaPods:
-
-This is an outdated way of doing things. I advise you to use [SPM](#swift-package-manager). However, I will continue to support Cocoapods for some time.
-
-<details><summary>Cocoapods Installation</summary>
-
-[CocoaPods](https://cocoapods.org) is a dependency manager. For usage and installation instructions, visit their website. To integrate using CocoaPods, specify it in your `Podfile`:
-
-```ruby
-pod 'SPAlert'
-```
-
-</details>
 
 ### Manually
 
@@ -109,6 +94,21 @@ alertView.titleLabel.font = UIFont.systemFont(ofSize: 21)
 alertView.titleLabel.textColor = .white
 ```
 
+### Liquid Glass (iOS 26+)
+
+On iOS 26 and later, both `AlertAppleMusic16View` and `AlertAppleMusic17View` automatically upgrade their background to a tinted `UIGlassEffect`. On older iOS versions they fall back to the original blur material, so no caller changes are required.
+
+If you want to opt out and force the classic blur on iOS 26+, pass `forceNonGlass: true` at construction time:
+
+```swift
+let alertView = AlertAppleMusic17View(title: "Added to Library", subtitle: nil, icon: .done, forceNonGlass: true)
+
+// also available on the iOS 16 style
+let alertView16 = AlertAppleMusic16View(title: "Added to Library", subtitle: nil, icon: .done, forceNonGlass: true)
+```
+
+The flag must be set at init — the background effect is built during initialisation, so a property change afterwards would have no effect.
+
 ## Present & Dismiss
 
 You can present and dismiss alerts manually via view.
@@ -128,18 +128,6 @@ For dismiss all alerts that was presented:
 AlertKitAPI.dismissAllAlerts()
 ```
 
-## Apps Using
+## Disclaimer
 
-<p float="left">
-    <a href="https://apps.apple.com/app/id1624477055"><img src="https://cdn.sparrowcode.io/github/apps-using/id1624477055.png?v=2" height="65"></a>
-    <a href="https://apps.apple.com/app/id1625641322"><img src="https://cdn.sparrowcode.io/github/apps-using/id1625641322.png?v=2" height="65"></a>
-    <a href="https://apps.apple.com/app/id1625641322"><img src="https://cdn.sparrowcode.io/github/apps-using/id6449774982.png?v=2" height="65"></a>
-    <a href="https://apps.apple.com/app/id875280793"><img src="https://cdn.sparrowcode.io/github/apps-using/id875280793.png?v=2" height="65"></a>
-    <a href="https://apps.apple.com/app/id743843090"><img src="https://cdn.sparrowcode.io/github/apps-using/id743843090.png?v=2" height="65"></a>
-    <a href="https://apps.apple.com/app/id537070378"><img src="https://cdn.sparrowcode.io/github/apps-using/id537070378.png?v=2" height="65"></a>
-    <a href="https://apps.apple.com/app/id1617055933"><img src="https://cdn.sparrowcode.io/github/apps-using/id1617055933.png?v=2" height="65"></a>
-    <a href="https://apps.apple.com/app/id1668579869"><img src="https://cdn.sparrowcode.io/github/apps-using/id1668579869.png?v=1" height="65"></a>
-    <a href="https://apps.apple.com/app/id6451087813"><img src="https://cdn.sparrowcode.io/github/apps-using/id6451087813.png?v=1" height="65"></a>
-</p>
-
-If you use a `AlertKit`, add your app via Pull Request.
+This is a fork of sparrowcode's [AlertKit](https://github.com/sparrowcode/AlertKit) to support iOS 26's tinted glass. 

@@ -11,6 +11,8 @@ public class AlertAppleMusic16View: UIView, AlertViewProtocol {
     public let titleLabel: UILabel?
     public let subtitleLabel: UILabel?
     public let iconView: UIView?
+
+    private let forceNonGlass: Bool
     
     public static var defaultContentColor = UIColor { trait in
         switch trait.userInterfaceStyle {
@@ -26,23 +28,36 @@ public class AlertAppleMusic16View: UIView, AlertViewProtocol {
     fileprivate var completion: (()->Void)? = nil
     
     private lazy var backgroundView: UIVisualEffectView = {
-        let view: UIVisualEffectView = {
+        let effect: UIVisualEffect = {
             #if !os(tvOS)
+            if #available(iOS 26, *), !forceNonGlass {
+                let glass = UIGlassEffect()
+                glass.tintColor = UIColor { trait in
+                    switch trait.userInterfaceStyle {
+                    case .dark: return UIColor.white.withAlphaComponent(0.12)
+                    default: return UIColor.black.withAlphaComponent(0.06)
+                    }
+                }
+                return glass
+            }
             if #available(iOS 13.0, *) {
-                return UIVisualEffectView(effect: UIBlurEffect(style: .systemThickMaterial))
+                return UIBlurEffect(style: .systemThickMaterial)
             } else {
-                return UIVisualEffectView(effect: UIBlurEffect(style: .light))
+                return UIBlurEffect(style: .light)
             }
             #else
-            return UIVisualEffectView(effect: UIBlurEffect(style: .light))
+            return UIBlurEffect(style: .light)
             #endif
         }()
+        let view = UIVisualEffectView(effect: effect)
         view.isUserInteractionEnabled = false
         return view
     }()
-    
-    public init(title: String? = nil, subtitle: String? = nil, icon: AlertIcon? = nil) {
-        
+
+    public init(title: String? = nil, subtitle: String? = nil, icon: AlertIcon? = nil, forceNonGlass: Bool = false) {
+
+        self.forceNonGlass = forceNonGlass
+
         if let title = title {
             let label = UILabel()
             label.font = UIFont.preferredFont(forTextStyle: .title2, weight: .bold)
